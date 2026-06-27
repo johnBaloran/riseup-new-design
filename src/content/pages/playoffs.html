@@ -23,9 +23,9 @@ permalink: "/playoffs/"
             <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
             <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
             <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
-            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/season-leaders/" class="cs-league-tab">Season Leaders</a></li>
             <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
-            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            
             <li><a href="/playoffs/" class="cs-league-tab cs-active">Playoffs</a></li>
         </ul>
     </div>
@@ -40,20 +40,37 @@ permalink: "/playoffs/"
         <!-- Filter Bar -->
         <div class="cs-filter-bar">
             <div class="cs-filter-left">
-                <h2 class="cs-season-title">Spring 2026 Playoffs</h2>
-                <span class="cs-season-badge">Current Season</span>
+                <!-- City Dropdown -->
+                <div class="cs-select-wrap">
+                    <span class="cs-select-label">City</span>
+                    <div class="cs-city-dropdown" id="playoffs-city-dropdown">
+                        <button class="cs-city-dropdown-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="cs-city-dropdown-value">Brampton</span>
+                            <svg class="cs-dropdown-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5L7 9L11 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="cs-city-dropdown-panel" role="listbox">
+                            <button class="cs-city-option cs-active" data-city="brampton" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Brampton</button>
+                            <button class="cs-city-option" data-city="burlington" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Burlington</button>
+                            <button class="cs-city-option" data-city="markham" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Markham</button>
+                            <button class="cs-city-option" data-city="mississauga" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Mississauga</button>
+                            <button class="cs-city-option" data-city="vaughan" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Vaughan</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="cs-filter-right">
-                <label class="cs-select-wrap">
-                    <span class="cs-select-label">Division</span>
-                    <select class="cs-division-select" id="playoffs-division-select">
-                        <option value="rookie">Rookie — Sunday</option>
-                        <option value="pro">Pro — Thursday</option>
-                        <option value="allstar">Allstar — Saturday</option>
-                        <option value="hof">Hall of Fame — Sunday</option>
-                    </select>
-                </label>
+            <!-- Division Tabs -->
+            <div class="cs-div-tabs" id="playoffs-div-tabs">
+                <button class="cs-div-tab cs-active" data-division="rookie" type="button">Rookie</button>
+                <button class="cs-div-tab" data-division="pro" type="button">Pro</button>
+                <button class="cs-div-tab" data-division="allstar" type="button">Allstar</button>
+                <button class="cs-div-tab" data-division="hof" type="button">Hall of Fame</button>
             </div>
+        </div>
+
+        <!-- Season Row -->
+        <div class="cs-season-row">
+            <h2 class="cs-season-title">Brampton Spring 2026 — Playoffs</h2>
+            <span class="cs-season-badge">Current Season</span>
         </div>
 
         <!-- Division Bracket Panels -->
@@ -467,10 +484,10 @@ permalink: "/playoffs/"
     </div>
 </section>
 
-<script>/* ---- Playoffs Division Select ---- */
+<script>/* ---- Playoffs Filters ---- */
 (function () {
-    var select = document.getElementById('playoffs-division-select');
     var panels = document.querySelectorAll('#rise-playoffs .cs-bracket-panel');
+    var divTabs = document.querySelectorAll('#playoffs-div-tabs .cs-div-tab');
 
     function showPanel(val) {
         panels.forEach(function (p) {
@@ -478,12 +495,18 @@ permalink: "/playoffs/"
         });
     }
 
-    if (select) {
-        select.addEventListener('change', function () {
-            showPanel(this.value);
+    divTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            divTabs.forEach(function (t) { t.classList.remove('cs-active'); });
+            tab.classList.add('cs-active');
+            showPanel(tab.dataset.division);
         });
-        showPanel(select.value);
-    }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initCustomDropdown(document.getElementById('playoffs-city-dropdown'), null);
+        showPanel('rookie');
+    });
 })();</script>
 
 {% endblock %}

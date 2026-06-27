@@ -20,6 +20,12 @@
                 </span>
             </button>
             <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <div class="cs-drawer-header">
+                    <img src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/riseup-logo-white.png" alt="Rise Up League" class="cs-drawer-logo" width="140" height="19" decoding="async">
+                    <button class="cs-drawer-close" id="cs-drawer-close" aria-label="Close menu" type="button">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                    </button>
+                </div>
                 <ul id="cs-expanded" class="cs-ul">
                     <!-- Home -->
                     <li class="cs-li">
@@ -44,7 +50,7 @@
                     </li>
                     <!-- League Dropdown -->
                     <li class="cs-li cs-dropdown">
-                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/schedule/" or page.url == "/standings/" or page.url == "/teams/" or page.url == "/leaders/" or page.url == "/career-leaders/" or page.url == "/mvp-ladder/" or page.url == "/playoffs/" %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="league-dropdown-toggle">
+                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/schedule/" or page.url == "/standings/" or page.url == "/teams/" or page.url == "/season-leaders/" or page.url == "/career-leaders/" or page.url == "/playoffs/" %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="league-dropdown-toggle">
                             League
 
                         </button>
@@ -59,13 +65,10 @@
                                 <a href="/teams/" class="cs-li-link cs-drop-link">Teams</a>
                             </li>
                             <li class="cs-drop-li">
-                                <a href="/leaders/" class="cs-li-link cs-drop-link">Leaders</a>
+                                <a href="/season-leaders/" class="cs-li-link cs-drop-link">Season Leaders</a>
                             </li>
                             <li class="cs-drop-li">
                                 <a href="/career-leaders/" class="cs-li-link cs-drop-link">Career Leaders</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="/mvp-ladder/" class="cs-li-link cs-drop-link">MVP Ladder</a>
                             </li>
                             <li class="cs-drop-li">
                                 <a href="/playoffs/" class="cs-li-link cs-drop-link">Playoffs</a>
@@ -103,6 +106,10 @@
                         </ul>
                     </li>
                 </ul>
+                <div class="cs-drawer-footer">
+                    <a href="/" class="cs-drawer-login">Log In</a>
+                    <a href="/" class="cs-drawer-signup">Sign Up</a>
+                </div>
             </div>
         </nav>
         <!--Auth Buttons-->

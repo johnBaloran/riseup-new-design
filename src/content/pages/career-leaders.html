@@ -23,9 +23,9 @@ permalink: "/career-leaders/"
             <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
             <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
             <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
-            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/season-leaders/" class="cs-league-tab">Season Leaders</a></li>
             <li><a href="/career-leaders/" class="cs-league-tab cs-active">Career Leaders</a></li>
-            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            
             <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
         </ul>
     </div>
@@ -37,52 +37,46 @@ permalink: "/career-leaders/"
 <section id="rise-career-leaders">
     <div class="cs-container">
 
-        <!-- Level Filter -->
-        <div class="cs-level-filters" role="group" aria-label="Filter by level">
-            <button class="cs-filter-pill cs-active" data-level="overall">All Levels</button>
-            <button class="cs-filter-pill" data-level="rookie">Rookie</button>
-            <button class="cs-filter-pill" data-level="pro">Pro</button>
-            <button class="cs-filter-pill" data-level="allstar">Allstar</button>
-            <button class="cs-filter-pill" data-level="hall-of-fame">Hall of Fame</button>
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <!-- City Dropdown -->
+                <div class="cs-select-wrap">
+                    <span class="cs-select-label">City</span>
+                    <div class="cs-city-dropdown" id="career-city-dropdown">
+                        <button class="cs-city-dropdown-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="cs-city-dropdown-value">Brampton</span>
+                            <svg class="cs-dropdown-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5L7 9L11 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="cs-city-dropdown-panel" role="listbox">
+                            <button class="cs-city-option cs-active" data-city="brampton" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Brampton</button>
+                            <button class="cs-city-option" data-city="burlington" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Burlington</button>
+                            <button class="cs-city-option" data-city="markham" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Markham</button>
+                            <button class="cs-city-option" data-city="mississauga" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Mississauga</button>
+                            <button class="cs-city-option" data-city="vaughan" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Vaughan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Level Tabs -->
+            <div class="cs-div-tabs" id="career-level-tabs">
+                <button class="cs-div-tab cs-active" data-level="overall" type="button">All Levels</button>
+                <button class="cs-div-tab" data-level="rookie" type="button">Rookie</button>
+                <button class="cs-div-tab" data-level="pro" type="button">Pro</button>
+                <button class="cs-div-tab" data-level="allstar" type="button">Allstar</button>
+                <button class="cs-div-tab" data-level="hall-of-fame" type="button">Hall of Fame</button>
+            </div>
         </div>
 
         <!-- Stat Tabs -->
         <div class="cs-stat-tabs" role="tablist" aria-label="Career stat category">
-            <button class="cs-stat-tab cs-active" data-stat="pts" role="tab" aria-selected="true">
-                <span class="cs-tab-icon cs-icon-pts" aria-hidden="true"></span>
-                <span class="cs-tab-label">Points</span>
-                <span class="cs-tab-short">PTS</span>
-            </button>
-            <button class="cs-stat-tab" data-stat="gp" role="tab" aria-selected="false">
-                <span class="cs-tab-icon cs-icon-gp" aria-hidden="true"></span>
-                <span class="cs-tab-label">Games</span>
-                <span class="cs-tab-short">GP</span>
-            </button>
-            <button class="cs-stat-tab" data-stat="reb" role="tab" aria-selected="false">
-                <span class="cs-tab-icon cs-icon-reb" aria-hidden="true"></span>
-                <span class="cs-tab-label">Rebounds</span>
-                <span class="cs-tab-short">REB</span>
-            </button>
-            <button class="cs-stat-tab" data-stat="ast" role="tab" aria-selected="false">
-                <span class="cs-tab-icon cs-icon-ast" aria-hidden="true"></span>
-                <span class="cs-tab-label">Assists</span>
-                <span class="cs-tab-short">AST</span>
-            </button>
-            <button class="cs-stat-tab" data-stat="stl" role="tab" aria-selected="false">
-                <span class="cs-tab-icon cs-icon-stl" aria-hidden="true"></span>
-                <span class="cs-tab-label">Steals</span>
-                <span class="cs-tab-short">STL</span>
-            </button>
-            <button class="cs-stat-tab" data-stat="blk" role="tab" aria-selected="false">
-                <span class="cs-tab-icon cs-icon-blk" aria-hidden="true"></span>
-                <span class="cs-tab-label">Blocks</span>
-                <span class="cs-tab-short">BLK</span>
-            </button>
-            <button class="cs-stat-tab" data-stat="3pm" role="tab" aria-selected="false">
-                <span class="cs-tab-icon cs-icon-3pm" aria-hidden="true"></span>
-                <span class="cs-tab-label">3-Pointers</span>
-                <span class="cs-tab-short">3PM</span>
-            </button>
+            <button class="cs-stat-tab cs-active" data-stat="pts" role="tab" aria-selected="true">Points</button>
+            <button class="cs-stat-tab" data-stat="gp" role="tab" aria-selected="false">Games</button>
+            <button class="cs-stat-tab" data-stat="reb" role="tab" aria-selected="false">Rebounds</button>
+            <button class="cs-stat-tab" data-stat="ast" role="tab" aria-selected="false">Assists</button>
+            <button class="cs-stat-tab" data-stat="stl" role="tab" aria-selected="false">Steals</button>
+            <button class="cs-stat-tab" data-stat="blk" role="tab" aria-selected="false">Blocks</button>
+            <button class="cs-stat-tab" data-stat="3pm" role="tab" aria-selected="false">3-Pointers</button>
         </div>
 
         <!-- Leaderboard Table -->
@@ -106,7 +100,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">JK</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Jamal Knight</span>
-                            <span class="cs-player-seasons">5 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">487</div>
@@ -124,7 +117,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">MO</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Marcus Okafor</span>
-                            <span class="cs-player-seasons">4 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">441</div>
@@ -142,7 +134,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">DW</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Devon Williams</span>
-                            <span class="cs-player-seasons">5 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">398</div>
@@ -160,7 +151,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">TR</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Tyler Reid</span>
-                            <span class="cs-player-seasons">4 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">356</div>
@@ -178,7 +168,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">AS</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Andre Shaw</span>
-                            <span class="cs-player-seasons">4 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">312</div>
@@ -196,7 +185,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">CL</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Chris Lamar</span>
-                            <span class="cs-player-seasons">3 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">289</div>
@@ -214,7 +202,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">BN</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Brian Nwosu</span>
-                            <span class="cs-player-seasons">3 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">267</div>
@@ -232,7 +219,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">KP</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Kevin Park</span>
-                            <span class="cs-player-seasons">3 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">241</div>
@@ -250,7 +236,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">RB</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Ray Brown</span>
-                            <span class="cs-player-seasons">3 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">218</div>
@@ -268,7 +253,6 @@ permalink: "/career-leaders/"
                         <div class="cs-player-avatar">SJ</div>
                         <div class="cs-player-info">
                             <span class="cs-player-name">Sam Jackson</span>
-                            <span class="cs-player-seasons">2 seasons</span>
                         </div>
                     </div>
                     <div class="cs-col-stat cs-stat-col cs-active-stat" data-stat="pts">196</div>
@@ -341,13 +325,18 @@ permalink: "/career-leaders/"
         });
     });
 
-    /* Level pills (placeholder) */
-    var levelPills = document.querySelectorAll('#rise-career-leaders .cs-filter-pill');
-    levelPills.forEach(function (pill) {
-        pill.addEventListener('click', function () {
-            levelPills.forEach(function (p) { p.classList.remove('cs-active'); });
-            pill.classList.add('cs-active');
+    /* Level tabs */
+    var levelTabs = document.querySelectorAll('#career-level-tabs .cs-div-tab');
+    levelTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            levelTabs.forEach(function (t) { t.classList.remove('cs-active'); });
+            tab.classList.add('cs-active');
         });
+    });
+
+    /* City dropdown */
+    document.addEventListener('DOMContentLoaded', function () {
+        initCustomDropdown(document.getElementById('career-city-dropdown'), null);
     });
 
     /* init */

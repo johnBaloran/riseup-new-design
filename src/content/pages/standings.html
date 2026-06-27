@@ -23,9 +23,9 @@ permalink: "/standings/"
             <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
             <li><a href="/standings/" class="cs-league-tab cs-active">Standings</a></li>
             <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
-            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/season-leaders/" class="cs-league-tab">Season Leaders</a></li>
             <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
-            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            
             <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
         </ul>
     </div>
@@ -36,22 +36,35 @@ permalink: "/standings/"
 <!-- ============================================ -->
 <section id="rise-standings">
     <div class="cs-container">
-        <!-- City Tabs -->
-        <div class="cs-city-tabs" role="tablist" aria-label="Filter by city">
-            <button class="cs-city-tab cs-active" data-city="brampton" role="tab" aria-selected="true">Brampton</button>
-            <button class="cs-city-tab" data-city="burlington" role="tab" aria-selected="false">Burlington</button>
-            <button class="cs-city-tab" data-city="markham" role="tab" aria-selected="false">Markham</button>
-            <button class="cs-city-tab" data-city="mississauga" role="tab" aria-selected="false">Mississauga</button>
-            <button class="cs-city-tab" data-city="vaughan" role="tab" aria-selected="false">Vaughan</button>
-        </div>
-
-        <!-- Level Filters -->
-        <div class="cs-level-filters" role="group" aria-label="Filter by level">
-            <button class="cs-filter-pill cs-active" data-level="all">All Levels</button>
-            <button class="cs-filter-pill" data-level="rookie">Rookie</button>
-            <button class="cs-filter-pill" data-level="pro">Pro</button>
-            <button class="cs-filter-pill" data-level="allstar">Allstar</button>
-            <button class="cs-filter-pill" data-level="hall-of-fame">Hall of Fame</button>
+        <!-- Filters -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <!-- City Dropdown -->
+                <div class="cs-select-wrap">
+                    <span class="cs-select-label">City</span>
+                    <div class="cs-city-dropdown" id="standings-city-dropdown">
+                        <button class="cs-city-dropdown-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="cs-city-dropdown-value">Brampton</span>
+                            <svg class="cs-dropdown-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5L7 9L11 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <div class="cs-city-dropdown-panel" role="listbox">
+                            <button class="cs-city-option cs-active" data-city="brampton" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Brampton</button>
+                            <button class="cs-city-option" data-city="burlington" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Burlington</button>
+                            <button class="cs-city-option" data-city="markham" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Markham</button>
+                            <button class="cs-city-option" data-city="mississauga" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Mississauga</button>
+                            <button class="cs-city-option" data-city="vaughan" role="option" type="button"><svg class="cs-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Vaughan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Level Tabs -->
+            <div class="cs-div-tabs">
+                <button class="cs-div-tab cs-active" data-level="all" type="button">All</button>
+                <button class="cs-div-tab" data-level="rookie" type="button">Rookie</button>
+                <button class="cs-div-tab" data-level="pro" type="button">Pro</button>
+                <button class="cs-div-tab" data-level="allstar" type="button">Allstar</button>
+                <button class="cs-div-tab" data-level="hall-of-fame" type="button">Hall of Fame</button>
+            </div>
         </div>
 
         <!-- Season Badge -->
@@ -322,37 +335,28 @@ permalink: "/standings/"
 
 <script>/* ---- Standings Filters ---- */
 (function () {
-    var cityTabs   = document.querySelectorAll('#rise-standings .cs-city-tab');
-    var levelPills = document.querySelectorAll('#rise-standings .cs-filter-pill');
-    var cards      = document.querySelectorAll('#rise-standings .cs-division-card');
+    var cards = document.querySelectorAll('#rise-standings .cs-division-card');
+    var levelTabs = document.querySelectorAll('#rise-standings .cs-div-tab');
 
-    var activeLevel = 'all';
-
-    function applyLevelFilter() {
+    function applyLevelFilter(level) {
         cards.forEach(function (card) {
-            var show = activeLevel === 'all' || card.dataset.level === activeLevel;
+            var show = level === 'all' || card.dataset.level === level;
             card.classList.toggle('cs-hidden', !show);
         });
     }
 
-    cityTabs.forEach(function (tab) {
+    levelTabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
-            cityTabs.forEach(function (t) {
-                t.classList.remove('cs-active');
-                t.setAttribute('aria-selected', 'false');
-            });
+            levelTabs.forEach(function (t) { t.classList.remove('cs-active'); });
             tab.classList.add('cs-active');
-            tab.setAttribute('aria-selected', 'true');
-            /* city switching would reload data — placeholder for now */
+            applyLevelFilter(tab.dataset.level);
         });
     });
 
-    levelPills.forEach(function (pill) {
-        pill.addEventListener('click', function () {
-            levelPills.forEach(function (p) { p.classList.remove('cs-active'); });
-            pill.classList.add('cs-active');
-            activeLevel = pill.dataset.level;
-            applyLevelFilter();
+    document.addEventListener('DOMContentLoaded', function () {
+        initCustomDropdown(document.getElementById('standings-city-dropdown'), function (city, name) {
+            var title = document.querySelector('#rise-standings .cs-season-title');
+            if (title) title.textContent = name + ' Spring 2026';
         });
     });
 })();</script>

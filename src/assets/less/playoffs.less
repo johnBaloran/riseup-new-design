@@ -1,88 +1,4 @@
 /*-- -------------------------- -->
-<---       League Header        -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0px) {
-	#league-header {
-		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
-		background-color: var(--headerColor);
-
-		.cs-container {
-			width: 100%;
-			max-width: (1440/16rem);
-			margin: auto;
-		}
-
-		.cs-topper {
-			display: inline-block;
-			margin-bottom: (12/16rem);
-			font-family: var(--bodyFont);
-			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
-			font-weight: bold;
-			letter-spacing: 0.18em;
-			text-transform: uppercase;
-			color: var(--primary);
-		}
-
-		.cs-title {
-			margin: 0 0 (32/16rem);
-			font-family: var(--headerFont);
-			font-size: clamp(2.75rem, 7vw, 5.5rem);
-			font-weight: 700;
-			line-height: 0.95;
-			letter-spacing: -0.01em;
-			text-transform: uppercase;
-			color: #fff;
-		}
-
-		.cs-league-tabs {
-			margin: 0;
-			padding: 0;
-			display: flex;
-			flex-wrap: nowrap;
-			gap: (8/16rem);
-			overflow-x: auto;
-			-webkit-overflow-scrolling: touch;
-			scrollbar-width: none;
-			&::-webkit-scrollbar { display: none; }
-
-			li {
-				list-style: none;
-				flex-shrink: 0;
-			}
-		}
-
-		.cs-league-tab {
-			display: inline-block;
-			padding: (7/16rem) (14/16rem);
-			text-decoration: none;
-			white-space: nowrap;
-			font-family: var(--bodyFont);
-			font-size: (12/16rem);
-			font-weight: bold;
-			letter-spacing: 0.05em;
-			text-transform: uppercase;
-			color: rgba(255, 255, 255, 0.7);
-			border: 1px solid rgba(255, 255, 255, 0.2);
-			border-radius: (100/16rem);
-			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
-
-			&:hover {
-				color: #fff;
-				border-color: rgba(255, 255, 255, 0.5);
-			}
-
-			&.cs-active {
-				color: #fff;
-				background-color: var(--primary);
-				border-color: var(--primary);
-			}
-		}
-	}
-}
-
-/*-- -------------------------- -->
 <---          Playoffs          -->
 <--- -------------------------- -*/
 
@@ -102,8 +18,8 @@
 		.cs-filter-bar {
 			display: flex;
 			flex-direction: column;
-			gap: (12/16rem);
-			margin-bottom: (40/16rem);
+			gap: (14/16rem);
+			margin-bottom: (28/16rem);
 		}
 
 		.cs-filter-left {
@@ -118,65 +34,31 @@
 			align-items: center;
 		}
 
+		.cs-season-row {
+			display: flex;
+			align-items: center;
+			gap: (12/16rem);
+			margin-bottom: (28/16rem);
+		}
+
 		.cs-season-title {
 			margin: 0;
 			font-family: var(--headerFont);
-			font-size: clamp(1.5rem, 3vw, 2rem);
+			font-size: clamp(1.25rem, 3vw, 1.75rem);
 			font-weight: 700;
-			text-transform: uppercase;
-			color: var(--headerColor);
-		}
-
-		.cs-season-badge {
-			padding: (6/16rem) (14/16rem);
-			font-family: var(--bodyFont);
-			font-size: (11/16rem);
-			font-weight: bold;
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
-			color: var(--primary);
-			border: 1px solid var(--primary);
-			border-radius: (100/16rem);
-		}
-
-		.cs-select-wrap {
-			display: inline-flex;
-			align-items: center;
-			gap: (10/16rem);
-		}
-
-		.cs-select-label {
-			font-family: var(--bodyFont);
-			font-size: (13/16rem);
-			font-weight: bold;
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
 			color: var(--bodyTextColor);
 		}
 
-		.cs-division-select {
-			box-sizing: border-box;
-			padding: (10/16rem) (40/16rem) (10/16rem) (16/16rem);
+		.cs-season-badge {
+			padding: (4/16rem) (12/16rem);
 			font-family: var(--bodyFont);
-			font-size: (15/16rem);
-			font-weight: bold;
-			color: var(--headerColor);
-			background-color: #fff;
-			border: 1px solid rgba(11, 11, 13, 0.2);
+			font-size: (11/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: #15803d;
+			background: rgba(21, 128, 61, 0.1);
 			border-radius: (100/16rem);
-			appearance: none;
-			cursor: pointer;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B0B0D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-position: right (14/16rem) center;
-			background-size: (16/16rem);
-			transition: border-color 0.3s;
-
-			&:hover,
-			&:focus-visible {
-				border-color: var(--primary);
-				outline: none;
-			}
 		}
 
 		/* Bracket Panel */
@@ -348,7 +230,6 @@
 
 		.cs-filter-bar {
 			flex-direction: row;
-			justify-content: space-between;
 			align-items: center;
 		}
 

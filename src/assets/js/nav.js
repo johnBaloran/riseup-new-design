@@ -40,6 +40,12 @@
         closeAllDropdowns();
     }
 
+    /* ---- Drawer close button ---- */
+    var drawerClose = document.getElementById('cs-drawer-close');
+    if (drawerClose) {
+        drawerClose.addEventListener('click', closeMenu);
+    }
+
     /* ---- Hamburger ---- */
     if (hamburger) {
         hamburger.addEventListener('click', function () {
