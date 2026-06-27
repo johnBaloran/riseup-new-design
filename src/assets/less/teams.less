@@ -1,0 +1,417 @@
+/*-- -------------------------- -->
+<---       League Header        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#league-header {
+		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
+		background-color: var(--headerColor);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			display: inline-block;
+			margin-bottom: (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+			font-weight: bold;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-title {
+			margin: 0 0 (32/16rem);
+			font-family: var(--headerFont);
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.01em;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.cs-league-tabs {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			gap: (8/16rem);
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			&::-webkit-scrollbar { display: none; }
+
+			li {
+				list-style: none;
+				flex-shrink: 0;
+			}
+		}
+
+		.cs-league-tab {
+			display: inline-block;
+			padding: (7/16rem) (14/16rem);
+			text-decoration: none;
+			white-space: nowrap;
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.7);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: (100/16rem);
+			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
+			&:hover {
+				color: #fff;
+				border-color: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background-color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---           Teams            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#rise-teams {
+		padding: (48/16rem) (16/16rem) (80/16rem);
+		background-color: var(--bodyTextColorWhite);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		/* Filter Bar */
+		.cs-filter-bar {
+			display: flex;
+			flex-direction: column;
+			gap: (16/16rem);
+			padding: (16/16rem) (20/16rem);
+			margin-bottom: (40/16rem);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+		}
+
+		.cs-filter-left {
+			display: flex;
+			flex-direction: column;
+			gap: (12/16rem);
+		}
+
+		.cs-filter-right {
+			display: flex;
+			align-items: center;
+		}
+
+		.cs-filter-count {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.45);
+		}
+
+		/* City Tabs */
+		.cs-city-tabs {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (6/16rem);
+		}
+
+		.cs-city-tab {
+			padding: (6/16rem) (14/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.5);
+			background: transparent;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.2s, background 0.2s, border-color 0.2s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				border-color: rgba(0, 0, 0, 0.3);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+
+		/* Level Pills */
+		.cs-level-pills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (6/16rem);
+		}
+
+		.cs-level-pill {
+			padding: (6/16rem) (14/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 600;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.5);
+			background: transparent;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.2s, background 0.2s, border-color 0.2s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				border-color: rgba(0, 0, 0, 0.25);
+			}
+
+			&.cs-active {
+				color: var(--primary);
+				border-color: var(--primary);
+				background: rgba(224, 58, 26, 0.07);
+			}
+		}
+
+		/* Divisions List */
+		.cs-divisions-list {
+			display: flex;
+			flex-direction: column;
+			gap: (48/16rem);
+		}
+
+		.cs-division-section {
+			&.cs-hidden {
+				display: none;
+			}
+		}
+
+		/* Division Header */
+		.cs-division-header {
+			display: flex;
+			align-items: center;
+			gap: (16/16rem);
+			margin-bottom: (24/16rem);
+		}
+
+		.cs-division-name {
+			margin: 0;
+			white-space: nowrap;
+			font-family: var(--headerFont);
+			font-size: clamp(1.25rem, 3vw, 2rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-divider-line {
+			flex: 1;
+			height: (4/16rem);
+			background: var(--primary);
+			border-radius: (100/16rem);
+		}
+
+		.cs-team-count {
+			white-space: nowrap;
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		/* Teams Grid */
+		.cs-teams-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (16/16rem);
+		}
+
+		/* Team Card */
+		.cs-team-card {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			overflow: hidden;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+			transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+
+			&:hover {
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+				transform: translateY(-(3/16rem));
+				border-color: rgba(224, 58, 26, 0.2);
+			}
+		}
+
+		.cs-team-body {
+			display: flex;
+			align-items: center;
+			gap: (14/16rem);
+			padding: (16/16rem) (16/16rem) (12/16rem);
+		}
+
+		/* Jersey logo */
+		.cs-team-logo {
+			flex-shrink: 0;
+			position: relative;
+			width: (56/16rem);
+			height: (56/16rem);
+			border-radius: (8/16rem);
+			overflow: hidden;
+			background: rgba(0, 0, 0, 0.04);
+			border: 1px solid rgba(0, 0, 0, 0.07);
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				display: block;
+				padding: (4/16rem);
+			}
+		}
+
+		/* Fallback letter if image fails */
+		.cs-logo-fallback {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: var(--headerFont);
+			font-size: (22/16rem);
+			font-weight: 700;
+			color: rgba(0, 0, 0, 0.3);
+			background: rgba(0, 0, 0, 0.04);
+		}
+
+		.cs-team-info {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.cs-team-name {
+			margin: 0 0 (2/16rem);
+			font-family: var(--headerFont);
+			font-size: (16/16rem);
+			font-weight: 700;
+			color: var(--bodyTextColor);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.cs-team-division {
+			margin: 0;
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			color: rgba(0, 0, 0, 0.45);
+		}
+
+		/* Win-Loss record */
+		.cs-team-record {
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			gap: (4/16rem);
+			font-family: var(--headerFont);
+			font-size: (20/16rem);
+			font-weight: 700;
+		}
+
+		.cs-record-wins   { color: var(--bodyTextColor); }
+		.cs-record-sep    { color: rgba(0, 0, 0, 0.25); font-size: (16/16rem); }
+		.cs-record-losses { color: rgba(0, 0, 0, 0.4); }
+
+		/* Card Footer */
+		.cs-team-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: (8/16rem) (16/16rem) (12/16rem);
+			border-top: 1px solid rgba(0, 0, 0, 0.05);
+		}
+
+		.cs-team-rank {
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.4);
+
+			&.cs-rank-1 { color: #92700F; }
+			&.cs-rank-2 { color: #6B7280; }
+			&.cs-rank-3 { color: #7C4E1A; }
+		}
+
+		.cs-team-gp {
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 500;
+			color: rgba(0, 0, 0, 0.35);
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#rise-teams {
+		padding: (64/16rem) (32/16rem) (96/16rem);
+
+		.cs-filter-bar {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.cs-filter-left {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.cs-teams-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#rise-teams {
+		padding: (80/16rem) (48/16rem) (120/16rem);
+
+		.cs-teams-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+/* Wide - 1280px */
+@media only screen and (min-width: 80rem) {
+	#rise-teams {
+		.cs-teams-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}

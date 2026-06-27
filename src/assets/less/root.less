@@ -1,0 +1,549 @@
+/*-- -------------------------- -->
+<---        Core Styles         -->
+<--- -------------------------- -*/
+
+/* Rise Up League Core Styles + Reset */
+@media only screen and (min-width: 0px) {
+	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+	:root {
+  /* Phoenix Ember — primary */
+  --primary: #E03A1A;
+  --primaryLight: #E8654C;      /* ember tint */
+
+  /* Molten Gold — accent */
+  --secondary: #C99A2E;
+  --secondaryLight: #D9B563;    /* gold tint */
+
+  /* Midnight Court — core neutral */
+  --headerColor: #0B0B0D;
+
+  /* Text colors */
+  --bodyTextColor: #3D3D40;     /* dark grey from Midnight Court ramp */
+  --bodyTextColorWhite: #F5F5F5; /* Hardwood White */
+
+  --darkBg: #0B0B0D;            /* Midnight Court as section background */
+  --lightBg: #F5F5F5;           /* Hardwood White sections */
+
+
+		/* 13px - 16px */
+		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+		/* 31px - 49px */
+		--headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+		--bodyFontSize: 1rem;
+		/* 60px - 100px top and bottom */
+		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+		--headerFont: "Zilla Slab", Arial, sans-serif;
+		--bodyFont: "Instrument Sans", Arial, sans-serif;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+		font-family: var(--bodyFont);
+		font-size: 100%;
+		transition: background-color 0.3s;
+		color: var(--bodyTextColor);
+	}
+
+	*,
+	*:before,
+	*:after {
+		/* prevents padding from affecting height and width */
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	.cs-topper {
+		font-size: var(--topperFontSize);
+		line-height: 1.2em;
+		text-transform: uppercase;
+		text-align: inherit;
+		letter-spacing: 0.1em;
+		font-weight: 700;
+		color: var(--primary);
+		margin-bottom: 0.25rem;
+		display: block;
+	}
+
+	.cs-title {
+		font-size: var(--headerFontSize);
+		font-weight: 900;
+		line-height: 1.2em;
+		text-align: inherit;
+		max-width: 43.75rem;
+		margin: 0 0 1rem 0;
+		color: var(--headerColor);
+		position: relative;
+	}
+
+	.cs-text {
+		font-size: var(--bodyFontSize);
+		line-height: 1.5em;
+		text-align: inherit;
+		width: 100%;
+		max-width: 40.625rem;
+		margin: 0;
+		color: var(--bodyTextColor);
+	}
+}
+
+/* Components + Utilities */
+@media only screen and (min-width: 0px) {
+	// Hidden screen reader skip nav button
+	.skip {
+		z-index: -1111111;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+
+.cs-button-solid {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: (56/16rem);
+    padding: 0 (64/16rem) 0 (28/16rem);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: (100/16rem);
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--bodyFont);
+    font-size: (14/16rem);
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    .cs-button-label {
+        position: relative;
+        transition: opacity 0.2s ease;
+    }
+
+    .cs-button-icon {
+        position: absolute;
+        right: (6/16rem);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: (44/16rem);
+        width: (44/16rem);
+        background: var(--primary);
+        border-radius: (100/16rem);
+        transition: width 0.3s ease;
+
+        svg {
+            width: (18/16rem);
+            height: (18/16rem);
+            color: #fff;
+            transition: transform 0.3s;
+        }
+    }
+
+    &:hover {
+        border-color: var(--primary);
+
+        .cs-button-label {
+            opacity: 0;
+        }
+
+        .cs-button-icon {
+            width: calc(~"100% - 0.75rem");
+
+            svg {
+                transform: translate(0.1em, -0.1em);
+            }
+        }
+    }
+
+    &:active {
+        .cs-button-icon {
+            transform: scale(0.96);
+        }
+    }
+}
+
+	.cs-button-outline {
+		z-index: 1;
+		position: relative;
+		display: inline-block;
+		width: auto;
+		padding: (16/16rem) (32/16rem);
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: (16/16rem);
+		line-height: (16/16em);
+		font-weight: bold;
+		border: 2px solid #000;
+
+		// Transition Properties
+		color: #000;
+		transition: color 0.3s;
+		transition-delay: 0.1s;
+		text-align: center;
+
+		&:hover {
+			color: #fff;
+
+			&:before {
+				width: 100%;
+			}
+		}
+
+		&:before {
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+			opacity: 1;
+			display: block;
+			background-color: #000;
+			height: 100%;
+
+			//Transition properties
+			width: 0;
+			transition: width 0.3s;
+		}
+	}
+
+	// Utilities - small classes useful in various common situations
+	.cs-color {
+		color: var(--primary);
+	}
+
+	.cs-bold {
+		font-weight: 700;
+	}
+
+	.cs-hide-on-mobile {
+		display: none !important;
+	}
+
+}
+
+/* Desktop Utilities */
+@media only screen and (min-width: 64rem) {
+	.cs-hide-on-mobile {
+		display: block !important;
+	}
+
+	.cs-hide-on-desktop {
+		display: none !important;
+	}
+}
+
+/* Scroll Reveal */
+@media only screen and (min-width: 0px) {
+	.cs-reveal {
+		opacity: 0;
+		transform: translateY(1.25rem);
+		transition: opacity 0.65s ease, transform 0.65s ease;
+		transition-delay: var(--reveal-delay, 0s);
+
+		&.cs-visible {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+/* Section Dividers */
+@media only screen and (min-width: 0px) {
+	.cs-section-divider {
+		display: block;
+		line-height: 0;
+		overflow: hidden;
+		height: (44/16rem);
+
+		svg {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
+}
+
+@media only screen and (min-width: 64rem) {
+	.cs-section-divider {
+		height: (60/16rem);
+	}
+}
+
+/* Base Element Styles */
+@media only screen and (min-width: 0px) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--headerFont);
+		line-height: 1.2em;
+		color: var(--headerColor);
+	}
+
+	p,
+	li,
+	a {
+		font-size: (16/16rem);
+		line-height: 1.5em;
+	}
+
+	p,
+	li {
+		color: var(--bodyTextColor);
+
+		a {
+			color: var(--primary);
+		}
+	}
+
+	a,
+	button {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	body.dark-mode {
+		background-color: var(--dark);
+
+		p,
+		li,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: #fff;
+		}
+	}
+}
+
+/* Fonts */
+@media only screen and (min-width: 0px) {
+
+	@font-face {
+		font-style: normal;
+		font-family: "Instrument Sans";
+		font-weight: 400;
+		font-display: swap;
+		src: local(""), url("/assets/fonts/InstrumentSans-Regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/InstrumentSans-Regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+
+	@font-face {
+		font-style: normal;
+		font-family: "Zilla Slab";
+		font-weight: 700;
+		font-display: swap;
+		src: local(""), url("/assets/fonts/ZillaSlab-SemiBold.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/ZillaSlab-SemiBold.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+}
+
+/*-- -------------------------- -->
+<---          Footer            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#cs-footer {
+		background-color: var(--darkBg);
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+			padding: clamp(3.75rem, 7.82vw, 6.25rem) (24/16rem);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: (40/16rem);
+		}
+
+		/* ---- Logo Group ---- */
+		.cs-logo-group {
+			width: 100%;
+		}
+
+		.cs-logo {
+			display: block;
+			margin-bottom: (24/16rem);
+		}
+
+		.cs-logo-img {
+			width: clamp(8rem, 20vw, 13rem);
+			height: auto;
+			display: block;
+		}
+
+		.cs-text {
+			max-width: (380/16rem);
+			margin-bottom: (24/16rem);
+			font-size: (15/16rem);
+			line-height: 1.6em;
+			color: rgba(245, 245, 245, 0.6); // Hardwood White, dimmed
+		}
+
+		.cs-social {
+			display: flex;
+			gap: (12/16rem);
+		}
+
+		.cs-social-link {
+			width: (36/16rem);
+			height: (36/16rem);
+			background-color: rgba(255, 255, 255, 0.08);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background-color 0.3s, border-color 0.3s;
+
+			&:hover {
+				background-color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+
+		.cs-social-img {
+			width: auto;
+			height: (13/16rem);
+			display: block;
+			filter: brightness(0) invert(1);
+		}
+
+		/* ---- Nav Columns ---- */
+		.cs-nav {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			gap: (12/16rem);
+		}
+
+		.cs-nav-li {
+			list-style: none;
+		}
+
+		.cs-header {
+			display: block;
+			margin-bottom: (4/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-nav-link {
+			font-size: (15/16rem);
+			line-height: 1.4em;
+			text-decoration: none;
+			color: rgba(245, 245, 245, 0.6);
+			transition: color 0.3s;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		/* ---- Bottom Bar ---- */
+		.cs-bottom-bar {
+			border-top: 1px solid rgba(255, 255, 255, 0.08);
+		}
+
+		.cs-bottom-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+			padding: (20/16rem) (24/16rem);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: (12/16rem);
+		}
+
+		.cs-copyright {
+			font-size: (13/16rem);
+			line-height: 1.5em;
+			color: rgba(245, 245, 245, 0.35);
+		}
+
+		.cs-bottom-links {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: (8/16rem) (20/16rem);
+
+			li {
+				list-style: none;
+			}
+		}
+
+		.cs-bottom-link {
+			font-size: (13/16rem);
+			line-height: 1.5em;
+			text-decoration: none;
+			color: rgba(245, 245, 245, 0.4);
+			transition: color 0.3s;
+
+			&:hover {
+				color: rgba(245, 245, 245, 0.8);
+			}
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#cs-footer {
+		.cs-container {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+
+		.cs-logo-group {
+			width: 100%;
+		}
+
+		.cs-bottom-container {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#cs-footer {
+		.cs-container {
+			flex-wrap: nowrap;
+			align-items: flex-start;
+		}
+
+		.cs-logo-group {
+			width: auto;
+			max-width: (320/16rem);
+			margin-right: auto;
+			flex-shrink: 0;
+		}
+	}
+}
+

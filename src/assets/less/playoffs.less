@@ -1,0 +1,377 @@
+/*-- -------------------------- -->
+<---       League Header        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#league-header {
+		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
+		background-color: var(--headerColor);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			display: inline-block;
+			margin-bottom: (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+			font-weight: bold;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-title {
+			margin: 0 0 (32/16rem);
+			font-family: var(--headerFont);
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.01em;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.cs-league-tabs {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			gap: (8/16rem);
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			&::-webkit-scrollbar { display: none; }
+
+			li {
+				list-style: none;
+				flex-shrink: 0;
+			}
+		}
+
+		.cs-league-tab {
+			display: inline-block;
+			padding: (7/16rem) (14/16rem);
+			text-decoration: none;
+			white-space: nowrap;
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.7);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: (100/16rem);
+			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
+			&:hover {
+				color: #fff;
+				border-color: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background-color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---          Playoffs          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#rise-playoffs {
+		padding: (48/16rem) (16/16rem) (80/16rem);
+		background-color: var(--bodyTextColorWhite);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		/* Filter Bar */
+		.cs-filter-bar {
+			display: flex;
+			flex-direction: column;
+			gap: (12/16rem);
+			margin-bottom: (40/16rem);
+		}
+
+		.cs-filter-left {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: (12/16rem);
+		}
+
+		.cs-filter-right {
+			display: flex;
+			align-items: center;
+		}
+
+		.cs-season-title {
+			margin: 0;
+			font-family: var(--headerFont);
+			font-size: clamp(1.5rem, 3vw, 2rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: var(--headerColor);
+		}
+
+		.cs-season-badge {
+			padding: (6/16rem) (14/16rem);
+			font-family: var(--bodyFont);
+			font-size: (11/16rem);
+			font-weight: bold;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--primary);
+			border: 1px solid var(--primary);
+			border-radius: (100/16rem);
+		}
+
+		.cs-select-wrap {
+			display: inline-flex;
+			align-items: center;
+			gap: (10/16rem);
+		}
+
+		.cs-select-label {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: bold;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-division-select {
+			box-sizing: border-box;
+			padding: (10/16rem) (40/16rem) (10/16rem) (16/16rem);
+			font-family: var(--bodyFont);
+			font-size: (15/16rem);
+			font-weight: bold;
+			color: var(--headerColor);
+			background-color: #fff;
+			border: 1px solid rgba(11, 11, 13, 0.2);
+			border-radius: (100/16rem);
+			appearance: none;
+			cursor: pointer;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B0B0D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right (14/16rem) center;
+			background-size: (16/16rem);
+			transition: border-color 0.3s;
+
+			&:hover,
+			&:focus-visible {
+				border-color: var(--primary);
+				outline: none;
+			}
+		}
+
+		/* Bracket Panel */
+		.cs-bracket-panel {
+			display: none;
+
+			&.cs-active {
+				display: block;
+			}
+		}
+
+		.cs-bracket-label {
+			margin-bottom: (28/16rem);
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.4);
+		}
+
+		/* Bracket Layout */
+		.cs-bracket {
+			display: flex;
+			flex-direction: column;
+			gap: (32/16rem);
+			overflow-x: auto;
+		}
+
+		.cs-bracket-round {
+			display: flex;
+			flex-direction: column;
+			gap: (16/16rem);
+		}
+
+		.cs-round-label {
+			font-family: var(--headerFont);
+			font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: var(--bodyTextColor);
+			padding-bottom: (10/16rem);
+			border-bottom: 2px solid var(--primary);
+			margin-bottom: (8/16rem);
+		}
+
+		.cs-round-games {
+			display: flex;
+			flex-direction: column;
+			gap: (12/16rem);
+		}
+
+		/* Bracket Game Card */
+		.cs-bracket-game {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (10/16rem);
+			overflow: hidden;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+			&.cs-championship {
+				border-color: rgba(201, 154, 46, 0.4);
+				box-shadow: 0 4px 16px rgba(201, 154, 46, 0.12);
+			}
+		}
+
+		.cs-game-team {
+			display: grid;
+			grid-template-columns: (28/16rem) 1fr (60/16rem) (44/16rem);
+			align-items: center;
+			gap: (8/16rem);
+			padding: (12/16rem) (16/16rem);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+			&:last-of-type {
+				border-bottom: none;
+			}
+
+			&.cs-winner {
+				background: rgba(224, 58, 26, 0.04);
+
+				.cs-team-name {
+					font-weight: 700;
+					color: var(--bodyTextColor);
+				}
+
+				.cs-score {
+					color: var(--primary);
+					font-weight: 700;
+				}
+			}
+		}
+
+		.cs-seed {
+			font-family: var(--bodyFont);
+			font-size: (11/16rem);
+			font-weight: 700;
+			color: rgba(0, 0, 0, 0.35);
+			text-align: center;
+		}
+
+		.cs-team-name {
+			font-family: var(--bodyFont);
+			font-size: (14/16rem);
+			font-weight: 500;
+			color: var(--bodyTextColor);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.cs-record {
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			color: rgba(0, 0, 0, 0.4);
+			text-align: right;
+		}
+
+		.cs-score {
+			font-family: var(--headerFont);
+			font-size: (20/16rem);
+			font-weight: 700;
+			color: rgba(0, 0, 0, 0.3);
+			text-align: right;
+		}
+
+		.cs-game-info {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: (8/16rem) (16/16rem);
+			background: rgba(0, 0, 0, 0.02);
+			border-top: 1px solid rgba(0, 0, 0, 0.05);
+		}
+
+		.cs-game-date {
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.4);
+		}
+
+		.cs-game-status {
+			padding: (3/16rem) (10/16rem);
+			font-family: var(--bodyFont);
+			font-size: (11/16rem);
+			font-weight: 700;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+			border-radius: (100/16rem);
+
+			&.cs-final {
+				color: #15803d;
+				background: rgba(21, 128, 61, 0.1);
+			}
+
+			&.cs-upcoming {
+				color: rgba(0, 0, 0, 0.4);
+				background: rgba(0, 0, 0, 0.06);
+			}
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#rise-playoffs {
+		padding: (64/16rem) (32/16rem) (96/16rem);
+
+		.cs-filter-bar {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.cs-bracket {
+			flex-direction: row;
+			align-items: flex-start;
+			gap: (24/16rem);
+		}
+
+		.cs-bracket-round {
+			flex: 1;
+			min-width: (260/16rem);
+		}
+
+		.cs-round-games {
+			flex: 1;
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#rise-playoffs {
+		padding: (80/16rem) (48/16rem) (120/16rem);
+	}
+}

@@ -1,0 +1,542 @@
+---
+title: "Teams | Rise Up League"
+description: "Browse all Rise Up League teams by city, division, and level."
+permalink: "/teams/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/teams.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             League Header                    -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Season Stats</span>
+        <h1 class="cs-title">Teams</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab cs-active">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 Teams                        -->
+<!-- ============================================ -->
+<section id="rise-teams">
+    <div class="cs-container">
+
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <!-- City Tabs -->
+                <div class="cs-city-tabs" role="tablist" aria-label="Filter by city">
+                    <button class="cs-city-tab cs-active" data-city="brampton" role="tab" aria-selected="true">Brampton</button>
+                    <button class="cs-city-tab" data-city="burlington" role="tab" aria-selected="false">Burlington</button>
+                    <button class="cs-city-tab" data-city="markham" role="tab" aria-selected="false">Markham</button>
+                    <button class="cs-city-tab" data-city="mississauga" role="tab" aria-selected="false">Mississauga</button>
+                    <button class="cs-city-tab" data-city="vaughan" role="tab" aria-selected="false">Vaughan</button>
+                </div>
+
+                <!-- Level Filter Pills -->
+                <div class="cs-level-pills" role="group" aria-label="Filter by level">
+                    <button class="cs-level-pill cs-active" data-level="all">All Levels</button>
+                    <button class="cs-level-pill" data-level="rookie">Rookie</button>
+                    <button class="cs-level-pill" data-level="pro">Pro</button>
+                    <button class="cs-level-pill" data-level="allstar">Allstar</button>
+                    <button class="cs-level-pill" data-level="hall-of-fame">Hall of Fame</button>
+                </div>
+            </div>
+            <div class="cs-filter-right">
+                <span class="cs-filter-count" id="team-count">17 Teams</span>
+            </div>
+        </div>
+
+        <!-- Divisions -->
+        <div class="cs-divisions-list" id="teams-divisions">
+
+            <!-- Rookie — Sunday -->
+            <div class="cs-division-section" data-level="rookie">
+                <div class="cs-division-header">
+                    <h3 class="cs-division-name">Rookie — Sunday</h3>
+                    <div class="cs-divider-line"></div>
+                    <span class="cs-team-count">5 Teams</span>
+                </div>
+                <div class="cs-teams-grid">
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Rim Reapers jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">R</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Rim Reapers</h4>
+                                <p class="cs-team-division">Rookie — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">6</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">1</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-1">1st Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Jez Elite jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">J</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Jez Elite</h4>
+                                <p class="cs-team-division">Rookie — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">5</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">2</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-2">2nd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="FTD jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">F</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">FTD</h4>
+                                <p class="cs-team-division">Rookie — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">4</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">3</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-3">3rd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Handlers jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">H</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Handlers</h4>
+                                <p class="cs-team-division">Rookie — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">2</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">5</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank">4th Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Ballers United jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">B</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Ballers United</h4>
+                                <p class="cs-team-division">Rookie — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">0</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">7</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank">5th Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Pro — Thursday -->
+            <div class="cs-division-section" data-level="pro">
+                <div class="cs-division-header">
+                    <h3 class="cs-division-name">Pro — Thursday</h3>
+                    <div class="cs-divider-line"></div>
+                    <span class="cs-team-count">4 Teams</span>
+                </div>
+                <div class="cs-teams-grid">
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="The ANBU jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">A</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">The ANBU</h4>
+                                <p class="cs-team-division">Pro — Thursday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">7</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">0</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-1">1st Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="CTO jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">C</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">CTO</h4>
+                                <p class="cs-team-division">Pro — Thursday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">5</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">2</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-2">2nd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Run It Up jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">R</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Run It Up</h4>
+                                <p class="cs-team-division">Pro — Thursday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">3</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">4</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-3">3rd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Vintage x Aly jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">V</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Vintage x Aly</h4>
+                                <p class="cs-team-division">Pro — Thursday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">0</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">7</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank">4th Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Allstar — Saturday -->
+            <div class="cs-division-section" data-level="allstar">
+                <div class="cs-division-header">
+                    <h3 class="cs-division-name">Allstar — Saturday</h3>
+                    <div class="cs-divider-line"></div>
+                    <span class="cs-team-count">4 Teams</span>
+                </div>
+                <div class="cs-teams-grid">
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="North Side Kings jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">N</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">North Side Kings</h4>
+                                <p class="cs-team-division">Allstar — Saturday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">6</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">1</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-1">1st Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Certified jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">C</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Certified</h4>
+                                <p class="cs-team-division">Allstar — Saturday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">4</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">3</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-2">2nd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Legacy jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">L</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Legacy</h4>
+                                <p class="cs-team-division">Allstar — Saturday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">3</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">4</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-3">3rd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Clutch City jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">C</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Clutch City</h4>
+                                <p class="cs-team-division">Allstar — Saturday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">1</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">6</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank">4th Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Hall of Fame — Sunday -->
+            <div class="cs-division-section" data-level="hall-of-fame">
+                <div class="cs-division-header">
+                    <h3 class="cs-division-name">Hall of Fame — Sunday</h3>
+                    <div class="cs-divider-line"></div>
+                    <span class="cs-team-count">4 Teams</span>
+                </div>
+                <div class="cs-teams-grid">
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="The Council jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">T</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">The Council</h4>
+                                <p class="cs-team-division">Hall of Fame — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">7</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">0</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-1">1st Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Overlords jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">O</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Overlords</h4>
+                                <p class="cs-team-division">Hall of Fame — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">5</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">2</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-2">2nd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Money Team jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">M</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Money Team</h4>
+                                <p class="cs-team-division">Hall of Fame — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">2</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">5</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank cs-rank-3">3rd Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                    <div class="cs-team-card">
+                        <div class="cs-team-body">
+                            <div class="cs-team-logo">
+                                <img src="/assets/images/jersey-placeholder.png" alt="Young Gunz jersey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                                <span class="cs-logo-fallback" style="display:none;">Y</span>
+                            </div>
+                            <div class="cs-team-info">
+                                <h4 class="cs-team-name">Young Gunz</h4>
+                                <p class="cs-team-division">Hall of Fame — Sunday</p>
+                            </div>
+                            <div class="cs-team-record">
+                                <span class="cs-record-wins">0</span>
+                                <span class="cs-record-sep">-</span>
+                                <span class="cs-record-losses">7</span>
+                            </div>
+                        </div>
+                        <div class="cs-team-footer">
+                            <span class="cs-team-rank">4th Place</span>
+                            <span class="cs-team-gp">7 GP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!-- end .cs-divisions-list -->
+    </div>
+</section>
+
+<script>/* ---- Teams Filters ---- */
+(function () {
+    var cityTabs   = document.querySelectorAll('#rise-teams .cs-city-tab');
+    var levelPills = document.querySelectorAll('#rise-teams .cs-level-pill');
+    var sections   = document.querySelectorAll('#rise-teams .cs-division-section');
+    var countEl    = document.getElementById('team-count');
+    var activeLevel = 'all';
+
+    function updateCount() {
+        var visible = 0;
+        sections.forEach(function (s) {
+            if (!s.classList.contains('cs-hidden')) {
+                visible += s.querySelectorAll('.cs-team-card').length;
+            }
+        });
+        if (countEl) countEl.textContent = visible + ' Team' + (visible !== 1 ? 's' : '');
+    }
+
+    function applyFilter() {
+        sections.forEach(function (s) {
+            var show = activeLevel === 'all' || s.dataset.level === activeLevel;
+            s.classList.toggle('cs-hidden', !show);
+        });
+        updateCount();
+    }
+
+    cityTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            cityTabs.forEach(function (t) {
+                t.classList.remove('cs-active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('cs-active');
+            tab.setAttribute('aria-selected', 'true');
+        });
+    });
+
+    levelPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            levelPills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+            activeLevel = pill.dataset.level;
+            applyFilter();
+        });
+    });
+})();</script>
+
+{% endblock %}

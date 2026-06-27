@@ -1,0 +1,457 @@
+/*-- -------------------------- -->
+<---        Info Header         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#info-header {
+		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
+		background-color: var(--headerColor);
+
+		.cs-container {
+			width: 100%;
+			max-width: (780/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			display: inline-block;
+			margin-bottom: (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+			font-weight: bold;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-title {
+			margin: 0 0 (16/16rem);
+			font-family: var(--headerFont);
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.01em;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.cs-subtitle {
+			margin: 0;
+			font-family: var(--bodyFont);
+			font-size: (15/16rem);
+			line-height: 1.6;
+			color: rgba(255, 255, 255, 0.55);
+
+			a {
+				color: var(--primary);
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---       Info Content         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#info-content {
+		padding: (48/16rem) (16/16rem) (80/16rem);
+		background-color: var(--bodyTextColorWhite);
+
+		.cs-container {
+			width: 100%;
+			max-width: (780/16rem);
+			margin: auto;
+		}
+
+		/* ---- League Rules Grid ---- */
+		.cs-rules-grid {
+			display: flex;
+			flex-direction: column;
+			gap: (32/16rem);
+		}
+
+		.cs-rule-block {
+			padding: (24/16rem);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.07);
+			border-radius: (10/16rem);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+			border-left: 3px solid var(--primary);
+		}
+
+		.cs-rule-title {
+			margin: 0 0 (12/16rem);
+			font-family: var(--headerFont);
+			font-size: (18/16rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-rule-list {
+			margin: 0;
+			padding: 0 0 0 (20/16rem);
+			display: flex;
+			flex-direction: column;
+			gap: (8/16rem);
+
+			li {
+				font-family: var(--bodyFont);
+				font-size: (14/16rem);
+				line-height: 1.6;
+				color: var(--bodyTextColor);
+			}
+		}
+
+		/* ---- FAQ ---- */
+		.cs-faq-container {
+			max-width: (720/16rem);
+		}
+
+		.cs-faq-list {
+			display: flex;
+			flex-direction: column;
+			gap: (12/16rem);
+		}
+
+		.cs-faq-item {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (10/16rem);
+			overflow: hidden;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+			transition: border-color 0.2s;
+
+			&[open] {
+				border-color: var(--primary);
+
+				.cs-faq-question {
+					color: var(--primary);
+
+					&:after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+
+		.cs-faq-question {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: (16/16rem);
+			padding: (18/16rem) (20/16rem);
+			font-family: var(--bodyFont);
+			font-size: (15/16rem);
+			font-weight: 700;
+			color: var(--bodyTextColor);
+			cursor: pointer;
+			transition: color 0.2s;
+			user-select: none;
+
+			&::-webkit-details-marker { display: none; }
+
+			&:after {
+				content: "";
+				flex-shrink: 0;
+				width: (20/16rem);
+				height: (20/16rem);
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233D3D40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				transition: transform 0.3s;
+			}
+
+			&:hover { color: var(--primary); }
+		}
+
+		.cs-faq-answer {
+			padding: 0 (20/16rem) (18/16rem);
+
+			p {
+				font-family: var(--bodyFont);
+				font-size: (14/16rem);
+				line-height: 1.7;
+				color: var(--bodyTextColor);
+				margin: 0;
+			}
+		}
+
+		/* ---- Document Pages (Terms, Refund) ---- */
+		.cs-doc-container {
+			max-width: (760/16rem);
+		}
+
+		.cs-doc-body {
+			display: flex;
+			flex-direction: column;
+			gap: (32/16rem);
+		}
+
+		.cs-doc-section {
+			padding-bottom: (32/16rem);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+			&:last-child {
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+		}
+
+		.cs-doc-heading {
+			margin: 0 0 (12/16rem);
+			font-family: var(--headerFont);
+			font-size: (20/16rem);
+			font-weight: 700;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-doc-body p {
+			font-family: var(--bodyFont);
+			font-size: (15/16rem);
+			line-height: 1.75;
+			color: var(--bodyTextColor);
+			margin: 0 0 (12/16rem);
+
+			&:last-child { margin-bottom: 0; }
+
+			a {
+				color: var(--primary);
+				text-decoration: none;
+
+				&:hover { text-decoration: underline; }
+			}
+		}
+
+		.cs-doc-list {
+			margin: (12/16rem) 0 (12/16rem) (20/16rem);
+			display: flex;
+			flex-direction: column;
+			gap: (8/16rem);
+
+			li {
+				font-family: var(--bodyFont);
+				font-size: (15/16rem);
+				line-height: 1.6;
+				color: var(--bodyTextColor);
+			}
+		}
+
+		/* ---- Contact ---- */
+		.cs-contact-container {
+			max-width: (900/16rem);
+			display: flex;
+			flex-direction: column;
+			gap: (48/16rem);
+		}
+
+		.cs-contact-cards {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (16/16rem);
+		}
+
+		.cs-contact-card {
+			display: flex;
+			align-items: flex-start;
+			gap: (16/16rem);
+			padding: (20/16rem);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (10/16rem);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+		}
+
+		.cs-contact-icon {
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: (44/16rem);
+			height: (44/16rem);
+			background: rgba(224, 58, 26, 0.08);
+			border-radius: (8/16rem);
+			color: var(--primary);
+
+			svg {
+				width: (20/16rem);
+				height: (20/16rem);
+			}
+		}
+
+		.cs-contact-card-body {
+			display: flex;
+			flex-direction: column;
+			gap: (3/16rem);
+		}
+
+		.cs-contact-card-title {
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.4);
+			margin: 0;
+		}
+
+		.cs-contact-card-value {
+			font-family: var(--headerFont);
+			font-size: (16/16rem);
+			font-weight: 700;
+			color: var(--bodyTextColor);
+			text-decoration: none;
+			transition: color 0.2s;
+
+			&:hover { color: var(--primary); }
+		}
+
+		.cs-contact-card-note {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			color: rgba(0, 0, 0, 0.4);
+			margin: 0;
+		}
+
+		/* Contact Form */
+		.cs-contact-form-wrap {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			padding: (28/16rem) (24/16rem);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		}
+
+		.cs-contact-form-title {
+			margin: 0 0 (24/16rem);
+			font-family: var(--headerFont);
+			font-size: (22/16rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: (16/16rem);
+		}
+
+		.cs-form-row {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (16/16rem);
+		}
+
+		.cs-form-label {
+			display: flex;
+			flex-direction: column;
+			gap: (6/16rem);
+		}
+
+		.cs-label-text {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.55);
+		}
+
+		.cs-form-input {
+			width: 100%;
+			box-sizing: border-box;
+			padding: (12/16rem) (16/16rem);
+			font-family: var(--bodyFont);
+			font-size: (15/16rem);
+			color: var(--bodyTextColor);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			border-radius: (8/16rem);
+			outline: none;
+			transition: border-color 0.2s;
+			appearance: none;
+
+			&::placeholder { color: rgba(0, 0, 0, 0.3); }
+
+			&:focus { border-color: var(--primary); }
+		}
+
+		.cs-form-select {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233D3D40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right (12/16rem) center;
+			background-size: (16/16rem);
+			padding-right: (40/16rem);
+			cursor: pointer;
+		}
+
+		.cs-form-textarea {
+			resize: vertical;
+			min-height: (120/16rem);
+		}
+
+		.cs-form-submit {
+			align-self: flex-start;
+			padding: (13/16rem) (32/16rem);
+			font-family: var(--bodyFont);
+			font-size: (14/16rem);
+			font-weight: 700;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+			color: #fff;
+			background: var(--primary);
+			border: none;
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: background-color 0.2s;
+
+			&:hover { background-color: #B92E13; }
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#info-header {
+		padding: clamp(8rem, 16vw, 12rem) (32/16rem) clamp(2.5rem, 5vw, 4rem);
+	}
+
+	#info-content {
+		padding: (64/16rem) (32/16rem) (96/16rem);
+
+		.cs-rules-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.cs-contact-cards {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.cs-form-row {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#info-header {
+		padding: clamp(8rem, 16vw, 12rem) (48/16rem) clamp(2.5rem, 5vw, 4rem);
+	}
+
+	#info-content {
+		padding: (80/16rem) (48/16rem) (120/16rem);
+	}
+}

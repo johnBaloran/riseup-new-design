@@ -1,0 +1,328 @@
+---
+title: "Game Photos | Rise Up League"
+description: "Browse game photos from Rise Up League basketball — every matchup, every season, every city."
+permalink: "/photos/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/photos.css">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             Game Photos Header               -->
+<!-- ============================================ -->
+<section id="photos-header">
+    <div class="cs-container">
+        <span class="cs-topper">Through the Lens</span>
+        <h1 class="cs-title">Game Photos</h1>
+        <ul class="cs-location-tabs">
+            <li><a href="/photos/brampton/" class="cs-location-tab cs-active">Brampton</a></li>
+            <li><a href="/photos/burlington/" class="cs-location-tab">Burlington</a></li>
+            <li><a href="/photos/markham/" class="cs-location-tab">Markham</a></li>
+            <li><a href="/photos/mississauga/" class="cs-location-tab">Mississauga</a></li>
+            <li><a href="/photos/vaughan/" class="cs-location-tab">Vaughan</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--             Game Photos Grid                 -->
+<!-- ============================================ -->
+<section id="photos-grid">
+    <div class="cs-container">
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <h2 class="cs-season-title">Brampton Spring 2026</h2>
+                <span class="cs-season-badge">Current Season</span>
+            </div>
+            <div class="cs-filter-right">
+                <label class="cs-select-wrap">
+                    <span class="cs-select-label">Season</span>
+                    <select class="cs-season-select" id="season-select">
+                        <option value="/photos/brampton/brampton-winter-2026/">Winter 2026</option>
+                        <option value="/photos/brampton/brampton-summer-2026/">Summer 2026</option>
+                        <option value="/photos/brampton/brampton-spring-2026/" selected>Spring 2026</option>
+                        <option value="/photos/brampton/fall-2025/">Fall 2025</option>
+                        <option value="/photos/brampton/summer-2025/">Summer 2025</option>
+                        <option value="/photos/brampton/spring-2025/">Spring 2025</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <!-- Division Pills -->
+        <div class="cs-division-filters" role="group" aria-label="Filter games by division">
+            <button class="cs-filter-pill cs-active" data-division="all">All <span class="cs-pill-count">9</span></button>
+            <button class="cs-filter-pill" data-division="rookie-sunday">Rookie — Sunday <span class="cs-pill-count">3</span></button>
+            <button class="cs-filter-pill" data-division="rookie-saturday">Rookie — Saturday <span class="cs-pill-count">2</span></button>
+            <button class="cs-filter-pill" data-division="pro-sunday">Pro — Sunday <span class="cs-pill-count">2</span></button>
+            <button class="cs-filter-pill" data-division="pro-saturday">Pro — Saturday <span class="cs-pill-count">1</span></button>
+            <button class="cs-filter-pill" data-division="fil-rookie-sunday">Fil – Rookie — Sunday <span class="cs-pill-count">1</span></button>
+        </div>
+        <!-- Game Cards -->
+        <ul class="cs-game-grid" id="game-grid">
+
+            <!-- Card 1 -->
+            <li class="cs-game-card" data-division="rookie-sunday">
+                <a href="/photos/brampton/brampton-spring-2026/rim-reapers-vs-ftd/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="Rim Reapers vs FTD game action" loading="eager" decoding="async">
+                        <span class="cs-photo-count">52 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">Rim Reapers vs FTD</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Rookie</span>
+                            <span class="cs-game-date">June 7, 2026</span>
+                            <span class="cs-game-venue">Sheridan Davis Campus</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5032_fcd6wr.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5034_tcffvf.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5035_wbolil.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 2 -->
+            <li class="cs-game-card" data-division="pro-sunday">
+                <a href="/photos/brampton/brampton-spring-2026/cto-vs-vintage/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="CTO vs Vintage x Aly game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">50 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">CTO vs Vintage x Aly</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Pro</span>
+                            <span class="cs-game-date">June 7, 2026</span>
+                            <span class="cs-game-venue">Sheridan Davis Campus</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4843_zxklcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4846_vzne7p.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 3 -->
+            <li class="cs-game-card" data-division="pro-sunday">
+                <a href="/photos/brampton/brampton-spring-2026/the-anbu-vs-run-it-up/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5032_fcd6wr.jpg" alt="The ANBU vs Run It Up game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">47 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">The ANBU vs Run It Up</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Pro</span>
+                            <span class="cs-game-date">June 8, 2026</span>
+                            <span class="cs-game-venue">Sheridan Davis Campus</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5032_fcd6wr.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4843_zxklcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4846_vzne7p.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 4 -->
+            <li class="cs-game-card" data-division="rookie-sunday">
+                <a href="/photos/brampton/brampton-spring-2026/jez-elite-vs-handlers/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="Jez Elite vs Handlers game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">44 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">Jez Elite vs Handlers</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Rookie</span>
+                            <span class="cs-game-date">June 8, 2026</span>
+                            <span class="cs-game-venue">Sheridan Davis Campus</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5035_wbolil.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5034_tcffvf.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 5 -->
+            <li class="cs-game-card" data-division="rookie-saturday">
+                <a href="/photos/brampton/brampton-spring-2026/north-side-kings-vs-legacy/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5034_tcffvf.jpg" alt="North Side Kings vs Legacy game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">38 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">North Side Kings vs Legacy</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Rookie</span>
+                            <span class="cs-game-date">June 13, 2026</span>
+                            <span class="cs-game-venue">St. Jude's Academy</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5034_tcffvf.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5035_wbolil.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4843_zxklcp.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 6 -->
+            <li class="cs-game-card" data-division="pro-saturday">
+                <a href="/photos/brampton/brampton-spring-2026/overlords-vs-the-council/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4843_zxklcp.jpg" alt="Overlords vs The Council game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">41 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">Overlords vs The Council</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Pro</span>
+                            <span class="cs-game-date">June 13, 2026</span>
+                            <span class="cs-game-venue">St. Jude's Academy</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4843_zxklcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4846_vzne7p.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5032_fcd6wr.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 7 -->
+            <li class="cs-game-card" data-division="rookie-sunday">
+                <a href="/photos/brampton/brampton-spring-2026/ballers-united-vs-certified/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5035_wbolil.jpg" alt="Ballers United vs Certified game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">35 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">Ballers United vs Certified</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Rookie</span>
+                            <span class="cs-game-date">June 14, 2026</span>
+                            <span class="cs-game-venue">Sheridan Davis Campus</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5035_wbolil.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 8 -->
+            <li class="cs-game-card" data-division="rookie-saturday">
+                <a href="/photos/brampton/brampton-spring-2026/young-gunz-vs-money-team/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4846_vzne7p.jpg" alt="Young Gunz vs Money Team game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">39 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">Young Gunz vs Money Team</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Rookie</span>
+                            <span class="cs-game-date">June 14, 2026</span>
+                            <span class="cs-game-venue">St. Jude's Academy</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4846_vzne7p.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5034_tcffvf.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5032_fcd6wr.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+            <!-- Card 9 -->
+            <li class="cs-game-card" data-division="fil-rookie-sunday">
+                <a href="/photos/brampton/brampton-spring-2026/ftd-vs-jez-elite-fil/" class="cs-game-link">
+                    <div class="cs-game-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_600,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="FTD vs Jez Elite game action" loading="lazy" decoding="async">
+                        <span class="cs-photo-count">33 Photos</span>
+                    </div>
+                    <div class="cs-game-info">
+                        <h3 class="cs-game-title">FTD vs Jez Elite</h3>
+                        <div class="cs-game-meta">
+                            <span class="cs-game-division">Fil – Rookie</span>
+                            <span class="cs-game-date">June 14, 2026</span>
+                            <span class="cs-game-venue">Sheridan Davis Campus</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-previews" aria-hidden="true">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="" loading="lazy" decoding="async">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_200,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5035_wbolil.jpg" alt="" loading="lazy" decoding="async">
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+        <!-- Pagination -->
+        <div class="cs-pagination">
+            <span class="cs-page-info">Showing 9 games</span>
+            <div class="cs-arrows">
+                <a href="" class="cs-arrow cs-disabled" aria-label="Previous page" aria-disabled="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                </a>
+                <a href="" class="cs-arrow cs-disabled" aria-label="Next page" aria-disabled="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>/* ---- Game Photos Filters ---- */
+(function () {
+    var pills  = document.querySelectorAll('#photos-grid .cs-filter-pill');
+    var cards  = document.querySelectorAll('#photos-grid .cs-game-card');
+    var select = document.getElementById('season-select');
+
+    pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            pills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+
+            var division = pill.dataset.division;
+            cards.forEach(function (card) {
+                var show = division === 'all' || card.dataset.division === division;
+                card.classList.toggle('cs-hidden', !show);
+            });
+        });
+    });
+
+    if (select) {
+        select.addEventListener('change', function () {
+            window.location.href = select.value;
+        });
+    }
+})();</script>
+
+{% endblock %}

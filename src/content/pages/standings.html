@@ -1,0 +1,360 @@
+---
+title: "Standings | Rise Up League"
+description: "Season standings for Rise Up League basketball — track wins, losses, and playoff position for all divisions."
+permalink: "/standings/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/standings.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             League Header                    -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Season Stats</span>
+        <h1 class="cs-title">Standings</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab cs-active">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Standings                      -->
+<!-- ============================================ -->
+<section id="rise-standings">
+    <div class="cs-container">
+        <!-- City Tabs -->
+        <div class="cs-city-tabs" role="tablist" aria-label="Filter by city">
+            <button class="cs-city-tab cs-active" data-city="brampton" role="tab" aria-selected="true">Brampton</button>
+            <button class="cs-city-tab" data-city="burlington" role="tab" aria-selected="false">Burlington</button>
+            <button class="cs-city-tab" data-city="markham" role="tab" aria-selected="false">Markham</button>
+            <button class="cs-city-tab" data-city="mississauga" role="tab" aria-selected="false">Mississauga</button>
+            <button class="cs-city-tab" data-city="vaughan" role="tab" aria-selected="false">Vaughan</button>
+        </div>
+
+        <!-- Level Filters -->
+        <div class="cs-level-filters" role="group" aria-label="Filter by level">
+            <button class="cs-filter-pill cs-active" data-level="all">All Levels</button>
+            <button class="cs-filter-pill" data-level="rookie">Rookie</button>
+            <button class="cs-filter-pill" data-level="pro">Pro</button>
+            <button class="cs-filter-pill" data-level="allstar">Allstar</button>
+            <button class="cs-filter-pill" data-level="hall-of-fame">Hall of Fame</button>
+        </div>
+
+        <!-- Season Badge -->
+        <div class="cs-season-row">
+            <h2 class="cs-season-title">Brampton Spring 2026</h2>
+            <span class="cs-season-badge">Current Season</span>
+        </div>
+
+        <!-- Division Cards Grid -->
+        <div class="cs-divisions-grid" id="divisions-grid">
+
+            <!-- Rookie — Sunday -->
+            <div class="cs-division-card" data-level="rookie">
+                <div class="cs-division-head">
+                    <h3 class="cs-division-name">Rookie — Sunday</h3>
+                    <span class="cs-team-count">5 Teams</span>
+                </div>
+                <div class="cs-table-wrap">
+                    <table class="cs-standings-table">
+                        <thead>
+                            <tr>
+                                <th class="cs-col-rank">#</th>
+                                <th class="cs-col-team">Team</th>
+                                <th class="cs-col-stat">W</th>
+                                <th class="cs-col-stat">L</th>
+                                <th class="cs-col-stat">GP</th>
+                                <th class="cs-col-stat">W%</th>
+                                <th class="cs-col-stat">+/-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cs-rank-1" data-rank="1">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-gold">1</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Rim Reapers</a></td>
+                                <td class="cs-col-stat">6</td>
+                                <td class="cs-col-stat">1</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.857</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+84</td>
+                            </tr>
+                            <tr class="cs-rank-2" data-rank="2">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-silver">2</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Jez Elite</a></td>
+                                <td class="cs-col-stat">5</td>
+                                <td class="cs-col-stat">2</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.714</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+47</td>
+                            </tr>
+                            <tr class="cs-rank-3" data-rank="3">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-bronze">3</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">FTD</a></td>
+                                <td class="cs-col-stat">4</td>
+                                <td class="cs-col-stat">3</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.571</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+12</td>
+                            </tr>
+                            <tr>
+                                <td class="cs-col-rank"><span class="cs-rank-badge">4</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Handlers</a></td>
+                                <td class="cs-col-stat">2</td>
+                                <td class="cs-col-stat">5</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.286</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-38</td>
+                            </tr>
+                            <tr>
+                                <td class="cs-col-rank"><span class="cs-rank-badge">5</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Ballers United</a></td>
+                                <td class="cs-col-stat">0</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.000</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-105</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pro — Thursday -->
+            <div class="cs-division-card" data-level="pro">
+                <div class="cs-division-head">
+                    <h3 class="cs-division-name">Pro — Thursday</h3>
+                    <span class="cs-team-count">4 Teams</span>
+                </div>
+                <div class="cs-table-wrap">
+                    <table class="cs-standings-table">
+                        <thead>
+                            <tr>
+                                <th class="cs-col-rank">#</th>
+                                <th class="cs-col-team">Team</th>
+                                <th class="cs-col-stat">W</th>
+                                <th class="cs-col-stat">L</th>
+                                <th class="cs-col-stat">GP</th>
+                                <th class="cs-col-stat">W%</th>
+                                <th class="cs-col-stat">+/-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cs-rank-1">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-gold">1</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">The ANBU</a></td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat">0</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">1.000</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+122</td>
+                            </tr>
+                            <tr class="cs-rank-2">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-silver">2</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">CTO</a></td>
+                                <td class="cs-col-stat">5</td>
+                                <td class="cs-col-stat">2</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.714</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+55</td>
+                            </tr>
+                            <tr class="cs-rank-3">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-bronze">3</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Run It Up</a></td>
+                                <td class="cs-col-stat">3</td>
+                                <td class="cs-col-stat">4</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.429</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-21</td>
+                            </tr>
+                            <tr>
+                                <td class="cs-col-rank"><span class="cs-rank-badge">4</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Vintage x Aly</a></td>
+                                <td class="cs-col-stat">0</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.000</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-156</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Allstar — Saturday -->
+            <div class="cs-division-card" data-level="allstar">
+                <div class="cs-division-head">
+                    <h3 class="cs-division-name">Allstar — Saturday</h3>
+                    <span class="cs-team-count">4 Teams</span>
+                </div>
+                <div class="cs-table-wrap">
+                    <table class="cs-standings-table">
+                        <thead>
+                            <tr>
+                                <th class="cs-col-rank">#</th>
+                                <th class="cs-col-team">Team</th>
+                                <th class="cs-col-stat">W</th>
+                                <th class="cs-col-stat">L</th>
+                                <th class="cs-col-stat">GP</th>
+                                <th class="cs-col-stat">W%</th>
+                                <th class="cs-col-stat">+/-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cs-rank-1">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-gold">1</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">North Side Kings</a></td>
+                                <td class="cs-col-stat">6</td>
+                                <td class="cs-col-stat">1</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.857</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+91</td>
+                            </tr>
+                            <tr class="cs-rank-2">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-silver">2</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Certified</a></td>
+                                <td class="cs-col-stat">4</td>
+                                <td class="cs-col-stat">3</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.571</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+18</td>
+                            </tr>
+                            <tr class="cs-rank-3">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-bronze">3</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Legacy</a></td>
+                                <td class="cs-col-stat">3</td>
+                                <td class="cs-col-stat">4</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.429</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-14</td>
+                            </tr>
+                            <tr>
+                                <td class="cs-col-rank"><span class="cs-rank-badge">4</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Clutch City</a></td>
+                                <td class="cs-col-stat">1</td>
+                                <td class="cs-col-stat">6</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.143</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-95</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Hall of Fame — Sunday -->
+            <div class="cs-division-card" data-level="hall-of-fame">
+                <div class="cs-division-head">
+                    <h3 class="cs-division-name">Hall of Fame — Sunday</h3>
+                    <span class="cs-team-count">4 Teams</span>
+                </div>
+                <div class="cs-table-wrap">
+                    <table class="cs-standings-table">
+                        <thead>
+                            <tr>
+                                <th class="cs-col-rank">#</th>
+                                <th class="cs-col-team">Team</th>
+                                <th class="cs-col-stat">W</th>
+                                <th class="cs-col-stat">L</th>
+                                <th class="cs-col-stat">GP</th>
+                                <th class="cs-col-stat">W%</th>
+                                <th class="cs-col-stat">+/-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cs-rank-1">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-gold">1</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">The Council</a></td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat">0</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">1.000</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+148</td>
+                            </tr>
+                            <tr class="cs-rank-2">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-silver">2</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Overlords</a></td>
+                                <td class="cs-col-stat">5</td>
+                                <td class="cs-col-stat">2</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.714</td>
+                                <td class="cs-col-stat cs-mono cs-positive">+63</td>
+                            </tr>
+                            <tr class="cs-rank-3">
+                                <td class="cs-col-rank"><span class="cs-rank-badge cs-bronze">3</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Money Team</a></td>
+                                <td class="cs-col-stat">2</td>
+                                <td class="cs-col-stat">5</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.286</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-42</td>
+                            </tr>
+                            <tr>
+                                <td class="cs-col-rank"><span class="cs-rank-badge">4</span></td>
+                                <td class="cs-col-team"><a href="#" class="cs-team-link">Young Gunz</a></td>
+                                <td class="cs-col-stat">0</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat">7</td>
+                                <td class="cs-col-stat cs-mono">.000</td>
+                                <td class="cs-col-stat cs-mono cs-negative">-169</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div><!-- end .cs-divisions-grid -->
+    </div>
+</section>
+
+<script>/* ---- Standings Filters ---- */
+(function () {
+    var cityTabs   = document.querySelectorAll('#rise-standings .cs-city-tab');
+    var levelPills = document.querySelectorAll('#rise-standings .cs-filter-pill');
+    var cards      = document.querySelectorAll('#rise-standings .cs-division-card');
+
+    var activeLevel = 'all';
+
+    function applyLevelFilter() {
+        cards.forEach(function (card) {
+            var show = activeLevel === 'all' || card.dataset.level === activeLevel;
+            card.classList.toggle('cs-hidden', !show);
+        });
+    }
+
+    cityTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            cityTabs.forEach(function (t) {
+                t.classList.remove('cs-active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('cs-active');
+            tab.setAttribute('aria-selected', 'true');
+            /* city switching would reload data — placeholder for now */
+        });
+    });
+
+    levelPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            levelPills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+            activeLevel = pill.dataset.level;
+            applyLevelFilter();
+        });
+    });
+})();</script>
+
+{% endblock %}

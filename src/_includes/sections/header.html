@@ -1,0 +1,114 @@
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="Rise Up League Home page">
+            <img class="cs-logo-white" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/riseup-logo-white.png" alt="" width="210" height="29" aria-hidden="true" decoding="async">
+            <img class="cs-logo-dark" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/riseup-logo-black.png" alt="" width="210" height="29" aria-hidden="true" decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" aria-label="main navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" id="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
+                <span class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </span>
+            </button>
+            <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul">
+                    <!-- Home -->
+                    <li class="cs-li">
+                        <a href="/" class="cs-li-link {% if page.url == "/" %} cs-active {% endif %}" {% if page.url == "/" %} aria-current="page" {% endif %}>
+                            Home
+                        </a>
+                    </li>
+                    <!-- Photos Dropdown -->
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/game-photos/" or page.url == "/media-day/" %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="photos-dropdown-toggle">
+                            Photos
+                            
+                        </button>
+                        <ul class="cs-drop-ul" data-label="Photos" aria-labelledby="photos-dropdown-toggle">
+                            <li class="cs-drop-li">
+                                <a href="/photos/" class="cs-li-link cs-drop-link">Game Photos</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/media-day/" class="cs-li-link cs-drop-link">Media Day</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- League Dropdown -->
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/schedule/" or page.url == "/standings/" or page.url == "/teams/" or page.url == "/leaders/" or page.url == "/career-leaders/" or page.url == "/mvp-ladder/" or page.url == "/playoffs/" %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="league-dropdown-toggle">
+                            League
+
+                        </button>
+                        <ul class="cs-drop-ul" data-label="League" aria-labelledby="league-dropdown-toggle">
+                            <li class="cs-drop-li">
+                                <a href="/schedule/" class="cs-li-link cs-drop-link">Schedule</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/standings/" class="cs-li-link cs-drop-link">Standings</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/teams/" class="cs-li-link cs-drop-link">Teams</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/leaders/" class="cs-li-link cs-drop-link">Leaders</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/career-leaders/" class="cs-li-link cs-drop-link">Career Leaders</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/mvp-ladder/" class="cs-li-link cs-drop-link">MVP Ladder</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/playoffs/" class="cs-li-link cs-drop-link">Playoffs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Information Dropdown -->
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/all-players/" or page.url == "/career-leaders/" or page.url == "/league-rules/" or page.url == "/terms-and-conditions/" or page.url == "/refund-policy/" or page.url == "/faq/" or page.url == "/contact/" %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="information-dropdown-toggle">
+                            Information
+                            
+                        </button>
+                        <ul class="cs-drop-ul" data-label="Information" aria-labelledby="information-dropdown-toggle">
+                            <li class="cs-drop-li">
+                                <a href="/all-players/" class="cs-li-link cs-drop-link">All Players</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/career-leaders/" class="cs-li-link cs-drop-link">Career Leaders</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/league-rules/" class="cs-li-link cs-drop-link">League Rules</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/terms-and-conditions/" class="cs-li-link cs-drop-link">Terms and Conditions</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/refund-policy/" class="cs-li-link cs-drop-link">Refund Policy</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/faq/" class="cs-li-link cs-drop-link">FAQ</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/contact/" class="cs-li-link cs-drop-link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Auth Buttons-->
+        <div class="cs-nav-buttons">
+            <a href="/" class="cs-nav-login">Log In</a>
+            <a href="/" class="cs-nav-signup">Sign Up</a>
+        </div>
+    </div>
+</header>

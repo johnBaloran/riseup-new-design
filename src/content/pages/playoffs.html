@@ -1,0 +1,489 @@
+---
+title: "Playoffs | Rise Up League"
+description: "Rise Up League Playoffs bracket — track every series from quarterfinals through the championship."
+permalink: "/playoffs/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/playoffs.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             League Header                    -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Postseason</span>
+        <h1 class="cs-title">Playoffs</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab cs-active">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Playoffs Bracket               -->
+<!-- ============================================ -->
+<section id="rise-playoffs">
+    <div class="cs-container">
+
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <h2 class="cs-season-title">Spring 2026 Playoffs</h2>
+                <span class="cs-season-badge">Current Season</span>
+            </div>
+            <div class="cs-filter-right">
+                <label class="cs-select-wrap">
+                    <span class="cs-select-label">Division</span>
+                    <select class="cs-division-select" id="playoffs-division-select">
+                        <option value="rookie">Rookie — Sunday</option>
+                        <option value="pro">Pro — Thursday</option>
+                        <option value="allstar">Allstar — Saturday</option>
+                        <option value="hof">Hall of Fame — Sunday</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <!-- Division Bracket Panels -->
+
+        <!-- Rookie -->
+        <div class="cs-bracket-panel cs-active" id="bracket-rookie">
+            <div class="cs-bracket-label">Rookie Division — Sunday</div>
+
+            <div class="cs-bracket">
+
+                <!-- Quarterfinals -->
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Quarterfinals</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">Rim Reapers</span>
+                                <span class="cs-record">8-2</span>
+                                <span class="cs-score">84</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">8</span>
+                                <span class="cs-team-name">Ballers United</span>
+                                <span class="cs-record">3-7</span>
+                                <span class="cs-score">71</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 15</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">4</span>
+                                <span class="cs-team-name">Jez Elite</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">77</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">5</span>
+                                <span class="cs-team-name">FTD</span>
+                                <span class="cs-record">5-5</span>
+                                <span class="cs-score">68</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 15</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">2</span>
+                                <span class="cs-team-name">Handlers</span>
+                                <span class="cs-record">7-3</span>
+                                <span class="cs-score">81</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">7</span>
+                                <span class="cs-team-name">Showtime</span>
+                                <span class="cs-record">3-7</span>
+                                <span class="cs-score">74</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 15</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">3</span>
+                                <span class="cs-team-name">Pure Buckets</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">79</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">6</span>
+                                <span class="cs-team-name">Fast Break</span>
+                                <span class="cs-record">4-6</span>
+                                <span class="cs-score">72</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 15</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Semifinals -->
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Semifinals</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">Rim Reapers</span>
+                                <span class="cs-record">8-2</span>
+                                <span class="cs-score">88</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">4</span>
+                                <span class="cs-team-name">Jez Elite</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">76</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 22</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">2</span>
+                                <span class="cs-team-name">Handlers</span>
+                                <span class="cs-record">7-3</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">3</span>
+                                <span class="cs-team-name">Pure Buckets</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 22</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Final -->
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Championship</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game cs-championship">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">Rim Reapers</span>
+                                <span class="cs-record">8-2</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">TBD</span>
+                                <span class="cs-team-name">TBD</span>
+                                <span class="cs-record">—</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 29</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Pro -->
+        <div class="cs-bracket-panel" id="bracket-pro">
+            <div class="cs-bracket-label">Pro Division — Thursday</div>
+
+            <div class="cs-bracket">
+
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Semifinals</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">The ANBU</span>
+                                <span class="cs-record">9-1</span>
+                                <span class="cs-score">92</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">4</span>
+                                <span class="cs-team-name">Vintage x Aly</span>
+                                <span class="cs-record">4-6</span>
+                                <span class="cs-score">78</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 19</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">2</span>
+                                <span class="cs-team-name">CTO</span>
+                                <span class="cs-record">7-3</span>
+                                <span class="cs-score">85</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">3</span>
+                                <span class="cs-team-name">Run It Up</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">80</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 19</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Championship</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game cs-championship">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">The ANBU</span>
+                                <span class="cs-record">9-1</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">2</span>
+                                <span class="cs-team-name">CTO</span>
+                                <span class="cs-record">7-3</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 26</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Allstar -->
+        <div class="cs-bracket-panel" id="bracket-allstar">
+            <div class="cs-bracket-label">Allstar Division — Saturday</div>
+
+            <div class="cs-bracket">
+
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Semifinals</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">North Side Kings</span>
+                                <span class="cs-record">8-2</span>
+                                <span class="cs-score">90</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">4</span>
+                                <span class="cs-team-name">Clutch City</span>
+                                <span class="cs-record">4-6</span>
+                                <span class="cs-score">75</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 21</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">2</span>
+                                <span class="cs-team-name">Certified</span>
+                                <span class="cs-record">7-3</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">3</span>
+                                <span class="cs-team-name">Legacy</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 21</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Championship</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game cs-championship">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">North Side Kings</span>
+                                <span class="cs-record">8-2</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">TBD</span>
+                                <span class="cs-team-name">TBD</span>
+                                <span class="cs-record">—</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 28</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Hall of Fame -->
+        <div class="cs-bracket-panel" id="bracket-hof">
+            <div class="cs-bracket-label">Hall of Fame Division — Sunday</div>
+
+            <div class="cs-bracket">
+
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Semifinals</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team cs-winner">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">The Council</span>
+                                <span class="cs-record">9-1</span>
+                                <span class="cs-score">95</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">4</span>
+                                <span class="cs-team-name">Young Gunz</span>
+                                <span class="cs-record">4-6</span>
+                                <span class="cs-score">81</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 22</span>
+                                <span class="cs-game-status cs-final">Final</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-bracket-game">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">2</span>
+                                <span class="cs-team-name">Overlords</span>
+                                <span class="cs-record">8-2</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">3</span>
+                                <span class="cs-team-name">Money Team</span>
+                                <span class="cs-record">6-4</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 22</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cs-bracket-round">
+                    <div class="cs-round-label">Championship</div>
+                    <div class="cs-round-games">
+
+                        <div class="cs-bracket-game cs-championship">
+                            <div class="cs-game-team">
+                                <span class="cs-seed">1</span>
+                                <span class="cs-team-name">The Council</span>
+                                <span class="cs-record">9-1</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-team">
+                                <span class="cs-seed">TBD</span>
+                                <span class="cs-team-name">TBD</span>
+                                <span class="cs-record">—</span>
+                                <span class="cs-score">—</span>
+                            </div>
+                            <div class="cs-game-info">
+                                <span class="cs-game-date">Jun 29</span>
+                                <span class="cs-game-status cs-upcoming">Upcoming</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>/* ---- Playoffs Division Select ---- */
+(function () {
+    var select = document.getElementById('playoffs-division-select');
+    var panels = document.querySelectorAll('#rise-playoffs .cs-bracket-panel');
+
+    function showPanel(val) {
+        panels.forEach(function (p) {
+            p.classList.toggle('cs-active', p.id === 'bracket-' + val);
+        });
+    }
+
+    if (select) {
+        select.addEventListener('change', function () {
+            showPanel(this.value);
+        });
+        showPanel(select.value);
+    }
+})();</script>
+
+{% endblock %}

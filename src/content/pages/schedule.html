@@ -1,0 +1,214 @@
+---
+title: "Schedule | Rise Up League"
+description: "Meta description for the page"
+permalink: "/schedule/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/schedule.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             League Header                    -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Game Day</span>
+        <h1 class="cs-title">Schedule</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab cs-active">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Schedule                      -->
+<!-- ============================================ -->
+<section id="rise-schedule">
+    <div class="cs-container">
+        <!-- Date Strip -->
+        <div class="cs-date-bar">
+            <button class="cs-arrow" id="date-prev" aria-label="Earlier dates">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            </button>
+            <div class="cs-date-strip" id="date-strip">
+                <!-- In Eleventy: loop over the unique game dates in your JSON -->
+                <button class="cs-date-pill" data-date="2026-06-07" data-label="Sunday, Jun 7">
+                    <span class="cs-date-day">Sun</span>
+                    <span class="cs-date-num">7</span>
+                    <span class="cs-date-month">Jun</span>
+                </button>
+                <button class="cs-date-pill" data-date="2026-06-08" data-label="Monday, Jun 8">
+                    <span class="cs-date-day">Mon</span>
+                    <span class="cs-date-num">8</span>
+                    <span class="cs-date-month">Jun</span>
+                </button>
+                <button class="cs-date-pill cs-active" data-date="2026-06-11" data-label="Thursday, Jun 11">
+                    <span class="cs-date-day">Thu</span>
+                    <span class="cs-date-num">11</span>
+                    <span class="cs-date-month">Jun</span>
+                </button>
+                <button class="cs-date-pill" data-date="2026-06-13" data-label="Saturday, Jun 13">
+                    <span class="cs-date-day">Sat</span>
+                    <span class="cs-date-num">13</span>
+                    <span class="cs-date-month">Jun</span>
+                </button>
+                <button class="cs-date-pill" data-date="2026-06-14" data-label="Sunday, Jun 14">
+                    <span class="cs-date-day">Sun</span>
+                    <span class="cs-date-num">14</span>
+                    <span class="cs-date-month">Jun</span>
+                </button>
+            </div>
+            <button class="cs-arrow" id="date-next" aria-label="Later dates">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+        </div>
+        <!-- Level Filter -->
+        <div class="cs-level-filters" role="group" aria-label="Filter games by level">
+            <button class="cs-filter-pill cs-active" data-level="all">All Levels</button>
+            <button class="cs-filter-pill" data-level="rookie">Rookie</button>
+            <button class="cs-filter-pill" data-level="pro">Pro</button>
+        </div>
+        <!-- Day Heading -->
+        <div class="cs-day-header">
+            <h2 class="cs-day-title" id="day-title">Thursday, Jun 11</h2>
+            <span class="cs-day-count" id="day-count">6 Games</span>
+        </div>
+        <!-- Game Rows -->
+        <!-- In Eleventy: loop over games in your JSON -->
+        <ul class="cs-game-list" id="game-list">
+            <li class="cs-game-row" data-date="2026-06-11" data-level="rookie">
+                <article class="cs-game-card">
+                    <div class="cs-game-teams">
+                        <div class="cs-team">
+                            <span class="cs-team-mark" aria-hidden="true">AEA</span>
+                            <span class="cs-team-name">Jez Elite</span>
+                        </div>
+                        <div class="cs-game-middle">
+                            <span class="cs-game-date">Thu Jun 11, 2026</span>
+                            <span class="cs-game-time">8:00 PM</span>
+                            <span class="cs-game-city">Brampton</span>
+                            <span class="cs-game-venue">St. Jude's Academy</span>
+                        </div>
+                        <div class="cs-team">
+                            <span class="cs-team-mark" aria-hidden="true">HDL</span>
+                            <span class="cs-team-name">Handlers</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-actions">
+                        <a href="/games/jez-elite-vs-handlers/" class="cs-game-action">
+                            <span>See Preview</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <span class="cs-row-level">Rookie</span>
+                </article>
+            </li>
+            <li class="cs-game-row" data-date="2026-06-11" data-level="pro">
+                <article class="cs-game-card">
+                    <div class="cs-game-teams">
+                        <div class="cs-team">
+                            <span class="cs-team-mark" aria-hidden="true">ANBU</span>
+                            <span class="cs-team-name">The ANBU</span>
+                        </div>
+                        <div class="cs-game-middle">
+                            <span class="cs-game-date">Thu Jun 11, 2026</span>
+                            <span class="cs-game-time">8:00 PM</span>
+                            <span class="cs-game-city">Brampton</span>
+                            <span class="cs-game-venue">St. Jude's Academy</span>
+                        </div>
+                        <div class="cs-team">
+                            <span class="cs-team-mark" aria-hidden="true">RIU</span>
+                            <span class="cs-team-name">Run It Up</span>
+                        </div>
+                    </div>
+                    <div class="cs-game-actions">
+                        <a href="/games/the-anbu-vs-run-it-up/" class="cs-game-action">
+                            <span>See Preview</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <span class="cs-row-level">Pro</span>
+                </article>
+            </li>
+            <!-- ...rest of the rows follow the same shape -->
+        </ul>
+        <p class="cs-no-games" id="no-games" hidden>No games match these filters.</p>
+    </div>
+</section>
+
+<script>/* ---- Schedule Filters ---- */
+(function () {
+    var datePills  = document.querySelectorAll('#rise-schedule .cs-date-pill');
+    var levelPills = document.querySelectorAll('#rise-schedule .cs-filter-pill');
+    var rows       = document.querySelectorAll('#rise-schedule .cs-game-row');
+    var dayTitle   = document.getElementById('day-title');
+    var dayCount   = document.getElementById('day-count');
+    var noGames    = document.getElementById('no-games');
+    var strip      = document.getElementById('date-strip');
+    var prevBtn    = document.getElementById('date-prev');
+    var nextBtn    = document.getElementById('date-next');
+
+    var activeDate  = '2026-06-11';
+    var activeLevel = 'all';
+
+    function applyFilters() {
+        var visible = 0;
+
+        rows.forEach(function (row) {
+            var show = row.dataset.date === activeDate &&
+                       (activeLevel === 'all' || row.dataset.level === activeLevel);
+            row.classList.toggle('cs-hidden', !show);
+            if (show) visible++;
+        });
+
+        dayCount.textContent = visible + (visible === 1 ? ' Game' : ' Games');
+        noGames.hidden = visible !== 0;
+    }
+
+    datePills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            datePills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+            activeDate = pill.dataset.date;
+            dayTitle.textContent = pill.dataset.label;
+            applyFilters();
+        });
+    });
+
+    levelPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            levelPills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+            activeLevel = pill.dataset.level;
+            applyFilters();
+        });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: -240, behavior: 'smooth' });
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: 240, behavior: 'smooth' });
+    });
+
+    applyFilters();
+})();</script>
+
+{% endblock %}

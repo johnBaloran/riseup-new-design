@@ -1,0 +1,774 @@
+---
+title: "Rise Up League"
+description: "Meta description for the page"
+permalink: "/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Critical styles are loaded first -->
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+    {% if client.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+    <!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+<section id="hero">
+    <div class="cs-container">
+        <video
+            class="cs-background"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="auto"
+            aria-hidden="true"
+        >
+            <source src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="cs-overlay" aria-hidden="true"></div>
+        <canvas class="cs-grain" aria-hidden="true"></canvas>
+        <div class="cs-bottom">
+            <div class="cs-name-block">
+                <span class="cs-topper">The Best Basketball League</span>
+                <h1 class="cs-hero-name">
+                    <span class="cs-name-first">Elevate</span>
+                    <span class="cs-name-last">Your Game</span>
+                </h1>
+            </div>
+            <div class="cs-right-block">
+                <p class="cs-hero-text">
+                    Competition, culture, and community collide in Ontario's premier adult basketball league.
+                </p>
+               <a href="" class="cs-button-solid">
+    <span class="cs-button-label">Register Now</span>
+    <span class="cs-button-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"/>
+            <polyline points="7 7 17 7 17 17"/>
+        </svg>
+    </span>
+</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>(function () {
+    var canvas = document.querySelector('.cs-grain');
+    if (!canvas) return;
+
+    var ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function drawGrain() {
+        var w         = canvas.width;
+        var h         = canvas.height;
+        var imageData = ctx.createImageData(w, h);
+        var buffer    = imageData.data;
+
+        for (var i = 0; i < buffer.length; i += 4) {
+            var val   = Math.random() * 255 | 0;
+            buffer[i]   = val;
+            buffer[i+1] = val;
+            buffer[i+2] = val;
+            buffer[i+3] = 255;
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(drawGrain);
+    }
+    drawGrain();
+})();</script>
+
+<!-- Dark → Light divider -->
+<div class="cs-section-divider" aria-hidden="true" style="background:#F5F5F5">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1440,0 0,60" fill="#0B0B0D"/></svg>
+</div>
+
+<!-- ============================================ -->
+<!--               League Features                -->
+<!-- ============================================ -->
+<section id="rise-features">
+    <div class="cs-container">
+        <div class="cs-content cs-reveal">
+            <span class="cs-topper">More than just a league</span>
+            <p class="cs-title">
+                Rise Up isn't pickup with a schedule. Every season comes loaded — guaranteed games, pro-level coverage, tracked stats, and hardware on the line.
+            </p>
+            <div class="cs-cta-wrap">
+                <a href="/sign-up/" class="cs-button-solid">
+                    <span class="cs-button-label">Join the League</span>
+                    <span class="cs-button-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7 7 17 7 17 17"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item cs-reveal">
+                <picture class="cs-picture">
+                    <img src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/feature-games.webp" alt="Players battling for position during a regular season game" loading="lazy" decoding="async">
+                </picture>
+                <h3 class="cs-h3">7 Games + Playoffs</h3>
+                <p class="cs-item-text">
+                    Competitive regular season with guaranteed playoff action
+                </p>
+            </li>
+            <li class="cs-item cs-reveal">
+                <picture class="cs-picture">
+                    <img src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/feature-coverage.webp" alt="Full game broadcast coverage on YouTube" loading="lazy" decoding="async">
+                </picture>
+                <h3 class="cs-h3">Full Game Coverage</h3>
+                <p class="cs-item-text">
+                    Every game professionally recorded and available to watch
+                </p>
+            </li>
+            <li class="cs-item cs-reveal">
+                <picture class="cs-picture">
+                    <img src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/feature-stats.webp" alt="Player career stat tracking dashboard" loading="lazy" decoding="async">
+                </picture>
+                <h3 class="cs-h3">Season Stats</h3>
+                <p class="cs-item-text">
+                    Track your performance with detailed statistics
+                </p>
+            </li>
+            <li class="cs-item cs-reveal">
+                <picture class="cs-picture">
+                    <img src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/feature-rings.webp" alt="Champions celebrating with rings, trophy and championship tees" loading="lazy" decoding="async">
+                </picture>
+                <h3 class="cs-h3">Championship Rings</h3>
+                <p class="cs-item-text">
+                    Win it all and receive championship gear
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Skill Divisions                 -->
+<!-- ============================================ -->
+<section id="rise-divisions">
+    <div class="cs-container">
+        <div class="cs-header cs-reveal">
+            <div class="cs-header-left">
+                <span class="cs-topper">Skill Divisions</span>
+                <h2 class="cs-title">Find Your Level</h2>
+            </div>
+            <p class="cs-text">
+                Every team is placed by skill so games stay competitive and fun. Start where you are and move up as your squad grows.
+            </p>
+        </div>
+        <div class="cs-carousel">
+            <ul class="cs-track" id="divisions-track">
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-rookie.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Rookie</h3>
+                        <p class="cs-division-text">
+                            New to the game. Learning fast and building fundamentals!
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 4</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Rookie</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-fil-rookie.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Fil – Rookie</h3>
+                        <p class="cs-division-text">
+                            New to the game. Learning fast and building fundamentals! Open to Filipino players, with one import allowed per team.
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 5</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Fil – Rookie</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-pro.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Pro</h3>
+                        <p class="cs-division-text">
+                            For players with some experience — sharpen your skills, compete, and have fun!
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 3</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Pro</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-fil-pro.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Fil – Pro</h3>
+                        <p class="cs-division-text">
+                            For players with some experience — sharpen your skills, compete, and have fun! Open to Filipino players, with one import allowed per team.
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 3</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Fil – Pro</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-allstar.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Allstar</h3>
+                        <p class="cs-division-text">
+                            For experienced players seeking competitive play — elevate your game and challenge opponents.
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 2</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Allstar</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-fil-great.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Fil – Great</h3>
+                        <p class="cs-division-text">
+                            For experienced players seeking competitive play — elevate your game and challenge opponents. Open to Filipino players, with one import allowed per team.
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 2</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Fil – Great</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-division">
+                    <div class="cs-division-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/division-hall-of-fame.webp');" aria-hidden="true"></div>
+                    <div class="cs-division-overlay" aria-hidden="true"></div>
+                    <div class="cs-division-content">
+                        <h3 class="cs-division-name">Hall of Fame</h3>
+                        <p class="cs-division-text">
+                            For college and advanced players ready for high-level competition — show your skills and play at the top level!
+                        </p>
+                        <div class="cs-division-footer">
+                            <span class="cs-grade">Grade 1</span>
+                            <a href="/sign-up/" class="cs-division-btn">Join Hall of Fame</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="cs-carousel-controls">
+            <div class="cs-progress" aria-hidden="true">
+                <div class="cs-progress-fill" id="divisions-progress"></div>
+            </div>
+            <div class="cs-arrows">
+                <button class="cs-arrow" id="divisions-prev" aria-label="Previous division">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                </button>
+                <button class="cs-arrow" id="divisions-next" aria-label="Next division">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>/* ---- Divisions Carousel ---- */
+(function () {
+    var track    = document.getElementById('divisions-track');
+    var fill     = document.getElementById('divisions-progress');
+    var prevBtn  = document.getElementById('divisions-prev');
+    var nextBtn  = document.getElementById('divisions-next');
+    if (!track || !fill) return;
+
+    function cardWidth() {
+        var card = track.querySelector('.cs-division');
+        if (!card) return 0;
+        var gap = parseFloat(getComputedStyle(track).gap) || 0;
+        return card.getBoundingClientRect().width + gap;
+    }
+
+    function update() {
+        var max = track.scrollWidth - track.clientWidth;
+        var pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
+        fill.style.width = pct + '%';
+
+        if (prevBtn) prevBtn.disabled = track.scrollLeft <= 4;
+        if (nextBtn) nextBtn.disabled = track.scrollLeft >= max - 4;
+    }
+
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+        track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+        track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    });
+
+    update();
+})();</script>
+
+<!-- Light → Dark divider -->
+<div class="cs-section-divider" aria-hidden="true" style="background:#0B0B0D">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1440,0 0,60" fill="#F5F5F5"/></svg>
+</div>
+
+<!-- ============================================ -->
+<!--               Game Photos                    -->
+<!-- ============================================ -->
+<section id="rise-gallery">
+    <div class="cs-container cs-reveal">
+        <div class="cs-gallery-header">
+            <div>
+                <span class="cs-topper">Through the Lens</span>
+                <h2 class="cs-title">From the Court</h2>
+            </div>
+            <a href="/photos/" class="cs-gallery-cta">
+                <span>View All Photos</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+    </div>
+    <div class="cs-marquee-outer">
+        <div class="cs-photo-track">
+            <!-- SET 1: real links -->
+            <a href="/media-day/" class="cs-photo-card">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_480,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7944_y0ynmm.jpg" alt="Rise Up League player portrait" loading="lazy" decoding="async">
+                <span class="cs-card-tag">Media Day</span>
+            </a>
+            <a href="/photos/" class="cs-photo-card">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_700,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="Basketball game action" loading="lazy" decoding="async">
+                <span class="cs-card-tag">Game Photos</span>
+            </a>
+            <a href="/media-day/" class="cs-photo-card">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_480,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7822_k9gzze.jpg" alt="Rise Up League player portrait" loading="lazy" decoding="async">
+                <span class="cs-card-tag">Media Day</span>
+            </a>
+            <a href="/photos/" class="cs-photo-card">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_700,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="Player drives to the basket" loading="lazy" decoding="async">
+                <span class="cs-card-tag">Game Photos</span>
+            </a>
+            <a href="/media-day/" class="cs-photo-card">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_480,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7515_iag1yl.jpg" alt="Rise Up League player portrait" loading="lazy" decoding="async">
+                <span class="cs-card-tag">Media Day</span>
+            </a>
+            <a href="/photos/" class="cs-photo-card">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_700,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="Intense basketball game action" loading="lazy" decoding="async">
+                <span class="cs-card-tag">Game Photos</span>
+            </a>
+            <!-- SET 2: duplicate for seamless loop -->
+            <a href="/media-day/" class="cs-photo-card" aria-hidden="true" tabindex="-1">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_480,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7944_y0ynmm.jpg" alt="" loading="lazy" decoding="async">
+                <span class="cs-card-tag" aria-hidden="true">Media Day</span>
+            </a>
+            <a href="/photos/" class="cs-photo-card" aria-hidden="true" tabindex="-1">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_700,f_auto,q_auto:good/v1780979928/game-photos/6a2175b64c4997718a727df8/ftd%20vs%20rim%20reapers/D3S_5033_g3wm1a.jpg" alt="" loading="lazy" decoding="async">
+                <span class="cs-card-tag" aria-hidden="true">Game Photos</span>
+            </a>
+            <a href="/media-day/" class="cs-photo-card" aria-hidden="true" tabindex="-1">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_480,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7822_k9gzze.jpg" alt="" loading="lazy" decoding="async">
+                <span class="cs-card-tag" aria-hidden="true">Media Day</span>
+            </a>
+            <a href="/photos/" class="cs-photo-card" aria-hidden="true" tabindex="-1">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_700,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4840_jkalcp.jpg" alt="" loading="lazy" decoding="async">
+                <span class="cs-card-tag" aria-hidden="true">Game Photos</span>
+            </a>
+            <a href="/media-day/" class="cs-photo-card" aria-hidden="true" tabindex="-1">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_480,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7515_iag1yl.jpg" alt="" loading="lazy" decoding="async">
+                <span class="cs-card-tag" aria-hidden="true">Media Day</span>
+            </a>
+            <a href="/photos/" class="cs-photo-card" aria-hidden="true" tabindex="-1">
+                <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_700,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="" loading="lazy" decoding="async">
+                <span class="cs-card-tag" aria-hidden="true">Game Photos</span>
+            </a>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var track = document.querySelector('#rise-gallery .cs-photo-track');
+        if (!track) return;
+        function setDuration() {
+            track.style.animationDuration = window.innerWidth >= 1024 ? '32s' : '20s';
+        }
+        setDuration();
+        window.addEventListener('resize', setDuration);
+    })();
+    </script>
+</section>
+
+<!-- ============================================ -->
+<!--               Testimonials                   -->
+<!-- ============================================ -->
+<section id="rise-testimonials">
+    <div class="cs-header cs-reveal">
+        <span class="cs-topper">Word on the Court</span>
+        <h2 class="cs-title">Players Talk</h2>
+    </div>
+    <!-- Row 1 -->
+    <div class="cs-marquee">
+        <div class="cs-marquee-track">
+            <ul class="cs-marquee-group">
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Best run league in the GTA, hands down. Games start on time, refs are legit, and every game is on YouTube by Monday."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Marcus T.</span>
+                        <span class="cs-quote-division">Allstar Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"I came in as a rookie barely able to dribble. Two seasons later I'm starting. The skill divisions actually work."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Devon K.</span>
+                        <span class="cs-quote-division">Pro Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"The stat tracking is addictive. My whole team checks the MVP ladder every week like it's fantasy."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Jay R.</span>
+                        <span class="cs-quote-division">Hall of Fame Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Fil division is family. Competitive on the court, barbecue energy off it. Wouldn't play anywhere else."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Paolo S.</span>
+                        <span class="cs-quote-division">Fil – Great Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Won the chip last season and the ring is actually nice. Not some plastic trophy — real championship hardware."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Andre W.</span>
+                        <span class="cs-quote-division">Allstar Division</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-marquee-group" aria-hidden="true">
+                <!-- exact duplicate of the 5 cards above for the seamless loop -->
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Best run league in the GTA, hands down. Games start on time, refs are legit, and every game is on YouTube by Monday."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Marcus T.</span>
+                        <span class="cs-quote-division">Allstar Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"I came in as a rookie barely able to dribble. Two seasons later I'm starting. The skill divisions actually work."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Devon K.</span>
+                        <span class="cs-quote-division">Pro Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"The stat tracking is addictive. My whole team checks the MVP ladder every week like it's fantasy."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Jay R.</span>
+                        <span class="cs-quote-division">Hall of Fame Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Fil division is family. Competitive on the court, barbecue energy off it. Wouldn't play anywhere else."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Paolo S.</span>
+                        <span class="cs-quote-division">Fil – Great Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Won the chip last season and the ring is actually nice. Not some plastic trophy — real championship hardware."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Andre W.</span>
+                        <span class="cs-quote-division">Allstar Division</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Row 2 (reverse direction) -->
+    <div class="cs-marquee cs-marquee-reverse">
+        <div class="cs-marquee-track">
+            <ul class="cs-marquee-group">
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Media day made us feel like pros. Team photos, player cards, the whole thing. My mom framed mine."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Chris L.</span>
+                        <span class="cs-quote-division">Pro Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Schedule drops before the season, standings update same night. The organization level is unmatched."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Sam B.</span>
+                        <span class="cs-quote-division">Rookie Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Started a team with five coworkers who hadn't played since high school. Rookie division was the perfect landing spot."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Nathan P.</span>
+                        <span class="cs-quote-division">Rookie Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Refs take it seriously, scorekeepers take it seriously. You can just focus on hooping."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Miguel D.</span>
+                        <span class="cs-quote-division">Fil – Pro Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Watching my own game film every week changed how I play. Can't get that anywhere else at this price."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Tyler J.</span>
+                        <span class="cs-quote-division">Hall of Fame Division</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="cs-marquee-group" aria-hidden="true">
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Media day made us feel like pros. Team photos, player cards, the whole thing. My mom framed mine."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Chris L.</span>
+                        <span class="cs-quote-division">Pro Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Schedule drops before the season, standings update same night. The organization level is unmatched."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Sam B.</span>
+                        <span class="cs-quote-division">Rookie Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Started a team with five coworkers who hadn't played since high school. Rookie division was the perfect landing spot."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Nathan P.</span>
+                        <span class="cs-quote-division">Rookie Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Refs take it seriously, scorekeepers take it seriously. You can just focus on hooping."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Miguel D.</span>
+                        <span class="cs-quote-division">Fil – Pro Division</span>
+                    </div>
+                </li>
+                <li class="cs-quote-card">
+                    <p class="cs-quote">"Watching my own game film every week changed how I play. Can't get that anywhere else at this price."</p>
+                    <div class="cs-quote-footer">
+                        <span class="cs-quote-name">Tyler J.</span>
+                        <span class="cs-quote-division">Hall of Fame Division</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Dark → Light divider -->
+<div class="cs-section-divider" aria-hidden="true" style="background:#F5F5F5">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1440,0 0,60" fill="#0B0B0D"/></svg>
+</div>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+<section id="rise-faq">
+    <div class="cs-container">
+        <div class="cs-content cs-reveal">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Got Questions?</h2>
+            <p class="cs-text">
+                Everything you need to know before you lace up. Can't find your answer? Reach out and we'll get back to you.
+            </p>
+            <a href="/contact/" class="cs-faq-link">Contact Us</a>
+        </div>
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">How do I register?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Hit Sign Up, create your account, and register your team or join as a free agent. Full teams pick their division during registration — free agents get placed on a roster that needs players in the right division.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">I don't have a team. Can I still play?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Absolutely. Register as a free agent and we'll place you on a team in the division that matches your level. It's one of the best ways to meet people who hoop.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">Which division should I join?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Divisions run from Rookie (new to the game) up to Hall of Fame (college and advanced players). If you're unsure, check the division descriptions on our League page — and don't stress, teams can move up or down between seasons so games stay competitive.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">What's included in a season?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Seven regular season games plus guaranteed playoffs, certified referees and scorekeepers, full game recordings on YouTube, tracked player stats, and championship rings and gear for the winners.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">How do the Fil divisions work?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Fil – Great, Fil – Pro, and Fil – Rookie are open to Filipino players, with one import (non-Filipino player) allowed per team. Skill levels mirror the open divisions.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">Where and when are games played?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        The full schedule is posted before the season starts and available on the Schedule page, with locations and tip-off times for every game. Standings update the same night games are played.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">Are my stats really tracked?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Every game. Points, rebounds, assists and more are recorded by official scorekeepers, feed into the season leaders and MVP ladder, and build your career profile across seasons.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-faq-button" aria-expanded="false">
+                    <span class="cs-faq-question">What's the refund policy?</span>
+                    <span class="cs-faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="cs-faq-answer">
+                    <p class="cs-faq-text">
+                        Full details live on our <a href="/refund-policy/">Refund Policy</a> page — give it a read before registering so there are no surprises.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script>/* ---- FAQ Accordion ---- */
+(function () {
+    var items = document.querySelectorAll('#rise-faq .cs-faq-item');
+    if (!items.length) return;
+
+    items.forEach(function (item) {
+        var button = item.querySelector('.cs-faq-button');
+
+        button.addEventListener('click', function () {
+            var isOpen = item.classList.contains('cs-active');
+
+            // close any open item (one-at-a-time accordion)
+            items.forEach(function (other) {
+                other.classList.remove('cs-active');
+                other.querySelector('.cs-faq-button').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('cs-active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+})();</script>
+
+<!-- Light → Dark divider -->
+<div class="cs-section-divider" aria-hidden="true" style="background:#0B0B0D">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 1440,0 0,60" fill="#F5F5F5"/></svg>
+</div>
+
+<!-- ============================================ -->
+<!--                  CTA                         -->
+<!-- ============================================ -->
+<section id="rise-cta">
+    <div class="cs-background" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rise-up-league/cta-bg.webp');" aria-hidden="true"></div>
+    <div class="cs-overlay" aria-hidden="true"></div>
+    <div class="cs-container cs-reveal">
+        <span class="cs-topper">Next Season Is Loading</span>
+        <h2 class="cs-title">
+            <span class="cs-title-line">Ready to</span>
+            <span class="cs-title-line">Rise Up?</span>
+        </h2>
+        <p class="cs-text">
+            Spots fill fast and the schedule waits for no one. Lock in your team — or join as a free agent — and we'll see you at tip-off.
+        </p>
+        <div class="cs-button-group">
+            <a href="/sign-up/" class="cs-button-solid">
+                <span class="cs-button-label">Register Now</span>
+                <span class="cs-button-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7 7 17 7 17 17"/>
+                    </svg>
+                </span>
+            </a>
+            <a href="/contact/" class="cs-cta-secondary">Talk to Us First</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

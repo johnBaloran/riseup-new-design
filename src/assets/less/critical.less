@@ -1,0 +1,181 @@
+/*-- -------------------------- -->
+<---           Hero              -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+    #hero {
+        position: relative;
+        width: 100%;
+        height: 100svh;
+        min-height: (500/16rem);
+        overflow: visible;
+
+        .cs-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
+
+        /* ---- Background Video ---- */
+        video.cs-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            z-index: 0;
+        }
+
+        /* ---- Dark Overlay ---- */
+        .cs-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 1;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.45) 0%,
+                rgba(0, 0, 0, 0.40) 40%,
+                rgba(0, 0, 0, 0.75) 100%
+            );
+        }
+
+        /* ---- Grain Overlay ---- */
+        .cs-grain {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            opacity: 0.05;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* ---- Bottom Content ---- */
+        .cs-bottom {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: (24/16rem);
+            padding: (0/16rem) (24/16rem) (40/16rem);
+        }
+
+        /* ---- Hero Name ---- */
+        .cs-hero-name {
+            display: flex;
+            flex-direction: column;
+            font-family: var(--headerFont);
+            font-weight: 700;
+            line-height: 0.92;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin: 0;
+            text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cs-name-first,
+        .cs-name-last {
+            display: block;
+            font-size: clamp(2.75rem, 9vw, 8rem);
+        }
+
+        /* ---- Topper ---- */
+        .cs-topper {
+            display: inline-block;
+            margin-bottom: (16/16rem);
+            font-family: var(--bodyFont);
+            font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+            font-weight: bold;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--bodyTextColorWhite);
+        }
+
+        /* ---- Right Block (text + CTA) ---- */
+        .cs-right-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (20/16rem);
+        }
+
+        .cs-hero-text {
+            font-family: var(--bodyFont);
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.92);
+            max-width: (420/16rem);
+            margin: 0;
+            text-align: left;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero {
+        .cs-bottom {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: (0/16rem) (48/16rem) (52/16rem);
+            gap: (40/16rem);
+        }
+
+        .cs-name-block {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        .cs-right-block {
+            flex: 0 0 auto;
+            width: clamp((280/16rem), 28vw, (420/16rem));
+            align-items: flex-end;
+        }
+
+        .cs-hero-text {
+            text-align: right;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #hero {
+        .cs-bottom {
+            padding: (0/16rem) (64/16rem) (64/16rem);
+        }
+
+        .cs-right-block {
+            padding-bottom: (8/16rem);
+        }
+
+        .cs-name-first,
+        .cs-name-last {
+            font-size: clamp(4.5rem, 7.5vw, 7rem);
+        }
+    }
+}
+
+/* Large Desktop - 1440px */
+@media only screen and (min-width: 90rem) {
+    #hero {
+        .cs-bottom {
+            padding: (0/16rem) (80/16rem) (72/16rem);
+        }
+
+        .cs-hero-text {
+            max-width: (460/16rem);
+        }
+    }
+}

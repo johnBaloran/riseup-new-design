@@ -1,0 +1,376 @@
+/*-- -------------------------- -->
+<---       League Header        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#league-header {
+		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
+		background-color: var(--headerColor);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			display: inline-block;
+			margin-bottom: (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+			font-weight: bold;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-title {
+			margin: 0 0 (32/16rem);
+			font-family: var(--headerFont);
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.01em;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.cs-league-tabs {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			gap: (8/16rem);
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			&::-webkit-scrollbar { display: none; }
+
+			li {
+				list-style: none;
+				flex-shrink: 0;
+			}
+		}
+
+		.cs-league-tab {
+			display: inline-block;
+			padding: (7/16rem) (14/16rem);
+			text-decoration: none;
+			white-space: nowrap;
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.7);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: (100/16rem);
+			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
+			&:hover {
+				color: #fff;
+				border-color: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background-color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---       Career Leaders       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#rise-career-leaders {
+		padding: (48/16rem) (16/16rem) (80/16rem);
+		background-color: var(--bodyTextColorWhite);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		/* Level Filter Pills */
+		.cs-level-filters {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (6/16rem);
+			margin-bottom: (28/16rem);
+		}
+
+		.cs-filter-pill {
+			padding: (6/16rem) (16/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.5);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.2s, background 0.2s, border-color 0.2s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				border-color: rgba(0, 0, 0, 0.28);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+
+		/* Stat Tabs */
+		.cs-stat-tabs {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (6/16rem);
+			padding: (8/16rem);
+			margin-bottom: (28/16rem);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+		}
+
+		.cs-stat-tab {
+			display: flex;
+			align-items: center;
+			gap: (6/16rem);
+			padding: (8/16rem) (14/16rem);
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.5);
+			background: transparent;
+			border: none;
+			border-radius: (8/16rem);
+			cursor: pointer;
+			transition: color 0.2s, background 0.2s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				background: rgba(0, 0, 0, 0.04);
+			}
+
+			&.cs-active {
+				color: var(--primary);
+				background: rgba(224, 58, 26, 0.08);
+			}
+		}
+
+		.cs-tab-label {
+			display: none;
+		}
+
+		.cs-tab-short {
+			display: block;
+			font-size: (11/16rem);
+			font-weight: 700;
+			letter-spacing: 0.05em;
+		}
+
+		/* Table Card */
+		.cs-table-card {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			overflow: hidden;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+			overflow-x: auto;
+			margin-bottom: (24/16rem);
+		}
+
+		/* Table Header */
+		.cs-table-head {
+			display: grid;
+			grid-template-columns: (44/16rem) 1fr repeat(7, (56/16rem));
+			align-items: center;
+			gap: (4/16rem);
+			padding: (10/16rem) (16/16rem);
+			background: rgba(0, 0, 0, 0.03);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+			min-width: (680/16rem);
+
+			div {
+				font-family: var(--bodyFont);
+				font-size: (11/16rem);
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: rgba(0, 0, 0, 0.4);
+				text-align: center;
+
+				&.cs-col-player { text-align: left; }
+				&.cs-active-stat { color: var(--primary); }
+			}
+		}
+
+		/* Leader Rows */
+		.cs-table-body {
+			min-width: (680/16rem);
+		}
+
+		.cs-leader-row {
+			display: grid;
+			grid-template-columns: (44/16rem) 1fr repeat(7, (56/16rem));
+			align-items: center;
+			gap: (4/16rem);
+			padding: (13/16rem) (16/16rem);
+			border-top: 1px solid rgba(0, 0, 0, 0.05);
+			transition: background 0.2s;
+
+			&:hover {
+				background: rgba(224, 58, 26, 0.03);
+			}
+
+			&.cs-rank-1 .cs-col-rank { border-left: 3px solid #C99A2E; }
+			&.cs-rank-2 .cs-col-rank { border-left: 3px solid #9CA3AF; }
+			&.cs-rank-3 .cs-col-rank { border-left: 3px solid #CD7F32; }
+
+			div {
+				font-family: var(--bodyFont);
+				font-size: (14/16rem);
+				color: var(--bodyTextColor);
+				text-align: center;
+				font-variant-numeric: tabular-nums;
+				font-feature-settings: "tnum";
+			}
+		}
+
+		.cs-col-rank {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-left: (6/16rem);
+		}
+
+		.cs-col-player {
+			display: flex;
+			align-items: center;
+			gap: (10/16rem);
+			text-align: left;
+		}
+
+		.cs-col-stat {
+			text-align: center;
+
+			&.cs-active-stat {
+				color: var(--primary);
+				font-weight: 700;
+			}
+		}
+
+		/* Player avatar */
+		.cs-player-avatar {
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: (36/16rem);
+			height: (36/16rem);
+			border-radius: 50%;
+			background: rgba(224, 58, 26, 0.1);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			color: var(--primary);
+		}
+
+		.cs-player-info {
+			display: flex;
+			flex-direction: column;
+			gap: (2/16rem);
+		}
+
+		.cs-player-name {
+			font-weight: 600;
+			color: var(--bodyTextColor);
+			white-space: nowrap;
+		}
+
+		.cs-player-seasons {
+			font-size: (11/16rem);
+			color: rgba(0, 0, 0, 0.4);
+		}
+
+		/* Rank Badge */
+		.cs-rank-badge {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: (28/16rem);
+			height: (28/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			color: rgba(0, 0, 0, 0.35);
+			background: rgba(0, 0, 0, 0.05);
+			border-radius: 50%;
+
+			&.cs-gold   { color: #92700F; background: rgba(201, 154, 46, 0.15); }
+			&.cs-silver { color: #6B7280; background: rgba(156, 163, 175, 0.15); }
+			&.cs-bronze { color: #7C4E1A; background: rgba(205, 127, 50, 0.15); }
+		}
+
+		/* Load More */
+		.cs-load-more-wrap {
+			display: flex;
+			justify-content: center;
+		}
+
+		.cs-load-more {
+			padding: (12/16rem) (32/16rem);
+			font-family: var(--bodyFont);
+			font-size: (14/16rem);
+			font-weight: 700;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: var(--bodyTextColor);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.2s, border-color 0.2s;
+
+			&:hover {
+				color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#rise-career-leaders {
+		padding: (64/16rem) (32/16rem) (96/16rem);
+
+		.cs-tab-label {
+			display: block;
+		}
+
+		.cs-tab-short {
+			display: none;
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#rise-career-leaders {
+		padding: (80/16rem) (48/16rem) (120/16rem);
+	}
+}

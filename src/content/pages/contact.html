@@ -1,0 +1,108 @@
+---
+title: "Contact Us | Rise Up League"
+description: "Get in touch with Rise Up League — questions, registration help, or general inquiries."
+permalink: "/contact/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/info.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--               Info Header                    -->
+<!-- ============================================ -->
+<section id="info-header">
+    <div class="cs-container">
+        <span class="cs-topper">Get In Touch</span>
+        <h1 class="cs-title">Contact Us</h1>
+        <p class="cs-subtitle">We typically respond within 1–2 business days.</p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Contact                        -->
+<!-- ============================================ -->
+<section id="info-content">
+    <div class="cs-container cs-contact-container">
+
+        <!-- Contact Info Cards -->
+        <div class="cs-contact-cards">
+            <div class="cs-contact-card">
+                <div class="cs-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="cs-contact-card-body">
+                    <h3 class="cs-contact-card-title">Email</h3>
+                    <a href="mailto:{{ client.email }}" class="cs-contact-card-value">{{ client.email }}</a>
+                    <p class="cs-contact-card-note">Best for general inquiries</p>
+                </div>
+            </div>
+
+            <div class="cs-contact-card">
+                <div class="cs-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </div>
+                <div class="cs-contact-card-body">
+                    <h3 class="cs-contact-card-title">Instagram</h3>
+                    <a href="{{ client.socials.instagram }}" target="_blank" rel="noopener" class="cs-contact-card-value">@riseupleague</a>
+                    <p class="cs-contact-card-note">DMs open for quick questions</p>
+                </div>
+            </div>
+
+            <div class="cs-contact-card">
+                <div class="cs-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="cs-contact-card-body">
+                    <h3 class="cs-contact-card-title">Locations</h3>
+                    <p class="cs-contact-card-value">Ontario, Canada</p>
+                    <p class="cs-contact-card-note">Brampton · Burlington · Markham · Mississauga · Vaughan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="cs-contact-form-wrap">
+            <h2 class="cs-contact-form-title">Send Us a Message</h2>
+            <form class="cs-contact-form" name="contact" method="POST" netlify>
+                <div class="cs-form-row">
+                    <label class="cs-form-label">
+                        <span class="cs-label-text">First Name</span>
+                        <input type="text" name="first-name" class="cs-form-input" placeholder="Jordan" required>
+                    </label>
+                    <label class="cs-form-label">
+                        <span class="cs-label-text">Last Name</span>
+                        <input type="text" name="last-name" class="cs-form-input" placeholder="Banks" required>
+                    </label>
+                </div>
+                <label class="cs-form-label">
+                    <span class="cs-label-text">Email Address</span>
+                    <input type="email" name="email" class="cs-form-input" placeholder="you@example.com" required>
+                </label>
+                <label class="cs-form-label">
+                    <span class="cs-label-text">Subject</span>
+                    <select name="subject" class="cs-form-input cs-form-select">
+                        <option value="">Select a topic</option>
+                        <option value="registration">Registration</option>
+                        <option value="payment">Payment / Billing</option>
+                        <option value="rules">Rules / Disputes</option>
+                        <option value="stats">Stats / Scores</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+                <label class="cs-form-label">
+                    <span class="cs-label-text">Message</span>
+                    <textarea name="message" class="cs-form-input cs-form-textarea" placeholder="Tell us how we can help..." rows="5" required></textarea>
+                </label>
+                <button type="submit" class="cs-form-submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

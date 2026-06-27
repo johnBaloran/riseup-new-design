@@ -1,0 +1,436 @@
+/*-- -------------------------- -->
+<---       League Header        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#league-header {
+		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
+		background-color: var(--headerColor);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			display: inline-block;
+			margin-bottom: (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+			font-weight: bold;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-title {
+			margin: 0 0 (32/16rem);
+			font-family: var(--headerFont);
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.01em;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.cs-league-tabs {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			gap: (8/16rem);
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			&::-webkit-scrollbar { display: none; }
+
+			li {
+				list-style: none;
+				flex-shrink: 0;
+			}
+		}
+
+		.cs-league-tab {
+			display: inline-block;
+			padding: (7/16rem) (14/16rem);
+			text-decoration: none;
+			white-space: nowrap;
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.7);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: (100/16rem);
+			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
+			&:hover {
+				color: #fff;
+				border-color: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background-color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---         All Players        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#rise-players {
+		padding: (48/16rem) (16/16rem) (80/16rem);
+		background-color: var(--bodyTextColorWhite);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1100/16rem);
+			margin: auto;
+		}
+
+		/* Filter Bar */
+		.cs-filter-bar {
+			display: flex;
+			flex-direction: column;
+			gap: (12/16rem);
+			padding: (16/16rem) (20/16rem);
+			margin-bottom: (24/16rem);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+		}
+
+		.cs-filter-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (12/16rem);
+			align-items: center;
+		}
+
+		.cs-filter-top {
+			justify-content: space-between;
+		}
+
+		.cs-filter-bottom {
+			justify-content: space-between;
+		}
+
+		/* City Tabs */
+		.cs-city-tabs {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (6/16rem);
+		}
+
+		.cs-city-tab {
+			padding: (6/16rem) (14/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.5);
+			background: transparent;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.2s, background 0.2s, border-color 0.2s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				border-color: rgba(0, 0, 0, 0.3);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+
+		/* Level Select */
+		.cs-select-wrap {
+			display: flex;
+			align-items: center;
+			gap: (8/16rem);
+		}
+
+		.cs-select-label {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.5);
+			white-space: nowrap;
+		}
+
+		.cs-select {
+			padding: (8/16rem) (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			color: var(--bodyTextColor);
+			background: var(--bodyTextColorWhite);
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			border-radius: (8/16rem);
+			cursor: pointer;
+
+			&:focus {
+				outline: none;
+				border-color: var(--primary);
+			}
+		}
+
+		/* Search */
+		.cs-search-wrap {
+			position: relative;
+			flex: 1;
+			max-width: (360/16rem);
+		}
+
+		.cs-search-icon {
+			position: absolute;
+			left: (12/16rem);
+			top: 50%;
+			transform: translateY(-50%);
+			width: (16/16rem);
+			height: (16/16rem);
+			color: rgba(0, 0, 0, 0.35);
+			pointer-events: none;
+		}
+
+		.cs-search-input {
+			width: 100%;
+			padding: (9/16rem) (12/16rem) (9/16rem) (36/16rem);
+			font-family: var(--bodyFont);
+			font-size: (14/16rem);
+			color: var(--bodyTextColor);
+			background: var(--bodyTextColorWhite);
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			border-radius: (8/16rem);
+			transition: border-color 0.2s;
+
+			&::placeholder {
+				color: rgba(0, 0, 0, 0.35);
+			}
+
+			&:focus {
+				outline: none;
+				border-color: var(--primary);
+				box-shadow: 0 0 0 3px rgba(224, 58, 26, 0.08);
+			}
+		}
+
+		/* Player count */
+		.cs-player-count {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.45);
+			white-space: nowrap;
+		}
+
+		/* Table Header */
+		.cs-table-head {
+			display: grid;
+			grid-template-columns: 1fr (140/16rem) (60/16rem) (160/16rem) (100/16rem);
+			align-items: center;
+			padding: (10/16rem) (16/16rem);
+			background: rgba(0, 0, 0, 0.04);
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-bottom: none;
+			border-radius: (8/16rem) (8/16rem) 0 0;
+
+			div {
+				font-family: var(--bodyFont);
+				font-size: (11/16rem);
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: rgba(0, 0, 0, 0.4);
+			}
+		}
+
+		/* Player List */
+		.cs-player-list {
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: 0 0 (8/16rem) (8/16rem);
+			overflow: hidden;
+			background: #fff;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		}
+
+		.cs-player-row {
+			display: grid;
+			grid-template-columns: 1fr (140/16rem) (60/16rem) (160/16rem) (100/16rem);
+			align-items: center;
+			padding: (12/16rem) (16/16rem);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+			transition: background 0.2s;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&:hover {
+				background: rgba(224, 58, 26, 0.03);
+			}
+
+			&.cs-hidden {
+				display: none;
+			}
+
+			div {
+				font-family: var(--bodyFont);
+				font-size: (14/16rem);
+				color: var(--bodyTextColor);
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+		/* Player avatar initials */
+		.cs-player-avatar {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: (30/16rem);
+			height: (30/16rem);
+			border-radius: 50%;
+			background: rgba(224, 58, 26, 0.1);
+			font-size: (11/16rem);
+			font-weight: 700;
+			color: var(--primary);
+			margin-right: (8/16rem);
+			flex-shrink: 0;
+		}
+
+		.cs-col-name {
+			display: flex;
+			align-items: center;
+			font-weight: 600;
+		}
+
+		.cs-col-team {
+			color: rgba(0, 0, 0, 0.65);
+		}
+
+		.cs-col-jersey {
+			font-weight: 600;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-col-division {
+			font-size: (13/16rem);
+			color: rgba(0, 0, 0, 0.55);
+		}
+
+		.cs-col-city {
+			font-size: (13/16rem);
+			color: rgba(0, 0, 0, 0.45);
+		}
+
+		/* Empty State */
+		.cs-empty-state {
+			padding: (60/16rem) (24/16rem);
+			text-align: center;
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (8/16rem);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+			&.cs-hidden {
+				display: none;
+			}
+		}
+
+		.cs-empty-text {
+			margin: 0;
+			font-family: var(--headerFont);
+			font-size: (18/16rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.3);
+		}
+
+		/* Pagination */
+		.cs-pagination {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: (20/16rem);
+			flex-wrap: wrap;
+			gap: (12/16rem);
+		}
+
+		.cs-page-info {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			color: rgba(0, 0, 0, 0.45);
+		}
+
+		.cs-page-controls {
+			display: flex;
+			align-items: center;
+			gap: (12/16rem);
+		}
+
+		.cs-page-btn {
+			padding: (8/16rem) (16/16rem);
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 600;
+			color: var(--bodyTextColor);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+			border-radius: (6/16rem);
+			cursor: pointer;
+			transition: color 0.2s, border-color 0.2s;
+
+			&:hover:not(:disabled) {
+				color: var(--primary);
+				border-color: var(--primary);
+			}
+
+			&:disabled {
+				opacity: 0.35;
+				cursor: not-allowed;
+			}
+		}
+
+		.cs-page-current {
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			color: rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#rise-players {
+		padding: (64/16rem) (32/16rem) (96/16rem);
+
+		.cs-table-head,
+		.cs-player-row {
+			grid-template-columns: 1fr (180/16rem) (60/16rem) (200/16rem) (120/16rem);
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#rise-players {
+		padding: (80/16rem) (48/16rem) (120/16rem);
+	}
+}

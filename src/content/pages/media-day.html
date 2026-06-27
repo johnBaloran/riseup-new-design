@@ -1,0 +1,265 @@
+---
+title: "Media Day | Rise Up League"
+description: "Rise Up League Media Day photos — official player and team portraits for each season."
+permalink: "/media-day/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/media-day.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--           Media Day Header                   -->
+<!-- ============================================ -->
+<section id="photos-header">
+    <div class="cs-container">
+        <span class="cs-topper">Behind the Brand</span>
+        <h1 class="cs-title">Media Day</h1>
+        <ul class="cs-location-tabs">
+            <li><a href="/media-day/" class="cs-location-tab cs-active">All Cities</a></li>
+            <li><a href="/media-day/brampton/" class="cs-location-tab">Brampton</a></li>
+            <li><a href="/media-day/burlington/" class="cs-location-tab">Burlington</a></li>
+            <li><a href="/media-day/markham/" class="cs-location-tab">Markham</a></li>
+            <li><a href="/media-day/mississauga/" class="cs-location-tab">Mississauga</a></li>
+            <li><a href="/media-day/vaughan/" class="cs-location-tab">Vaughan</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           Media Day Sessions Grid            -->
+<!-- ============================================ -->
+<section id="media-day-grid">
+    <div class="cs-container">
+
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <h2 class="cs-season-title">Fall 2025 Media Day</h2>
+                <span class="cs-season-badge">6 Sessions</span>
+            </div>
+            <div class="cs-filter-right">
+                <label class="cs-select-wrap">
+                    <span class="cs-select-label">Season</span>
+                    <select class="cs-season-select" id="media-season-select">
+                        <option value="fall-2025" selected>Fall 2025</option>
+                        <option value="summer-2025">Summer 2025</option>
+                        <option value="spring-2025">Spring 2025</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <!-- City Filter Pills -->
+        <div class="cs-city-filters" role="group" aria-label="Filter by city">
+            <button class="cs-filter-pill cs-active" data-city="all">All <span class="cs-pill-count">6</span></button>
+            <button class="cs-filter-pill" data-city="brampton">Brampton <span class="cs-pill-count">2</span></button>
+            <button class="cs-filter-pill" data-city="mississauga">Mississauga <span class="cs-pill-count">2</span></button>
+            <button class="cs-filter-pill" data-city="vaughan">Vaughan <span class="cs-pill-count">2</span></button>
+        </div>
+
+        <!-- Session Cards -->
+        <ul class="cs-sessions-grid" id="sessions-grid">
+
+            <!-- Session 1: St. Jude's Academy, Mississauga, Oct 21 -->
+            <li class="cs-session-card" data-city="mississauga">
+                <a href="#" class="cs-session-link">
+                    <div class="cs-session-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_800,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7944_y0ynmm.jpg" alt="St. Jude's Academy Media Day Oct 21" loading="lazy" decoding="async">
+                        <div class="cs-cover-overlay"></div>
+                        <div class="cs-cover-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <span>106 Photos</span>
+                        </div>
+                    </div>
+                    <div class="cs-session-body">
+                        <div class="cs-session-info">
+                            <h3 class="cs-session-venue">St. Jude's Academy</h3>
+                            <div class="cs-session-meta">
+                                <span class="cs-session-city-badge">Mississauga</span>
+                                <time class="cs-session-date" datetime="2025-10-21">Oct 21, 2025</time>
+                            </div>
+                        </div>
+                        <div class="cs-session-thumbs">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7940_fxm9ug.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7943_metnmt.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7941_dj35ba.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7944_y0ynmm.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Session 2: Fitcourts Brampton, Oct 19 (289 photos) -->
+            <li class="cs-session-card" data-city="brampton">
+                <a href="#" class="cs-session-link">
+                    <div class="cs-session-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_800,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7822_k9gzze.jpg" alt="Fitcourts Brampton Media Day Oct 19" loading="lazy" decoding="async">
+                        <div class="cs-cover-overlay"></div>
+                        <div class="cs-cover-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <span>289 Photos</span>
+                        </div>
+                    </div>
+                    <div class="cs-session-body">
+                        <div class="cs-session-info">
+                            <h3 class="cs-session-venue">Fitcourts Brampton</h3>
+                            <div class="cs-session-meta">
+                                <span class="cs-session-city-badge">Brampton</span>
+                                <time class="cs-session-date" datetime="2025-10-19">Oct 19, 2025</time>
+                            </div>
+                        </div>
+                        <div class="cs-session-thumbs">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7821_htjjzm.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7820_bpa2ze.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7814_tgn3ai.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761110024/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-19/D3S_7822_k9gzze.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Session 3: Game6 Sports Academy, Vaughan, Oct 19 (12 photos) -->
+            <li class="cs-session-card" data-city="vaughan">
+                <a href="#" class="cs-session-link">
+                    <div class="cs-session-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_800,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-107_mhj0ia.jpg" alt="Game6 Sports Academy Media Day Oct 19" loading="lazy" decoding="async">
+                        <div class="cs-cover-overlay"></div>
+                        <div class="cs-cover-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <span>12 Photos</span>
+                        </div>
+                    </div>
+                    <div class="cs-session-body">
+                        <div class="cs-session-info">
+                            <h3 class="cs-session-venue">Game6 Sports Academy</h3>
+                            <div class="cs-session-meta">
+                                <span class="cs-session-city-badge">Vaughan</span>
+                                <time class="cs-session-date" datetime="2025-10-19">Oct 19, 2025</time>
+                            </div>
+                        </div>
+                        <div class="cs-session-thumbs">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-106_bd7kcf.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-104_ahivga.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-103_qegpzz.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-107_mhj0ia.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Session 4: Fitcourts Brampton, Oct 18 (286 photos) -->
+            <li class="cs-session-card" data-city="brampton">
+                <a href="#" class="cs-session-link">
+                    <div class="cs-session-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_800,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7515_iag1yl.jpg" alt="Fitcourts Brampton Media Day Oct 18" loading="lazy" decoding="async">
+                        <div class="cs-cover-overlay"></div>
+                        <div class="cs-cover-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <span>286 Photos</span>
+                        </div>
+                    </div>
+                    <div class="cs-session-body">
+                        <div class="cs-session-info">
+                            <h3 class="cs-session-venue">Fitcourts Brampton</h3>
+                            <div class="cs-session-meta">
+                                <span class="cs-session-city-badge">Brampton</span>
+                                <time class="cs-session-date" datetime="2025-10-18">Oct 18, 2025</time>
+                            </div>
+                        </div>
+                        <div class="cs-session-thumbs">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7514_zsemqo.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7516_uxy056.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7513_aamerj.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1761109828/media-day-photos/67bdf18f8bc5e6b537efa890/2025-10-18/Brampton%20Sat%20Media%20Day/D3S_7515_iag1yl.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Session 5: Game6 Sports Academy, Vaughan, Oct 18 (39 photos) -->
+            <li class="cs-session-card" data-city="vaughan">
+                <a href="#" class="cs-session-link">
+                    <div class="cs-session-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_800,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-108_nbyozc.jpg" alt="Game6 Sports Academy Media Day Oct 18" loading="lazy" decoding="async">
+                        <div class="cs-cover-overlay"></div>
+                        <div class="cs-cover-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <span>39 Photos</span>
+                        </div>
+                    </div>
+                    <div class="cs-session-body">
+                        <div class="cs-session-info">
+                            <h3 class="cs-session-venue">Game6 Sports Academy</h3>
+                            <div class="cs-session-meta">
+                                <span class="cs-session-city-badge">Vaughan</span>
+                                <time class="cs-session-date" datetime="2025-10-18">Oct 18, 2025</time>
+                            </div>
+                        </div>
+                        <div class="cs-session-thumbs">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-110_kuieb9.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-105_jzxjys.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-99_dtjaoe.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-108_nbyozc.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Session 6: St. Jude's Academy, Mississauga, Oct 16 (233 photos) -->
+            <li class="cs-session-card" data-city="mississauga">
+                <a href="#" class="cs-session-link">
+                    <div class="cs-session-cover">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_800,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-109_af9ggb.jpg" alt="St. Jude's Academy Media Day Oct 16" loading="lazy" decoding="async">
+                        <div class="cs-cover-overlay"></div>
+                        <div class="cs-cover-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <span>233 Photos</span>
+                        </div>
+                    </div>
+                    <div class="cs-session-body">
+                        <div class="cs-session-info">
+                            <h3 class="cs-session-venue">St. Jude's Academy</h3>
+                            <div class="cs-session-meta">
+                                <span class="cs-session-city-badge">Mississauga</span>
+                                <time class="cs-session-date" datetime="2025-10-16">Oct 16, 2025</time>
+                            </div>
+                        </div>
+                        <div class="cs-session-thumbs">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-111_qgbuba.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-100_yi4kge.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-102_jdzmng.jpg" alt="" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_300,f_auto,q_auto:good/v1762238154/media-day-photos/6782311a90fd6e209620207f/2025-10-19/Headshots-109_af9ggb.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</section>
+
+<script>
+(function () {
+    var pills = document.querySelectorAll('#media-day-grid .cs-filter-pill');
+    var cards = document.querySelectorAll('#media-day-grid .cs-session-card');
+
+    pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            pills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+            var city = pill.dataset.city;
+            cards.forEach(function (card) {
+                card.classList.toggle('cs-hidden', city !== 'all' && card.dataset.city !== city);
+            });
+        });
+    });
+})();
+</script>
+
+{% endblock %}

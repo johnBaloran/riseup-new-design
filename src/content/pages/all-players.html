@@ -1,0 +1,285 @@
+---
+title: "All Players | Rise Up League"
+description: "Browse all registered players in Rise Up League — search by name, filter by level and division."
+permalink: "/all-players/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/players.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             Page Header                      -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Roster</span>
+        <h1 class="cs-title">All Players</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               All Players                    -->
+<!-- ============================================ -->
+<section id="rise-players">
+    <div class="cs-container">
+
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-row cs-filter-top">
+                <!-- City Tabs -->
+                <div class="cs-city-tabs" role="tablist" aria-label="Filter by city">
+                    <button class="cs-city-tab cs-active" data-city="brampton" role="tab" aria-selected="true">Brampton</button>
+                    <button class="cs-city-tab" data-city="burlington" role="tab" aria-selected="false">Burlington</button>
+                    <button class="cs-city-tab" data-city="markham" role="tab" aria-selected="false">Markham</button>
+                    <button class="cs-city-tab" data-city="mississauga" role="tab" aria-selected="false">Mississauga</button>
+                    <button class="cs-city-tab" data-city="vaughan" role="tab" aria-selected="false">Vaughan</button>
+                </div>
+
+                <!-- Level Select -->
+                <div class="cs-select-wrap">
+                    <label class="cs-select-label" for="player-level-select">Level</label>
+                    <select id="player-level-select" class="cs-select" aria-label="Filter by level">
+                        <option value="all">All Levels</option>
+                        <option value="rookie">Rookie</option>
+                        <option value="pro">Pro</option>
+                        <option value="allstar">Allstar</option>
+                        <option value="hall-of-fame">Hall of Fame</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cs-filter-row cs-filter-bottom">
+                <!-- Search -->
+                <div class="cs-search-wrap">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" id="player-search" class="cs-search-input" placeholder="Search player name…" autocomplete="off">
+                </div>
+                <span class="cs-player-count" id="player-count">50 Players</span>
+            </div>
+        </div>
+
+        <!-- Table Header -->
+        <div class="cs-table-head">
+            <div class="cs-col-name">Name</div>
+            <div class="cs-col-team">Team</div>
+            <div class="cs-col-jersey">Jersey</div>
+            <div class="cs-col-division">Division</div>
+            <div class="cs-col-city">City</div>
+        </div>
+
+        <!-- Player List -->
+        <div class="cs-player-list" id="player-list">
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">AB</span>Aiden Brooks</div>
+                <div class="cs-col-team">Rim Reapers</div>
+                <div class="cs-col-jersey">#3</div>
+                <div class="cs-col-division">Rookie — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">AS</span>Andre Shaw</div>
+                <div class="cs-col-team">Overlords</div>
+                <div class="cs-col-jersey">#11</div>
+                <div class="cs-col-division">Hall of Fame — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">BN</span>Brian Nwosu</div>
+                <div class="cs-col-team">Certified</div>
+                <div class="cs-col-jersey">#32</div>
+                <div class="cs-col-division">Allstar — Saturday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">CJ</span>Calvin James</div>
+                <div class="cs-col-team">The Council</div>
+                <div class="cs-col-jersey">#7</div>
+                <div class="cs-col-division">Hall of Fame — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">CL</span>Chris Lamar</div>
+                <div class="cs-col-team">Jez Elite</div>
+                <div class="cs-col-jersey">#23</div>
+                <div class="cs-col-division">Rookie — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">DM</span>Dante Myles</div>
+                <div class="cs-col-team">The ANBU</div>
+                <div class="cs-col-jersey">#14</div>
+                <div class="cs-col-division">Pro — Thursday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">DW</span>Devon Williams</div>
+                <div class="cs-col-team">The Council</div>
+                <div class="cs-col-jersey">#5</div>
+                <div class="cs-col-division">Hall of Fame — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">EA</span>Elijah Asante</div>
+                <div class="cs-col-team">FTD</div>
+                <div class="cs-col-jersey">#9</div>
+                <div class="cs-col-division">Rookie — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">GK</span>Greg Kim</div>
+                <div class="cs-col-team">CTO</div>
+                <div class="cs-col-jersey">#21</div>
+                <div class="cs-col-division">Pro — Thursday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">JK</span>Jamal Knight</div>
+                <div class="cs-col-team">The ANBU</div>
+                <div class="cs-col-jersey">#1</div>
+                <div class="cs-col-division">Pro — Thursday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">JT</span>Jordan Thomas</div>
+                <div class="cs-col-team">North Side Kings</div>
+                <div class="cs-col-jersey">#44</div>
+                <div class="cs-col-division">Allstar — Saturday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">KP</span>Kevin Park</div>
+                <div class="cs-col-team">Rim Reapers</div>
+                <div class="cs-col-jersey">#0</div>
+                <div class="cs-col-division">Rookie — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">LR</span>Lance Rivera</div>
+                <div class="cs-col-team">Legacy</div>
+                <div class="cs-col-jersey">#30</div>
+                <div class="cs-col-division">Allstar — Saturday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">MO</span>Marcus Okafor</div>
+                <div class="cs-col-team">North Side Kings</div>
+                <div class="cs-col-jersey">#34</div>
+                <div class="cs-col-division">Allstar — Saturday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">NP</span>Nathan Price</div>
+                <div class="cs-col-team">Overlords</div>
+                <div class="cs-col-jersey">#15</div>
+                <div class="cs-col-division">Hall of Fame — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">OA</span>Omar Adeyemi</div>
+                <div class="cs-col-team">Jez Elite</div>
+                <div class="cs-col-jersey">#8</div>
+                <div class="cs-col-division">Rookie — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">RB</span>Ray Brown</div>
+                <div class="cs-col-team">Money Team</div>
+                <div class="cs-col-jersey">#22</div>
+                <div class="cs-col-division">Hall of Fame — Sunday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">SJ</span>Sam Jackson</div>
+                <div class="cs-col-team">Run It Up</div>
+                <div class="cs-col-jersey">#24</div>
+                <div class="cs-col-division">Pro — Thursday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">TR</span>Tyler Reid</div>
+                <div class="cs-col-team">CTO</div>
+                <div class="cs-col-jersey">#2</div>
+                <div class="cs-col-division">Pro — Thursday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+            <div class="cs-player-row">
+                <div class="cs-col-name"><span class="cs-player-avatar">VM</span>Victor Mack</div>
+                <div class="cs-col-team">Clutch City</div>
+                <div class="cs-col-jersey">#10</div>
+                <div class="cs-col-division">Allstar — Saturday</div>
+                <div class="cs-col-city">Brampton</div>
+            </div>
+        </div>
+
+        <!-- Empty state -->
+        <div class="cs-empty-state cs-hidden" id="players-empty">
+            <p class="cs-empty-text">No players found matching your search.</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="cs-pagination" id="players-pagination">
+            <span class="cs-page-info">Showing 1–20 of 50 players</span>
+            <div class="cs-page-controls">
+                <button class="cs-page-btn" id="page-prev" disabled>&#8592; Prev</button>
+                <span class="cs-page-current">Page 1 of 3</span>
+                <button class="cs-page-btn" id="page-next">Next &#8594;</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>/* ---- All Players Filter ---- */
+(function () {
+    var searchInput = document.getElementById('player-search');
+    var countEl     = document.getElementById('player-count');
+    var emptyState  = document.getElementById('players-empty');
+    var rows        = document.querySelectorAll('#player-list .cs-player-row');
+    var cityTabs    = document.querySelectorAll('#rise-players .cs-city-tab');
+
+    function filterRows() {
+        var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        var visible = 0;
+
+        rows.forEach(function (row) {
+            var name = row.querySelector('.cs-col-name') ? row.querySelector('.cs-col-name').textContent.toLowerCase() : '';
+            var show = !query || name.indexOf(query) !== -1;
+            row.classList.toggle('cs-hidden', !show);
+            if (show) visible++;
+        });
+
+        if (countEl) countEl.textContent = visible + ' Player' + (visible !== 1 ? 's' : '');
+        if (emptyState) emptyState.classList.toggle('cs-hidden', visible > 0);
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', filterRows);
+    }
+
+    cityTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            cityTabs.forEach(function (t) {
+                t.classList.remove('cs-active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('cs-active');
+            tab.setAttribute('aria-selected', 'true');
+        });
+    });
+})();</script>
+
+{% endblock %}

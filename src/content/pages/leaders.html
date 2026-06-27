@@ -1,0 +1,307 @@
+---
+title: "Leaders | Rise Up League"
+description: "Season statistical leaders for Rise Up League basketball — top scorers, rebounders, assisters, and more."
+permalink: "/leaders/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/leaders.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             League Header                    -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Season Stats</span>
+        <h1 class="cs-title">Leaders</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab cs-active">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Leaders Board                  -->
+<!-- ============================================ -->
+<section id="rise-leaders">
+    <div class="cs-container">
+
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <!-- City Tabs -->
+                <div class="cs-city-tabs" role="tablist" aria-label="Filter by city">
+                    <button class="cs-city-tab cs-active" data-city="brampton" role="tab" aria-selected="true">Brampton</button>
+                    <button class="cs-city-tab" data-city="burlington" role="tab" aria-selected="false">Burlington</button>
+                    <button class="cs-city-tab" data-city="markham" role="tab" aria-selected="false">Markham</button>
+                    <button class="cs-city-tab" data-city="mississauga" role="tab" aria-selected="false">Mississauga</button>
+                    <button class="cs-city-tab" data-city="vaughan" role="tab" aria-selected="false">Vaughan</button>
+                </div>
+
+                <!-- Division Selector -->
+                <div class="cs-select-wrap">
+                    <label class="cs-select-label" for="division-select">Division</label>
+                    <select id="division-select" class="cs-select">
+                        <option value="all">All Divisions</option>
+                        <option value="rookie-sun">Rookie — Sunday</option>
+                        <option value="pro-thu">Pro — Thursday</option>
+                        <option value="allstar-sat">Allstar — Saturday</option>
+                        <option value="hof-sun">Hall of Fame — Sunday</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cs-filter-right">
+                <span class="cs-filter-info" id="leaders-count">Top 10 by Points</span>
+            </div>
+        </div>
+
+        <!-- Stat Pill Filters -->
+        <div class="cs-stat-pills" role="group" aria-label="Filter by statistic">
+            <button class="cs-stat-pill cs-active" data-stat="points" data-label="Points">Points <span class="cs-stat-abbr">PPG</span></button>
+            <button class="cs-stat-pill" data-stat="rebounds" data-label="Rebounds">Rebounds <span class="cs-stat-abbr">RPG</span></button>
+            <button class="cs-stat-pill" data-stat="assists" data-label="Assists">Assists <span class="cs-stat-abbr">APG</span></button>
+            <button class="cs-stat-pill" data-stat="steals" data-label="Steals">Steals <span class="cs-stat-abbr">SPG</span></button>
+            <button class="cs-stat-pill" data-stat="blocks" data-label="Blocks">Blocks <span class="cs-stat-abbr">BPG</span></button>
+        </div>
+
+        <!-- Season Badge -->
+        <div class="cs-season-row">
+            <h2 class="cs-season-title">Brampton Spring 2026 — League Leaders</h2>
+            <span class="cs-season-badge">Current Season</span>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="cs-table-card">
+            <div class="cs-table-head">
+                <div class="cs-col-rank">#</div>
+                <div class="cs-col-player">Player</div>
+                <div class="cs-col-team">Team</div>
+                <div class="cs-col-stat cs-stat-col" data-stat="points">PPG</div>
+                <div class="cs-col-stat cs-stat-col" data-stat="rebounds">RPG</div>
+                <div class="cs-col-stat cs-stat-col" data-stat="assists">APG</div>
+                <div class="cs-col-stat cs-stat-col" data-stat="steals">SPG</div>
+                <div class="cs-col-stat cs-stat-col" data-stat="blocks">BPG</div>
+            </div>
+            <div class="cs-table-body" id="leaders-table-body">
+                <div class="cs-leader-row cs-rank-1">
+                    <div class="cs-col-rank"><span class="cs-rank-badge cs-gold">1</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">JK</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Jamal Knight</span>
+                            <span class="cs-player-div">Pro — Thursday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">The ANBU</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">28.4</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">6.1</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">4.2</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">1.8</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.4</div>
+                </div>
+                <div class="cs-leader-row cs-rank-2">
+                    <div class="cs-col-rank"><span class="cs-rank-badge cs-silver">2</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">DW</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Devon Williams</span>
+                            <span class="cs-player-div">Hall of Fame — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">The Council</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">25.7</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">4.3</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">7.9</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">2.1</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.2</div>
+                </div>
+                <div class="cs-leader-row cs-rank-3">
+                    <div class="cs-col-rank"><span class="cs-rank-badge cs-bronze">3</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">MO</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Marcus Okafor</span>
+                            <span class="cs-player-div">Allstar — Saturday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">North Side Kings</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">23.1</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">11.4</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">2.0</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">0.9</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">2.3</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">4</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">TR</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Tyler Reid</span>
+                            <span class="cs-player-div">Pro — Thursday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">CTO</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">21.6</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">3.8</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">5.5</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">1.4</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.1</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">5</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">AS</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Andre Shaw</span>
+                            <span class="cs-player-div">Hall of Fame — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Overlords</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">20.9</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">7.2</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">3.1</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">1.0</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">1.1</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">6</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">KP</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Kevin Park</span>
+                            <span class="cs-player-div">Rookie — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Rim Reapers</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">19.4</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">5.5</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">2.8</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">2.4</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.3</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">7</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">BN</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Brian Nwosu</span>
+                            <span class="cs-player-div">Allstar — Saturday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Certified</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">18.7</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">9.0</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">1.5</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">0.7</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">3.1</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">8</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">CL</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Chris Lamar</span>
+                            <span class="cs-player-div">Rookie — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Jez Elite</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">17.2</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">4.1</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">6.3</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">1.9</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.0</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">9</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">RB</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Ray Brown</span>
+                            <span class="cs-player-div">Hall of Fame — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Money Team</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">16.8</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">5.9</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">3.7</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">1.2</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.6</div>
+                </div>
+                <div class="cs-leader-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">10</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar" aria-hidden="true">SJ</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Sam Jackson</span>
+                            <span class="cs-player-div">Pro — Thursday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Run It Up</div>
+                    <div class="cs-col-stat cs-stat-col cs-highlight" data-stat="points">15.3</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="rebounds">4.7</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="assists">4.4</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="steals">0.8</div>
+                    <div class="cs-col-stat cs-stat-col" data-stat="blocks">0.2</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eligibility Note -->
+        <div class="cs-eligibility-note">
+            <h3 class="cs-note-title">Eligibility Requirements</h3>
+            <p class="cs-note-body">Players must have played in at least <strong>3 regular season games</strong> to appear on the leaders board.</p>
+        </div>
+
+    </div>
+</section>
+
+<script>/* ---- Leaders Stat Filter ---- */
+(function () {
+    var statPills   = document.querySelectorAll('#rise-leaders .cs-stat-pill');
+    var statCols    = document.querySelectorAll('#rise-leaders .cs-stat-col');
+    var countEl     = document.getElementById('leaders-count');
+    var activeStat  = 'points';
+
+    function applyStatHighlight() {
+        statCols.forEach(function (col) {
+            var isCurrent = col.dataset.stat === activeStat;
+            col.classList.toggle('cs-highlight', isCurrent);
+        });
+    }
+
+    statPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            statPills.forEach(function (p) { p.classList.remove('cs-active'); });
+            pill.classList.add('cs-active');
+            activeStat = pill.dataset.stat;
+            if (countEl) countEl.textContent = 'Top 10 by ' + pill.dataset.label;
+            applyStatHighlight();
+        });
+    });
+
+    /* City tabs (placeholder — would reload data) */
+    var cityTabs = document.querySelectorAll('#rise-leaders .cs-city-tab');
+    cityTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            cityTabs.forEach(function (t) {
+                t.classList.remove('cs-active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('cs-active');
+            tab.setAttribute('aria-selected', 'true');
+        });
+    });
+})();</script>
+
+{% endblock %}

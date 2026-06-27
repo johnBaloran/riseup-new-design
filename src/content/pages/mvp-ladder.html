@@ -1,0 +1,340 @@
+---
+title: "MVP Ladder | Rise Up League"
+description: "Rise Up League MVP Ladder — see the top MVP candidates ranked by our composite scoring formula."
+permalink: "/mvp-ladder/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/mvp-ladder.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             League Header                    -->
+<!-- ============================================ -->
+<section id="league-header">
+    <div class="cs-container">
+        <span class="cs-topper">Season Stats</span>
+        <h1 class="cs-title">MVP Ladder</h1>
+        <ul class="cs-league-tabs">
+            <li><a href="/schedule/" class="cs-league-tab">Schedule</a></li>
+            <li><a href="/standings/" class="cs-league-tab">Standings</a></li>
+            <li><a href="/teams/" class="cs-league-tab">Teams</a></li>
+            <li><a href="/leaders/" class="cs-league-tab">Leaders</a></li>
+            <li><a href="/career-leaders/" class="cs-league-tab">Career Leaders</a></li>
+            <li><a href="/mvp-ladder/" class="cs-league-tab cs-active">MVP Ladder</a></li>
+            <li><a href="/playoffs/" class="cs-league-tab">Playoffs</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               MVP Ladder                     -->
+<!-- ============================================ -->
+<section id="rise-mvp">
+    <div class="cs-container">
+
+        <!-- Filter Bar -->
+        <div class="cs-filter-bar">
+            <div class="cs-filter-left">
+                <!-- City Tabs -->
+                <div class="cs-city-tabs" role="tablist" aria-label="Filter by city">
+                    <button class="cs-city-tab cs-active" data-city="brampton" role="tab" aria-selected="true">Brampton</button>
+                    <button class="cs-city-tab" data-city="burlington" role="tab" aria-selected="false">Burlington</button>
+                    <button class="cs-city-tab" data-city="markham" role="tab" aria-selected="false">Markham</button>
+                    <button class="cs-city-tab" data-city="mississauga" role="tab" aria-selected="false">Mississauga</button>
+                    <button class="cs-city-tab" data-city="vaughan" role="tab" aria-selected="false">Vaughan</button>
+                </div>
+
+                <!-- Division Selector -->
+                <div class="cs-select-wrap">
+                    <label class="cs-select-label" for="mvp-division-select">Division</label>
+                    <select id="mvp-division-select" class="cs-select">
+                        <option value="all">All Divisions</option>
+                        <option value="rookie-sun">Rookie — Sunday</option>
+                        <option value="pro-thu">Pro — Thursday</option>
+                        <option value="allstar-sat">Allstar — Saturday</option>
+                        <option value="hof-sun">Hall of Fame — Sunday</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cs-filter-right">
+                <span class="cs-filter-info">Top 10 MVP Candidates</span>
+            </div>
+        </div>
+
+        <!-- Season Badge -->
+        <div class="cs-season-row">
+            <h2 class="cs-season-title">Brampton Spring 2026 — MVP Ladder</h2>
+            <span class="cs-season-badge">Current Season</span>
+        </div>
+
+        <!-- MVP Table -->
+        <div class="cs-table-card">
+            <div class="cs-table-head">
+                <div class="cs-col-rank">#</div>
+                <div class="cs-col-player">Player</div>
+                <div class="cs-col-team">Team</div>
+                <div class="cs-col-stat">PPG</div>
+                <div class="cs-col-stat">RPG</div>
+                <div class="cs-col-stat">APG</div>
+                <div class="cs-col-stat">SPG</div>
+                <div class="cs-col-stat">BPG</div>
+                <div class="cs-col-stat">GP</div>
+                <div class="cs-col-stat cs-mvp-col">MVP</div>
+            </div>
+            <div class="cs-table-body">
+                <div class="cs-mvp-row cs-rank-1">
+                    <div class="cs-col-rank"><span class="cs-rank-badge cs-gold">1</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">JK</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Jamal Knight</span>
+                            <span class="cs-player-div">Pro — Thursday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">The ANBU</div>
+                    <div class="cs-col-stat">28.4</div>
+                    <div class="cs-col-stat">6.1</div>
+                    <div class="cs-col-stat">4.2</div>
+                    <div class="cs-col-stat">1.8</div>
+                    <div class="cs-col-stat">0.4</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">98.97</div>
+                </div>
+                <div class="cs-mvp-row cs-rank-2">
+                    <div class="cs-col-rank"><span class="cs-rank-badge cs-silver">2</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">MO</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Marcus Okafor</span>
+                            <span class="cs-player-div">Allstar — Saturday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">North Side Kings</div>
+                    <div class="cs-col-stat">23.1</div>
+                    <div class="cs-col-stat">11.4</div>
+                    <div class="cs-col-stat">2.0</div>
+                    <div class="cs-col-stat">0.9</div>
+                    <div class="cs-col-stat">2.3</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">91.44</div>
+                </div>
+                <div class="cs-mvp-row cs-rank-3">
+                    <div class="cs-col-rank"><span class="cs-rank-badge cs-bronze">3</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">DW</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Devon Williams</span>
+                            <span class="cs-player-div">Hall of Fame — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">The Council</div>
+                    <div class="cs-col-stat">25.7</div>
+                    <div class="cs-col-stat">4.3</div>
+                    <div class="cs-col-stat">7.9</div>
+                    <div class="cs-col-stat">2.1</div>
+                    <div class="cs-col-stat">0.2</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">89.32</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">4</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">BN</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Brian Nwosu</span>
+                            <span class="cs-player-div">Allstar — Saturday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Certified</div>
+                    <div class="cs-col-stat">18.7</div>
+                    <div class="cs-col-stat">9.0</div>
+                    <div class="cs-col-stat">1.5</div>
+                    <div class="cs-col-stat">0.7</div>
+                    <div class="cs-col-stat">3.1</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">79.11</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">5</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">TR</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Tyler Reid</span>
+                            <span class="cs-player-div">Pro — Thursday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">CTO</div>
+                    <div class="cs-col-stat">21.6</div>
+                    <div class="cs-col-stat">3.8</div>
+                    <div class="cs-col-stat">5.5</div>
+                    <div class="cs-col-stat">1.4</div>
+                    <div class="cs-col-stat">0.1</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">76.88</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">6</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">KP</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Kevin Park</span>
+                            <span class="cs-player-div">Rookie — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Rim Reapers</div>
+                    <div class="cs-col-stat">19.4</div>
+                    <div class="cs-col-stat">5.5</div>
+                    <div class="cs-col-stat">2.8</div>
+                    <div class="cs-col-stat">2.4</div>
+                    <div class="cs-col-stat">0.3</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">74.53</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">7</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">AS</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Andre Shaw</span>
+                            <span class="cs-player-div">Hall of Fame — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Overlords</div>
+                    <div class="cs-col-stat">20.9</div>
+                    <div class="cs-col-stat">7.2</div>
+                    <div class="cs-col-stat">3.1</div>
+                    <div class="cs-col-stat">1.0</div>
+                    <div class="cs-col-stat">1.1</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">72.17</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">8</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">CL</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Chris Lamar</span>
+                            <span class="cs-player-div">Rookie — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Jez Elite</div>
+                    <div class="cs-col-stat">17.2</div>
+                    <div class="cs-col-stat">4.1</div>
+                    <div class="cs-col-stat">6.3</div>
+                    <div class="cs-col-stat">1.9</div>
+                    <div class="cs-col-stat">0.0</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">68.40</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">9</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">RB</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Ray Brown</span>
+                            <span class="cs-player-div">Hall of Fame — Sunday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Money Team</div>
+                    <div class="cs-col-stat">16.8</div>
+                    <div class="cs-col-stat">5.9</div>
+                    <div class="cs-col-stat">3.7</div>
+                    <div class="cs-col-stat">1.2</div>
+                    <div class="cs-col-stat">0.6</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">62.85</div>
+                </div>
+                <div class="cs-mvp-row">
+                    <div class="cs-col-rank"><span class="cs-rank-badge">10</span></div>
+                    <div class="cs-col-player">
+                        <div class="cs-player-avatar">SJ</div>
+                        <div class="cs-player-info">
+                            <span class="cs-player-name">Sam Jackson</span>
+                            <span class="cs-player-div">Pro — Thursday</span>
+                        </div>
+                    </div>
+                    <div class="cs-col-team">Run It Up</div>
+                    <div class="cs-col-stat">15.3</div>
+                    <div class="cs-col-stat">4.7</div>
+                    <div class="cs-col-stat">4.4</div>
+                    <div class="cs-col-stat">0.8</div>
+                    <div class="cs-col-stat">0.2</div>
+                    <div class="cs-col-stat">7</div>
+                    <div class="cs-col-stat cs-mvp-col">58.19</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formula Card -->
+        <div class="cs-formula-card">
+            <div class="cs-formula-header">
+                <h3 class="cs-formula-title">How MVP Score is Calculated</h3>
+            </div>
+            <p class="cs-formula-intro">At Rise Up League, we currently track PTS, REB, AST, STL, and BLK stats. Efficiency stats (FGM/FGA, 3PM/3PA, FTM/FTA) are not yet included in the formula.</p>
+
+            <div class="cs-formula-requirements">
+                <h4 class="cs-formula-subtitle">Requirements &amp; Formula</h4>
+                <div class="cs-requirement-list">
+                    <div class="cs-requirement-item">
+                        <span class="cs-req-num">1</span>
+                        <p>Player <strong>must</strong> have played in at least <strong>5 regular season games</strong></p>
+                    </div>
+                    <div class="cs-requirement-item">
+                        <span class="cs-req-num">2</span>
+                        <div>
+                            <p><strong>Sum</strong> of the following weighted stats:</p>
+                            <ul class="cs-formula-weights">
+                                <li><span class="cs-weight-label">PPG</span><span class="cs-weight-mult">× 3.0</span></li>
+                                <li><span class="cs-weight-label">RPG</span><span class="cs-weight-mult">× 2.0</span></li>
+                                <li><span class="cs-weight-label">APG</span><span class="cs-weight-mult">× 2.0</span></li>
+                                <li><span class="cs-weight-label">SPG</span><span class="cs-weight-mult">× 2.0</span></li>
+                                <li><span class="cs-weight-label">BPG</span><span class="cs-weight-mult">× 2.0</span></li>
+                                <li><span class="cs-weight-label">Win %</span><span class="cs-weight-mult">× 3.0</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cs-formula-example">
+                <h4 class="cs-formula-subtitle">Example Calculation</h4>
+                <p class="cs-formula-scenario">A player averaging <strong>22.4 PPG</strong>, <strong>10.2 RPG</strong>, <strong>3.4 APG</strong>, <strong>0.8 SPG</strong>, <strong>0.2 BPG</strong> — Team record: <strong>6-1</strong> (85.7% win%)</p>
+                <div class="cs-calc-rows">
+                    <div class="cs-calc-row"><span>22.4 PPG × 3.0</span><span class="cs-calc-val">= 67.2</span></div>
+                    <div class="cs-calc-row"><span>10.2 RPG × 2.0</span><span class="cs-calc-val">= 20.4</span></div>
+                    <div class="cs-calc-row"><span>3.4 APG × 2.0</span><span class="cs-calc-val">= 6.8</span></div>
+                    <div class="cs-calc-row"><span>0.8 SPG × 2.0</span><span class="cs-calc-val">= 1.6</span></div>
+                    <div class="cs-calc-row"><span>0.2 BPG × 2.0</span><span class="cs-calc-val">= 0.4</span></div>
+                    <div class="cs-calc-row"><span>0.857 Win% × 3.0</span><span class="cs-calc-val">= 2.57</span></div>
+                    <div class="cs-calc-row cs-calc-total">
+                        <span>Final MVP Score</span>
+                        <span class="cs-calc-score">98.97</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>/* ---- MVP Ladder Filters ---- */
+(function () {
+    var cityTabs = document.querySelectorAll('#rise-mvp .cs-city-tab');
+    cityTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            cityTabs.forEach(function (t) {
+                t.classList.remove('cs-active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('cs-active');
+            tab.setAttribute('aria-selected', 'true');
+        });
+    });
+})();</script>
+
+{% endblock %}

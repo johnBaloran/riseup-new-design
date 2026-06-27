@@ -1,0 +1,469 @@
+/*-- -------------------------- -->
+<---       League Header        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#league-header {
+		padding: clamp(8rem, 16vw, 12rem) (24/16rem) clamp(2.5rem, 5vw, 4rem);
+		background-color: var(--headerColor);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		.cs-topper {
+			display: inline-block;
+			margin-bottom: (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+			font-weight: bold;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		.cs-title {
+			margin: 0 0 (32/16rem);
+			font-family: var(--headerFont);
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.01em;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.cs-league-tabs {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			gap: (8/16rem);
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			&::-webkit-scrollbar { display: none; }
+
+			li {
+				list-style: none;
+				flex-shrink: 0;
+			}
+		}
+
+		.cs-league-tab {
+			display: inline-block;
+			padding: (7/16rem) (14/16rem);
+			text-decoration: none;
+			white-space: nowrap;
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: bold;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.7);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: (100/16rem);
+			transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
+			&:hover {
+				color: #fff;
+				border-color: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background-color: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---          Standings         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0px) {
+	#rise-standings {
+		padding: (48/16rem) (16/16rem) (80/16rem);
+		background-color: var(--bodyTextColorWhite);
+
+		.cs-container {
+			width: 100%;
+			max-width: (1440/16rem);
+			margin: auto;
+		}
+
+		/* City Tabs */
+		.cs-city-tabs {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (8/16rem);
+			margin-bottom: (20/16rem);
+		}
+
+		.cs-city-tab {
+			padding: (8/16rem) (18/16rem);
+			font-family: var(--bodyFont);
+			font-size: (13/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.5);
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.25s, background 0.25s, border-color 0.25s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				border-color: rgba(0, 0, 0, 0.3);
+			}
+
+			&.cs-active {
+				color: #fff;
+				background: var(--primary);
+				border-color: var(--primary);
+			}
+		}
+
+		/* Level Filter Pills */
+		.cs-level-filters {
+			display: flex;
+			flex-wrap: wrap;
+			gap: (6/16rem);
+			margin-bottom: (32/16rem);
+		}
+
+		.cs-filter-pill {
+			padding: (6/16rem) (14/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 600;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.45);
+			background: transparent;
+			border: 1px solid rgba(0, 0, 0, 0.12);
+			border-radius: (100/16rem);
+			cursor: pointer;
+			transition: color 0.2s, background 0.2s, border-color 0.2s;
+
+			&:hover {
+				color: var(--bodyTextColor);
+				border-color: rgba(0, 0, 0, 0.25);
+			}
+
+			&.cs-active {
+				color: var(--primary);
+				border-color: var(--primary);
+				background: rgba(224, 58, 26, 0.07);
+			}
+		}
+
+		/* Season Row */
+		.cs-season-row {
+			display: flex;
+			align-items: center;
+			gap: (12/16rem);
+			margin-bottom: (28/16rem);
+		}
+
+		.cs-season-title {
+			margin: 0;
+			font-family: var(--headerFont);
+			font-size: clamp(1.25rem, 3vw, 1.75rem);
+			font-weight: 700;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-season-badge {
+			padding: (4/16rem) (12/16rem);
+			font-family: var(--bodyFont);
+			font-size: (11/16rem);
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: #15803d;
+			background: rgba(21, 128, 61, 0.1);
+			border-radius: (100/16rem);
+		}
+
+		/* Divisions Grid */
+		.cs-divisions-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: (24/16rem);
+		}
+
+		.cs-division-card {
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: (12/16rem);
+			overflow: hidden;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+			&.cs-hidden {
+				display: none;
+			}
+		}
+
+		.cs-division-head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: (16/16rem) (20/16rem);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+			background: rgba(0, 0, 0, 0.02);
+		}
+
+		.cs-division-name {
+			margin: 0;
+			font-family: var(--headerFont);
+			font-size: clamp(1rem, 2.5vw, 1.25rem);
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.02em;
+			color: var(--bodyTextColor);
+		}
+
+		.cs-team-count {
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 600;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--primary);
+		}
+
+		/* Table */
+		.cs-table-wrap {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.cs-standings-table {
+			width: 100%;
+			border-collapse: collapse;
+			min-width: (480/16rem);
+
+			thead tr {
+				background: rgba(0, 0, 0, 0.02);
+			}
+
+			th {
+				padding: (10/16rem) (12/16rem);
+				font-family: var(--bodyFont);
+				font-size: (11/16rem);
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: rgba(0, 0, 0, 0.4);
+				text-align: center;
+				white-space: nowrap;
+
+				&.cs-col-team {
+					text-align: left;
+				}
+			}
+
+			tbody tr {
+				border-top: 1px solid rgba(0, 0, 0, 0.05);
+				transition: background 0.2s;
+
+				&:hover {
+					background: rgba(224, 58, 26, 0.04);
+				}
+
+				&.cs-rank-1 td.cs-col-rank { border-left: 3px solid #C99A2E; }
+				&.cs-rank-2 td.cs-col-rank { border-left: 3px solid #9CA3AF; }
+				&.cs-rank-3 td.cs-col-rank { border-left: 3px solid #CD7F32; }
+			}
+
+			td {
+				padding: (12/16rem) (12/16rem);
+				font-family: var(--bodyFont);
+				font-size: (14/16rem);
+				color: var(--bodyTextColor);
+				text-align: center;
+				white-space: nowrap;
+
+				&.cs-col-team {
+					text-align: left;
+				}
+			}
+		}
+
+		/* Rank badge */
+		.cs-rank-badge {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: (28/16rem);
+			height: (28/16rem);
+			font-family: var(--bodyFont);
+			font-size: (12/16rem);
+			font-weight: 700;
+			color: rgba(0, 0, 0, 0.35);
+			background: rgba(0, 0, 0, 0.05);
+			border-radius: 50%;
+
+			&.cs-gold {
+				color: #92700F;
+				background: rgba(201, 154, 46, 0.15);
+			}
+
+			&.cs-silver {
+				color: #6B7280;
+				background: rgba(156, 163, 175, 0.15);
+			}
+
+			&.cs-bronze {
+				color: #7C4E1A;
+				background: rgba(205, 127, 50, 0.15);
+			}
+		}
+
+		/* Team link */
+		.cs-team-link {
+			text-decoration: none;
+			color: var(--bodyTextColor);
+			font-weight: 600;
+			transition: color 0.2s;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+
+		/* Mono stat values */
+		.cs-mono {
+			font-variant-numeric: tabular-nums;
+			font-feature-settings: "tnum";
+		}
+
+		.cs-positive { color: #15803d; font-weight: 600; }
+		.cs-negative { color: #b91c1c; font-weight: 600; }
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#rise-standings {
+		padding: (64/16rem) (32/16rem) (96/16rem);
+
+		.cs-divisions-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#rise-standings {
+		padding: (80/16rem) (48/16rem) (120/16rem);
+
+		.cs-divisions-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: (32/16rem);
+		}
+	}
+}
+
+/* Mobile Card Layout — converts table rows to swipeable cards */
+@media only screen and (max-width: 47.9375rem) {
+	#rise-standings {
+		.cs-table-wrap {
+			overflow-x: visible;
+		}
+
+		.cs-standings-table {
+			display: block;
+			min-width: 0;
+
+			thead { display: none; }
+
+			tbody { display: flex; flex-direction: column; }
+
+			/* Reset desktop rank-border on td — move to tr level */
+			tbody tr.cs-rank-1 td.cs-col-rank { border-left: none; }
+			tbody tr.cs-rank-2 td.cs-col-rank { border-left: none; }
+			tbody tr.cs-rank-3 td.cs-col-rank { border-left: none; }
+
+			tbody tr {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				padding: (14/16rem) (16/16rem) (12/16rem);
+				border-top: 1px solid rgba(0, 0, 0, 0.06);
+				transition: background 0.2s;
+
+				&:hover { background: rgba(224, 58, 26, 0.04); }
+
+				&.cs-rank-1 { border-left: 3px solid #C99A2E; padding-left: (13/16rem); }
+				&.cs-rank-2 { border-left: 3px solid #9CA3AF; padding-left: (13/16rem); }
+				&.cs-rank-3 { border-left: 3px solid #CD7F32; padding-left: (13/16rem); }
+			}
+
+			td {
+				padding: 0;
+				white-space: normal;
+				border: none;
+				text-align: center;
+			}
+
+			/* Rank badge — fixed width left anchor */
+			td.cs-col-rank {
+				flex: 0 0 (40/16rem);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* Team name — grows to fill row 1, forces stats to wrap */
+			td.cs-col-team {
+				flex: 1;
+				min-width: 0;
+				display: flex;
+				align-items: center;
+				text-align: left;
+
+				a.cs-team-link {
+					font-size: (15/16rem);
+					font-weight: 600;
+				}
+			}
+
+			/* Stats — 5 equal columns on row 2 */
+			td.cs-col-stat {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: (3/16rem);
+				padding-top: (10/16rem);
+				font-size: (14/16rem);
+
+				&::before {
+					font-size: (9/16rem);
+					font-weight: 700;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					color: rgba(0, 0, 0, 0.35);
+				}
+			}
+
+			/* Column labels via nth-child */
+			td:nth-child(3)::before { content: "W"; }
+			td:nth-child(4)::before { content: "L"; }
+			td:nth-child(5)::before { content: "GP"; }
+			td:nth-child(6)::before { content: "W%"; }
+			td:nth-child(7)::before { content: "+/-"; }
+		}
+	}
+}

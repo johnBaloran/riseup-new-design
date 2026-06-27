@@ -1,0 +1,86 @@
+---
+title: "Refund Policy | Rise Up League"
+description: "Rise Up League refund policy — understand when and how refunds are issued for season registration."
+permalink: "/refund-policy/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/info.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--               Info Header                    -->
+<!-- ============================================ -->
+<section id="info-header">
+    <div class="cs-container">
+        <span class="cs-topper">Policies</span>
+        <h1 class="cs-title">Refund Policy</h1>
+        <p class="cs-subtitle">Last updated: January 2026. Please read this policy carefully before registering.</p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Refund Policy                  -->
+<!-- ============================================ -->
+<section id="info-content">
+    <div class="cs-container cs-doc-container">
+
+        <div class="cs-doc-body">
+
+            <div class="cs-doc-section">
+                <h2 class="cs-doc-heading">General Policy</h2>
+                <p>Rise Up League is committed to providing a fair and transparent refund process. All refund requests must be submitted in writing to <a href="mailto:{{ client.email }}">{{ client.email }}</a> and include your name, team name, division, and reason for the request.</p>
+            </div>
+
+            <div class="cs-doc-section">
+                <h2 class="cs-doc-heading">Full Refunds</h2>
+                <p>A full refund will be issued if:</p>
+                <ul class="cs-doc-list">
+                    <li>You cancel your registration before the season start date.</li>
+                    <li>Rise Up League cancels the season due to unforeseen circumstances (e.g., facility closures, force majeure).</li>
+                    <li>A registration error was made by Rise Up League staff.</li>
+                </ul>
+            </div>
+
+            <div class="cs-doc-section">
+                <h2 class="cs-doc-heading">Partial Refunds</h2>
+                <p>Partial refunds may be issued on a pro-rated basis if:</p>
+                <ul class="cs-doc-list">
+                    <li>You withdraw from the season after it has started, provided the withdrawal occurs before the midpoint of the regular season.</li>
+                    <li>A documented medical condition prevents you from continuing to participate. Medical documentation may be required.</li>
+                </ul>
+                <p>The refund amount will be calculated based on the number of games remaining in the season at the time of the request, minus an administrative processing fee.</p>
+            </div>
+
+            <div class="cs-doc-section">
+                <h2 class="cs-doc-heading">No Refunds</h2>
+                <p>No refunds will be issued in the following circumstances:</p>
+                <ul class="cs-doc-list">
+                    <li>Withdrawal requests submitted after the midpoint of the regular season.</li>
+                    <li>Suspension or removal from the League due to a violation of the Code of Conduct or League Rules.</li>
+                    <li>Failure to appear for scheduled games (no-shows).</li>
+                    <li>Disputes over game results, officiating, or statistics.</li>
+                    <li>Default fines are non-refundable.</li>
+                </ul>
+            </div>
+
+            <div class="cs-doc-section">
+                <h2 class="cs-doc-heading">Processing Time</h2>
+                <p>Approved refunds will be processed within 7–10 business days. Refunds are issued via the original payment method where possible. Rise Up League is not responsible for delays caused by financial institutions.</p>
+            </div>
+
+            <div class="cs-doc-section">
+                <h2 class="cs-doc-heading">Contact Us</h2>
+                <p>To submit a refund request or for questions about this policy, email us at <a href="mailto:{{ client.email }}">{{ client.email }}</a>.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
