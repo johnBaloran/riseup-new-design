@@ -107,114 +107,599 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 })();</script>
 
 <!-- ============================================ -->
-<!--               League Features                -->
+<!--        What Rise Up Delivers (Pillars)       -->
 <!-- ============================================ -->
-<section id="rise-features">
-    <div class="cs-container">
-        <div class="cs-content cs-reveal">
-            <span class="cs-topper">More than just a league</span>
-            <h2 class="cs-title">The Rise Up<br>Experience</h2>
+<section id="rise-pillars">
+    <div class="cs-pillars-sticky">
+
+        <!-- Mobile: stacked cards -->
+        <div class="cs-pillars-mobile">
+            <div class="cs-pillar-card cs-reveal">
+                <div class="cs-pillar-card-img">
+                    <img src="/assets/images/7-games-plus-playoffs.jpeg" alt="Rise Up League 7 games plus playoffs" loading="lazy" decoding="async">
+                </div>
+                <h3 class="cs-pillar-card-heading">7 Games + <span class="cs-accent">Playoffs</span></h3>
+                <p class="cs-pillar-card-text">Seven guaranteed regular-season games plus a full playoff bracket. Every season has stakes — no shortened schedules, no cut corners.</p>
+            </div>
+            <div class="cs-pillar-card cs-reveal">
+                <div class="cs-pillar-card-img">
+                    <img src="/assets/images/full-game-coverage.jpeg" alt="Rise Up League full game coverage" loading="lazy" decoding="async">
+                </div>
+                <h3 class="cs-pillar-card-heading">Full Game <span class="cs-accent">Coverage</span></h3>
+                <p class="cs-pillar-card-text">Official scorekeepers at every game and full game footage posted to YouTube. Every run is documented, every bucket on record.</p>
+            </div>
+            <div class="cs-pillar-card cs-reveal">
+                <div class="cs-pillar-card-img">
+                    <img src="/assets/images/season-stats.jpeg" alt="Rise Up League season stats" loading="lazy" decoding="async">
+                </div>
+                <h3 class="cs-pillar-card-heading">Season <span class="cs-accent">Stats</span></h3>
+                <p class="cs-pillar-card-text">Real-time stats for every player on the floor. Track your points, assists, and rebounds across the full season — like the pros do.</p>
+            </div>
+            <div class="cs-pillar-card cs-reveal">
+                <div class="cs-pillar-card-img">
+                    <img src="/assets/images/championship-rings.jpeg" alt="Rise Up League championship rings" loading="lazy" decoding="async">
+                </div>
+                <h3 class="cs-pillar-card-heading">Championship <span class="cs-accent">Rings</span></h3>
+                <p class="cs-pillar-card-text">Real rings. Pro media day portraits. A gym full of people watching you win it all. This isn't rec ball — it's the full experience.</p>
+            </div>
         </div>
-        <ul class="cs-card-group">
-            <li class="cs-item cs-reveal">
-                <picture class="cs-picture">
-                    <img src="/assets/images/7-games-plus-playoffs.jpeg" alt="Players battling for position during a regular season game" loading="lazy" decoding="async">
-                </picture>
-                <div class="cs-item-body">
-                    <span class="cs-item-num">01</span>
-                    <h3 class="cs-h3">7 Games + Playoffs</h3>
-                    <p class="cs-item-text">Competitive regular season with guaranteed playoff action every season.</p>
+
+        <!-- Desktop: sticky 2-col panel -->
+        <div class="cs-pillars-panel">
+            <div class="cs-pillar-left">
+                <span class="cs-topper">What Rise Up Delivers</span>
+                <h2 class="cs-pillar-heading">
+                    <span class="cs-pillar-word" data-pillar="0">7 Games + <span class="cs-accent">Playoffs</span></span>
+                    <span class="cs-pillar-word" data-pillar="1">Full Game <span class="cs-accent">Coverage</span></span>
+                    <span class="cs-pillar-word" data-pillar="2">Season <span class="cs-accent">Stats</span></span>
+                    <span class="cs-pillar-word" data-pillar="3">Championship <span class="cs-accent">Rings</span></span>
+                </h2>
+                <div class="cs-pillar-bodies">
+                    <p class="cs-pillar-text" data-pillar="0">Seven guaranteed regular-season games plus a full playoff bracket. Every season has stakes — no shortened schedules, no cut corners.</p>
+                    <p class="cs-pillar-text" data-pillar="1">Official scorekeepers at every game and full game footage posted to YouTube. Every run is documented, every bucket on record.</p>
+                    <p class="cs-pillar-text" data-pillar="2">Real-time stats for every player on the floor. Track your points, assists, and rebounds across the full season — like the pros do.</p>
+                    <p class="cs-pillar-text" data-pillar="3">Real rings. Pro media day portraits. A gym full of people watching you win it all. This isn't rec ball — it's the full experience.</p>
+                </div>
+                <div class="cs-pillar-ctas">
+                    <a href="/sign-up/" class="cs-pillar-link" data-pillar="0">Join the League →</a>
+                    <a href="/sign-up/" class="cs-pillar-link" data-pillar="1">Watch on YouTube →</a>
+                    <a href="/stats/" class="cs-pillar-link" data-pillar="2">See the Stats →</a>
+                    <a href="/sign-up/" class="cs-pillar-link" data-pillar="3">Start Your Journey →</a>
+                </div>
+            </div>
+            <div class="cs-pillar-right">
+                <div class="cs-pillar-img-wrapper" data-pillar="0">
+                    <img src="/assets/images/7-games-plus-playoffs.jpeg" alt="Rise Up League 7 games plus playoffs" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-pillar-img-wrapper" data-pillar="1">
+                    <img src="/assets/images/full-game-coverage.jpeg" alt="Rise Up League full game coverage" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-pillar-img-wrapper" data-pillar="2">
+                    <img src="/assets/images/season-stats.jpeg" alt="Rise Up League season stats" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-pillar-img-wrapper" data-pillar="3">
+                    <img src="/assets/images/championship-rings.jpeg" alt="Rise Up League championship rings" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="cs-pillars-progress">
+                <div class="cs-pillars-progress-bar-track">
+                    <div class="cs-pillars-progress-bar" id="cs-pillars-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scroll-height spacer — 4 panels -->
+        <div class="cs-pillars-spacer" aria-hidden="true"></div>
+
+    </div>
+</section>
+
+<script>
+(function () {
+    var section = document.getElementById('rise-pillars');
+    if (!section) return;
+    var words  = Array.prototype.slice.call(section.querySelectorAll('.cs-pillar-word'));
+    var texts  = Array.prototype.slice.call(section.querySelectorAll('.cs-pillar-text'));
+    var images = Array.prototype.slice.call(section.querySelectorAll('.cs-pillar-img-wrapper'));
+    var links  = Array.prototype.slice.call(section.querySelectorAll('.cs-pillar-link'));
+    var spacer = section.querySelector('.cs-pillars-spacer');
+    var bar    = document.getElementById('cs-pillars-bar');
+    var current = -1;
+
+    function activateAll() {
+        [words, texts, images, links].forEach(function (list) {
+            list.forEach(function (el) { el.classList.add('is-active'); });
+        });
+        if (bar) bar.style.width = '100%';
+    }
+
+    function activate(i) {
+        if (i === current) return;
+        current = i;
+        [words, texts, images, links].forEach(function (list) {
+            list.forEach(function (el) {
+                el.classList.toggle('is-active', +el.dataset.pillar === i);
+            });
+        });
+    }
+
+    function onScroll() {
+        if (!spacer || window.innerWidth < 1024) { activateAll(); return; }
+        var rect     = section.getBoundingClientRect();
+        var total    = section.offsetHeight - window.innerHeight;
+        var progress = Math.max(0, Math.min(1, -rect.top / total));
+        activate(Math.min(3, Math.floor(progress * 4)));
+        if (bar) bar.style.width = (progress * 100) + '%';
+    }
+
+    if (window.innerWidth < 1024) {
+        activateAll();
+    } else {
+        words[0]  && words[0].classList.add('is-active');
+        texts[0]  && texts[0].classList.add('is-active');
+        images[0] && images[0].classList.add('is-active');
+        links[0]  && links[0].classList.add('is-active');
+        current = 0;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+})();
+</script>
+
+<!-- ============================================ -->
+<!--           Season Steps (Made-style)          -->
+<!-- ============================================ -->
+<section id="rise-steps">
+    <div class="cs-container">
+
+        <div class="cs-steps-header cs-reveal">
+            <span class="cs-topper">The Journey</span>
+            <h2 class="cs-title">Memorable Moments.<br>One Season.</h2>
+        </div>
+
+        <ul class="cs-steps-list">
+
+            <svg class="cs-curve" aria-hidden="true" viewBox="0 0 1000 1000" preserveAspectRatio="none" width="100%" height="100%">
+                <path class="cs-curve-line" fill="none" d="M 490 60 C 820 180, 720 360, 470 480 S 130 640, 190 780 S 610 820, 500 920" />
+                <path class="cs-curve-path" fill="none" stroke="none" d="M 490 60 C 820 180, 720 360, 470 480 S 130 640, 190 780 S 610 820, 500 920" />
+            </svg>
+
+            <div class="cs-ball" aria-hidden="true"><div class="cs-ball-icon"></div></div>
+
+            <li class="cs-step-row">
+                <span class="cs-step-bg" aria-hidden="true">ARRIVAL</span>
+                <div class="cs-step-card">
+                    <picture class="cs-step-picture">
+                        <img src="/assets/images/rookie-level.jpeg" alt="Players registering for Rise Up League" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-step-scrim"></div>
+                    <div class="cs-step-info">
+                        <p class="cs-step-action">REGISTER</p>
+                        <p class="cs-step-label">Lock In Your Spot</p>
+                        <p class="cs-step-sub">Come as a full team or a free agent — we'll place you. Pick your division and lock in before spots fill.</p>
+                    </div>
                 </div>
             </li>
-            <li class="cs-item cs-reveal">
-                <picture class="cs-picture">
-                    <img src="/assets/images/full-game-coverage.jpeg" alt="Full game broadcast coverage on YouTube" loading="lazy" decoding="async">
-                </picture>
-                <div class="cs-item-body">
-                    <span class="cs-item-num">02</span>
-                    <h3 class="cs-h3">Full Game Coverage</h3>
-                    <p class="cs-item-text">Every game professionally recorded and on YouTube before the week is out.</p>
+
+            <li class="cs-step-row">
+                <span class="cs-step-bg" aria-hidden="true">READY</span>
+                <div class="cs-step-card">
+                    <picture class="cs-step-picture">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_1200,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7944_y0ynmm.jpg" alt="Rise Up League media day portraits" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-step-scrim"></div>
+                    <div class="cs-step-info">
+                        <p class="cs-step-action">MEDIA DAY</p>
+                        <p class="cs-step-label">Look the Part</p>
+                        <p class="cs-step-sub">Every player gets professional portraits and a player card before tip-off. Invite your family — this is where it starts to feel real.</p>
+                    </div>
                 </div>
             </li>
-            <li class="cs-item cs-reveal">
-                <picture class="cs-picture">
-                    <img src="/assets/images/season-stats.jpeg" alt="Player career stat tracking dashboard" loading="lazy" decoding="async">
-                </picture>
-                <div class="cs-item-body">
-                    <span class="cs-item-num">03</span>
-                    <h3 class="cs-h3">Season Stats</h3>
-                    <p class="cs-item-text">Points, rebounds, assists — tracked by official scorekeepers every game.</p>
+
+            <li class="cs-step-row">
+                <span class="cs-step-bg" aria-hidden="true">COMPETE</span>
+                <div class="cs-step-card">
+                    <picture class="cs-step-picture">
+                        <img src="https://res.cloudinary.com/dcxxq084j/image/upload/w_1200,f_auto,q_auto:good/v1780979835/game-photos/6a21784ec5ba966e8cb3fb75/cto%20vs%20vintage/D3S_4844_lm2f2b.jpg" alt="Intense game action in Rise Up League" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-step-scrim"></div>
+                    <div class="cs-step-info">
+                        <p class="cs-step-action">PLAY</p>
+                        <p class="cs-step-label">Grind the Season</p>
+                        <p class="cs-step-sub">Seven regular season games. Certified refs, official scorekeeping, and your stats tracked every game. Full game footage on YouTube by Monday.</p>
+                    </div>
                 </div>
             </li>
-            <li class="cs-item cs-reveal">
-                <picture class="cs-picture">
-                    <img src="/assets/images/championship-rings.jpeg" alt="Champions celebrating with rings, trophy and championship tees" loading="lazy" decoding="async">
-                </picture>
-                <div class="cs-item-body">
-                    <span class="cs-item-num">04</span>
-                    <h3 class="cs-h3">Championship Rings</h3>
-                    <p class="cs-item-text">Real championship rings and gear for the team that rises to the top.</p>
+
+            <li class="cs-step-row">
+                <span class="cs-step-bg" aria-hidden="true">GLORY</span>
+                <div class="cs-step-card">
+                    <picture class="cs-step-picture">
+                        <img src="/assets/images/championship-rings.jpeg" alt="Rise Up League championship rings and trophy" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-step-scrim"></div>
+                    <div class="cs-step-info">
+                        <p class="cs-step-action">WIN IT ALL</p>
+                        <p class="cs-step-label">Championship Night</p>
+                        <p class="cs-step-sub">The bracket drops. Every game is elimination. Win it all and you're walking out with a ring and a gym full of people who watched you earn it.</p>
+                    </div>
                 </div>
             </li>
+
         </ul>
-        <div class="cs-cta-wrap cs-reveal">
-            <a href="/sign-up/" class="cs-button-solid">
-                <span class="cs-button-label">Join the League</span>
-                <span class="cs-button-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7"/>
-                        <polyline points="7 7 17 7 17 17"/>
-                    </svg>
-                </span>
-            </a>
+
+    </div>
+</section>
+
+<script>
+(function () {
+    var section = document.getElementById('rise-steps');
+    if (!section) return;
+
+    var rows = Array.prototype.slice.call(section.querySelectorAll('.cs-step-row'));
+
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                e.target.classList.add('cs-active');
+                io.unobserve(e.target);
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+        rows.forEach(function (r) { io.observe(r); });
+    } else {
+        rows.forEach(function (r) { r.classList.add('cs-active'); });
+    }
+
+    /* Travelling basketball — desktop only */
+    var pathEl   = section.querySelector('.cs-curve-path');
+    var ball     = section.querySelector('.cs-ball-icon');
+    var curveSvg = section.querySelector('.cs-curve');
+    var list     = section.querySelector('.cs-steps-list');
+
+    if (pathEl && ball && curveSvg && list &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+        window.matchMedia('(min-width: 64rem)').matches) {
+
+        var VBW = 1000, VBH = 1000, len = pathEl.getTotalLength();
+        var sx = 1, sy = 1;
+        var watermarks = rows.map(function (r) { return r.querySelector('.cs-step-bg'); });
+
+        function cacheScale() {
+            var box = curveSvg.getBoundingClientRect();
+            if (box.width && box.height) { sx = box.width / VBW; sy = box.height / VBH; }
+        }
+        cacheScale();
+
+        var ticking = false;
+        function place() {
+            var vh       = window.innerHeight;
+            var scrolled = window.scrollY || window.pageYOffset;
+            var listTop  = list.getBoundingClientRect().top + scrolled;
+            var start    = listTop - vh * 0.5;
+            var end      = listTop + list.offsetHeight - vh * 0.5;
+            var p        = Math.max(0, Math.min(1, (scrolled - start) / (end - start)));
+            var pt       = pathEl.getPointAtLength(p * len);
+            var ballScreenY = list.getBoundingClientRect().top + (pt.y * sy);
+
+            ball.style.transform = 'translate(' + (pt.x * sx) + 'px, ' + (pt.y * sy) + 'px) rotate(' + (p * 720) + 'deg)';
+
+            watermarks.forEach(function (wm) {
+                if (!wm) return;
+                wm.classList.toggle('cs-ball-passed', ballScreenY >= wm.getBoundingClientRect().bottom);
+            });
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) { requestAnimationFrame(place); ticking = true; }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', function () { cacheScale(); onScroll(); });
+        window.addEventListener('load', function () { cacheScale(); place(); });
+        place();
+    }
+})();
+</script>
+
+<!-- ============================================ -->
+<!--            By the Numbers Stats             -->
+<!-- ============================================ -->
+<section id="rise-stats">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Track Record</span>
+            <h2 class="cs-title">By The Numbers</h2>
+            <p class="cs-text">Every figure below was earned on the court — this is what a real competitive basketball community looks like.</p>
+        </div>
+        <div class="cs-picture-wrap">
+            <div class="cs-slides-pin">
+                <div class="cs-slide cs-active">
+                    <picture class="cs-picture">
+                        <img src="/assets/images/season-stats.jpeg" alt="Rise Up League season stats" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="cs-slide">
+                    <picture class="cs-picture">
+                        <img src="/assets/images/7-games-plus-playoffs.jpeg" alt="Rise Up League games" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="cs-slide">
+                    <picture class="cs-picture">
+                        <img src="/assets/images/championship-rings.jpeg" alt="Rise Up League championship" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+            </div>
+            <div class="cs-step-card cs-card-1">
+                <p class="cs-card-num"><span class="cs-num" data-target="500">0</span><span class="cs-card-suffix">+</span></p>
+                <p class="cs-card-label">Players</p>
+                <p class="cs-card-sub">Across 6 competitive divisions</p>
+            </div>
+            <div class="cs-step-card cs-card-2">
+                <p class="cs-card-num"><span class="cs-num" data-target="7">0</span><span class="cs-card-suffix">+</span></p>
+                <p class="cs-card-label">Games Guaranteed</p>
+                <p class="cs-card-sub">Plus a full playoff bracket</p>
+            </div>
+            <div class="cs-step-card cs-card-3">
+                <p class="cs-card-num"><span class="cs-num" data-target="6">0</span></p>
+                <p class="cs-card-label">Divisions</p>
+                <p class="cs-card-sub">Rookie to All-Star level</p>
+            </div>
+            <div class="cs-step-card cs-card-4">
+                <p class="cs-card-num"><span class="cs-num" data-target="100">0</span><span class="cs-card-suffix">%</span></p>
+                <p class="cs-card-label">Covered</p>
+                <p class="cs-card-sub">Every game filmed &amp; on YouTube</p>
+            </div>
         </div>
     </div>
 </section>
 
+<script>
+(function () {
+    var section  = document.querySelector('#rise-stats');
+    var slides   = document.querySelectorAll('#rise-stats .cs-slide');
+    var cards    = document.querySelectorAll('#rise-stats .cs-step-card');
+    var numEls   = document.querySelectorAll('#rise-stats .cs-num[data-target]');
+    if (!section) return;
+
+    /* --- Image crossfade --- */
+    if (slides.length > 1) {
+        var cur = 0;
+        setInterval(function () {
+            slides[cur].classList.remove('cs-active');
+            cur = (cur + 1) % slides.length;
+            slides[cur].classList.add('cs-active');
+        }, 3500);
+    }
+
+    /* --- Count-up --- */
+    var counted = false;
+    function countUp(el, target) {
+        var dur = target >= 500 ? 1400 : target >= 50 ? 900 : 650;
+        var start = null;
+        function frame(t) {
+            if (!start) start = t;
+            var p = Math.min(1, (t - start) / dur);
+            var eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+            el.textContent = Math.round(eased * target).toLocaleString();
+            if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+    }
+
+    /* --- Card fade-in + fling-out --- */
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var flingMap = [
+        { tx: -60, ty: -50, rot: -8 },
+        { tx:  60, ty: -50, rot:  8 },
+        { tx: -60, ty: -50, rot:  6 },
+        { tx:  60, ty: -50, rot: -6 }
+    ];
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function onScroll() {
+        var rect    = section.getBoundingClientRect();
+        var windowH = window.innerHeight;
+        var secH    = section.offsetHeight;
+
+        var fadeStart    = windowH * 0.8;
+        var fadeEnd      = windowH * 0.2;
+        var fadeProgress = Math.max(0, Math.min(1, (fadeStart - rect.top) / (fadeStart - fadeEnd)));
+
+        var flingStart    = fadeEnd;
+        var flingEnd      = -(secH * 0.35);
+        var flingProgress = Math.max(0, Math.min(1, (flingStart - rect.top) / (flingStart - flingEnd)));
+        var flingEased    = easeOut(flingProgress);
+
+        cards.forEach(function (card, i) {
+            var fm = flingMap[i] || flingMap[0];
+            if (reduceMotion) { card.style.opacity = fadeProgress > 0 ? '1' : '0'; return; }
+            if (flingProgress > 0) {
+                card.style.opacity   = '1';
+                card.style.transform = 'translate(' + (flingEased * fm.tx) + 'px,' + (flingEased * fm.ty) + 'px) rotate(' + (flingEased * fm.rot) + 'deg)';
+            } else {
+                card.style.opacity   = fadeProgress;
+                card.style.transform = 'translate(0,0) rotate(0deg)';
+            }
+        });
+
+        if (fadeProgress >= 1 && !counted) {
+            counted = true;
+            numEls.forEach(function (el) {
+                var t = parseInt(el.dataset.target, 10);
+                if (!isNaN(t)) countUp(el, t);
+            });
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+</script>
+
 <!-- ============================================ -->
-<!--            Campaign Blocks                   -->
+<!--           The Rise Up Experience            -->
 <!-- ============================================ -->
-<section id="rise-campaigns">
-    <article class="cs-campaign">
-        <div class="cs-campaign-bg" style="background-image: url('https://res.cloudinary.com/dcxxq084j/image/upload/w_1920,f_auto,q_auto:good/v1761150568/media-day-photos/678230f890fd6e209620207b/2025-10-21/Sauga%20Tues%20Media%20Day/D3S_7944_y0ynmm.jpg');" aria-hidden="true"></div>
-        <div class="cs-campaign-overlay" aria-hidden="true"></div>
-        <div class="cs-campaign-content cs-reveal">
-            <span class="cs-topper">Media Day</span>
-            <h2 class="cs-campaign-title">Look<br>the Part</h2>
-            <p class="cs-campaign-text">Professional portraits. Player cards. The full media day treatment — because every player deserves to feel like a pro before tip-off.</p>
-            <a href="/media-day/" class="cs-campaign-btn">
-                <span>View Media Day</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-    </article>
-    <article class="cs-campaign cs-campaign--right">
-        <div class="cs-campaign-bg" style="background-image: url('/assets/images/fil-great-level.jpeg'); background-position: 60% center;" aria-hidden="true"></div>
-        <div class="cs-campaign-overlay" aria-hidden="true"></div>
-        <div class="cs-campaign-content cs-reveal">
-            <span class="cs-topper">Fil Divisions</span>
-            <h2 class="cs-campaign-title">Built for<br>the Community</h2>
-            <p class="cs-campaign-text">Three dedicated Filipino divisions — Fil – Rookie, Fil – Pro, and Fil – Great. Competitive on the court, family off it. One import allowed per team.</p>
-            <a href="/sign-up/" class="cs-campaign-btn">
-                <span>Join a Fil Division</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-    </article>
-    <article class="cs-campaign">
-        <div class="cs-campaign-bg" style="background-image: url('/assets/images/all-star-level.jpeg');" aria-hidden="true"></div>
-        <div class="cs-campaign-overlay" aria-hidden="true"></div>
-        <div class="cs-campaign-content cs-reveal">
-            <span class="cs-topper">Next Season</span>
-            <h2 class="cs-campaign-title">Your Run<br>Starts Here</h2>
-            <p class="cs-campaign-text">Register your team or come in as a free agent and we'll place you. Spots fill fast. The schedule waits for no one.</p>
-            <a href="/sign-up/" class="cs-campaign-btn">
-                <span>Register Now</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-    </article>
+<section id="rise-experience">
+    <div class="cs-exp-header cs-reveal">
+        <span class="cs-topper">Game Night</span>
+        <h2 class="cs-exp-title">You Have to<br>Feel It.</h2>
+        <p class="cs-exp-sub">Every game night is an event. Electric crowds, the people who matter most in the stands, and a league that treats everyone like family — players, fans, and first-timers alike.</p>
+    </div>
+    <div class="cs-exp-grid">
+        <article class="cs-exp-card cs-exp-large cs-reveal">
+            <div class="cs-exp-bg" style="background-image: url('https://res.cloudinary.com/dcxxq084j/image/upload/w_1400,f_auto,q_auto:good/v1779942345/game-photos/69dce953e2ff0393a1dea8d0/A33I1329_uz7lrw.jpg');" aria-hidden="true"></div>
+            <div class="cs-exp-overlay" aria-hidden="true"></div>
+            <div class="cs-exp-content">
+                <span class="cs-exp-tag">The Energy</span>
+                <p class="cs-exp-cap">A gym that gets loud. Every bucket, every block, every clutch shot — the crowd feels it with you.</p>
+            </div>
+        </article>
+        <article class="cs-exp-card cs-reveal">
+            <div class="cs-exp-bg" style="background-image: url('/assets/images/championship-rings.jpeg');" aria-hidden="true"></div>
+            <div class="cs-exp-overlay" aria-hidden="true"></div>
+            <div class="cs-exp-content">
+                <span class="cs-exp-tag">Your People</span>
+                <p class="cs-exp-cap">Invite your family. Bring your friends. The stands matter — show them what you've been working on all week.</p>
+            </div>
+        </article>
+        <article class="cs-exp-card cs-reveal">
+            <div class="cs-exp-bg" style="background-image: url('/assets/images/full-game-coverage.jpeg');" aria-hidden="true"></div>
+            <div class="cs-exp-overlay" aria-hidden="true"></div>
+            <div class="cs-exp-content">
+                <span class="cs-exp-tag">The Staff</span>
+                <p class="cs-exp-cap">A welcoming, organized league that treats every player, fan, and first-time visitor like they belong.</p>
+            </div>
+        </article>
+    </div>
 </section>
+
+<!-- ============================================ -->
+<!--              Where We Play                   -->
+<!-- ============================================ -->
+<section id="rise-locations">
+    <div class="cs-container">
+        <div class="cs-loc-header cs-reveal">
+            <span class="cs-topper">The League</span>
+            <h2 class="cs-title">Find Your City</h2>
+            <p class="cs-text">Three cities across the GTA. Pick your home court and lock in your spot for next season.</p>
+        </div>
+        <div class="cs-loc-grid" id="loc-track">
+
+            <a href="/sign-up/" class="cs-loc-card cs-reveal">
+                <div class="cs-loc-photo">
+                    <div class="cs-loc-bg" style="background-image: url('/assets/images/7-games-plus-playoffs.jpeg');" aria-hidden="true"></div>
+                    <div class="cs-loc-gradient" aria-hidden="true"></div>
+                    <span class="cs-loc-num" aria-hidden="true">01</span>
+                </div>
+                <div class="cs-loc-body">
+                    <span class="cs-loc-badge">Now Registering</span>
+                    <h3 class="cs-loc-city">Brampton</h3>
+                    <div class="cs-loc-meta">
+                        <span>6 Divisions</span>
+                        <span class="cs-loc-dot" aria-hidden="true">·</span>
+                        <span>500+ Players</span>
+                    </div>
+                    <span class="cs-loc-cta">Register Now
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <a href="/sign-up/" class="cs-loc-card cs-reveal">
+                <div class="cs-loc-photo">
+                    <div class="cs-loc-bg" style="background-image: url('/assets/images/pro-level.jpeg');" aria-hidden="true"></div>
+                    <div class="cs-loc-gradient" aria-hidden="true"></div>
+                    <span class="cs-loc-num" aria-hidden="true">02</span>
+                </div>
+                <div class="cs-loc-body">
+                    <span class="cs-loc-badge">Now Registering</span>
+                    <h3 class="cs-loc-city">Vaughan</h3>
+                    <div class="cs-loc-meta">
+                        <span>6 Divisions</span>
+                        <span class="cs-loc-dot" aria-hidden="true">·</span>
+                        <span>500+ Players</span>
+                    </div>
+                    <span class="cs-loc-cta">Register Now
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <a href="/sign-up/" class="cs-loc-card cs-reveal">
+                <div class="cs-loc-photo">
+                    <div class="cs-loc-bg" style="background-image: url('/assets/images/fil-great-level.jpeg');" aria-hidden="true"></div>
+                    <div class="cs-loc-gradient" aria-hidden="true"></div>
+                    <span class="cs-loc-num" aria-hidden="true">03</span>
+                </div>
+                <div class="cs-loc-body">
+                    <span class="cs-loc-badge">Now Registering</span>
+                    <h3 class="cs-loc-city">Mississauga</h3>
+                    <div class="cs-loc-meta">
+                        <span>6 Divisions</span>
+                        <span class="cs-loc-dot" aria-hidden="true">·</span>
+                        <span>500+ Players</span>
+                    </div>
+                    <span class="cs-loc-cta">Register Now
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+        <div class="cs-loc-controls">
+            <div class="cs-loc-progress">
+                <div class="cs-loc-progress-fill" id="loc-progress"></div>
+            </div>
+            <div class="cs-loc-arrows">
+                <button class="cs-loc-arrow" id="loc-prev" aria-label="Previous location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                </button>
+                <button class="cs-loc-arrow" id="loc-next" aria-label="Next location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<script>/* ---- Locations Carousel ---- */
+(function () {
+    var track   = document.getElementById('loc-track');
+    var fill    = document.getElementById('loc-progress');
+    var prevBtn = document.getElementById('loc-prev');
+    var nextBtn = document.getElementById('loc-next');
+    if (!track || !fill) return;
+
+    function cardWidth() {
+        var card = track.querySelector('.cs-loc-card');
+        if (!card) return 0;
+        var gap = parseFloat(getComputedStyle(track).gap) || 0;
+        return card.getBoundingClientRect().width + gap;
+    }
+
+    function update() {
+        var max = track.scrollWidth - track.clientWidth;
+        var pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
+        fill.style.width = pct + '%';
+        if (prevBtn) prevBtn.disabled = track.scrollLeft <= 4;
+        if (nextBtn) nextBtn.disabled = track.scrollLeft >= max - 4;
+    }
+
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+        track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+        track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    });
+
+    update();
+})();</script>
 
 <!-- Dark → Light divider -->
 <div class="cs-section-divider" aria-hidden="true" style="background:#F5F5F5">
@@ -827,5 +1312,22 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </div>
     </div>
 </section>
+
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function () {
+    window._lenis = new Lenis({
+        duration: 2.2,
+        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+        smoothWheel: true,
+    });
+
+    function raf(time) {
+        window._lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+})();
+</script>
 
 {% endblock %}
