@@ -1,0 +1,9 @@
+[      67ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8080/assets/fonts/roboto-v29-latin-regular.woff2:0
+[      67ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8080/assets/fonts/roboto-v29-latin-700.woff2:0
+[     121ms] [LOG] [11ty][16:05:19.152 UTC] Connected @ http://localhost:8080/.11ty/reload-client.js:20
+[    4529ms] [WARNING] The resource http://localhost:8080/assets/svgs/logo-black.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8080/:0
+[    4529ms] [WARNING] The resource http://localhost:8080/assets/fonts/roboto-v29-latin-700.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8080/:0
+[    4529ms] [WARNING] The resource http://localhost:8080/assets/fonts/roboto-v29-latin-regular.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8080/:0
+[  329657ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8080/assets/fonts/roboto-v29-latin-regular.woff2:0
+[  329659ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8080/assets/fonts/roboto-v29-latin-700.woff2:0
+[  329690ms] [LOG] [11ty][16:10:48.721 UTC] Connected @ http://localhost:8080/.11ty/reload-client.js:20

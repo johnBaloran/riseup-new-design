@@ -1,288 +1,279 @@
 /*-- -------------------------- -->
-<---     Pillars Sticky Scroll  -->
+<---  Pillars Horizontal Panels  -->
 <--- -------------------------- -*/
 
-
-/* Mobile - 360px */
+/* Mobile - 0px */
 @media only screen and (min-width: 0px) {
     #rise-pillars {
         background-color: var(--darkBg);
 
-        .cs-pillars-panel {
-            display: none;
+        /* ---- Group wrapper (height set by JS on desktop) ---- */
+        .cs-pillars-group {
+            position: relative;
+            height: 100vh;
         }
 
-        .cs-pillars-spacer {
-            display: none;
+        /* ---- Mobile: horizontal snap-scroll container ---- */
+        .cs-pillars-sticky {
+            width: 100%;
+            height: 100vh;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar { display: none; }
         }
 
-        .cs-pillars-progress {
-            display: none;
+        /* ---- Track ---- */
+        .cs-pillars-track {
+            display: flex;
+            height: 100%;
         }
 
-        /* ---- Mobile: stacked cards ---- */
-        .cs-pillars-mobile {
+        /* ---- Single full-viewport panel ---- */
+        .cs-pillar-panel {
+            flex: 0 0 100vw;
+            width: 100vw;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        /* ---- Background photo ---- */
+        .cs-pillar-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ---- Dark gradient overlay ---- */
+        .cs-pillar-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(11, 11, 13, 0.92) 0%,
+                rgba(11, 11, 13, 0.42) 48%,
+                rgba(11, 11, 13, 0.12) 100%
+            );
+        }
+
+        /* ---- Content — category top, body bottom ---- */
+        .cs-pillar-content {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
             display: flex;
             flex-direction: column;
-            gap: (3/16rem);
+            justify-content: space-between;
+            padding: (28/16rem) (24/16rem) (52/16rem);
         }
 
-        .cs-pillar-card {
-            padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 2.5rem);
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-            &:first-child {
-                border-top: none;
-            }
+        .cs-pillar-cat {
+            font-family: var(--bodyFont);
+            font-size: (10/16rem);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(245, 245, 245, 0.3);
         }
 
-        .cs-pillar-card-img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            margin-bottom: (28/16rem);
-            border-radius: (8/16rem);
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-        }
-
-        .cs-pillar-card-heading {
-            margin: 0 0 (16/16rem);
+        .cs-pillar-title {
             font-family: var(--headerFont);
-            font-size: clamp(2rem, 6vw, 3.25rem);
+            font-size: clamp(2.25rem, 9vw, 3.5rem);
             font-weight: 700;
-            line-height: 1.0;
-            letter-spacing: -0.015em;
+            letter-spacing: -0.02em;
             text-transform: uppercase;
             color: #fff;
+            line-height: 1.0;
+            margin: 0 0 (8/16rem);
 
-            .cs-accent {
+            .cs-accent { color: var(--primary); }
+        }
+
+        .cs-pillar-sub {
+            font-family: var(--bodyFont);
+            font-size: (10/16rem);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(245, 245, 245, 0.35);
+            margin: 0 0 (14/16rem);
+        }
+
+        .cs-pillar-desc {
+            font-family: var(--bodyFont);
+            font-size: (14/16rem);
+            line-height: 1.7;
+            color: rgba(245, 245, 245, 0.6);
+            max-width: (480/16rem);
+            margin: 0 0 (22/16rem);
+        }
+
+        .cs-pillar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: (8/16rem);
+            font-family: var(--bodyFont);
+            font-size: (10/16rem);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(245, 245, 245, 0.25);
+            padding-bottom: (4/16rem);
+            transition: border-color 0.3s ease, gap 0.3s ease, color 0.3s ease;
+
+            svg { flex-shrink: 0; }
+
+            &:hover {
+                border-color: var(--primary);
                 color: var(--primary);
+                gap: (14/16rem);
             }
         }
 
-        .cs-pillar-card-text {
-            margin: 0;
-            font-family: var(--bodyFont);
-            font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
-            line-height: 1.65;
-            color: rgba(245, 245, 245, 0.58);
-            max-width: 52ch;
+        /* ---- Scroll hint — desktop only ---- */
+        .cs-pillars-hint { display: none; }
+
+        /* ---- Progress bar — desktop only ---- */
+        .cs-pillars-progress { display: none; }
+
+        .cs-pillars-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--primary);
+            border-radius: 999px;
+            transition: width 0.15s linear;
+        }
+
+        /* ---- Dots — mobile only ---- */
+        .cs-pillars-dots {
+            position: absolute;
+            bottom: (24/16rem);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            display: flex;
+            gap: (6/16rem);
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .cs-pillar-dot {
+            width: (5/16rem);
+            height: (5/16rem);
+            border-radius: 50%;
+            background: rgba(245, 245, 245, 0.25);
+            transition: all 0.3s ease;
+
+            &.is-active {
+                background: var(--primary);
+                transform: scale(1.4);
+            }
         }
     }
 }
 
-/* Desktop - 1024px: sticky scroll */
-@media only screen and (min-width: 64rem) {
+/* Desktop - 768px: vertical-scroll drives horizontal translate */
+@media only screen and (min-width: 48rem) {
     #rise-pillars {
-        padding: 0;
 
-        .cs-pillars-mobile {
-            display: none;
-        }
+        /* Hide dots */
+        .cs-pillars-dots { display: none; }
 
-        .cs-pillars-sticky {
-            position: relative;
-        }
-
-        .cs-pillars-panel {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        .cs-pillars-spacer {
-            background: transparent;
-        }
-
-        .cs-pillar-left {
+        /* Scroll hint */
+        .cs-pillars-hint {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: clamp(3rem, 5vw, 6rem);
-            background: var(--darkBg);
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-topper {
-            display: block;
-            margin-bottom: (16/16rem);
-            font-family: var(--bodyFont);
-            font-size: clamp(0.75rem, 1.4vw, 0.8125rem);
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--primary);
-        }
-
-        .cs-pillar-heading {
-            position: relative;
-            min-height: 2.6em;
-            overflow: visible;
-            margin: 0 0 (40/16rem);
-            font-family: var(--headerFont);
-            font-size: clamp(2.25rem, 3.2vw, 4rem);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            color: #fff;
-        }
-
-        .cs-pillar-word {
-            display: block;
             position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transform: translateY((16/16rem));
-            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-            white-space: normal;
-            color: #fff;
-
-            .cs-accent {
-                color: var(--primary);
-            }
-
-            &.is-active {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cs-pillar-bodies {
-            position: relative;
-            min-height: (8/1em);
-            margin-bottom: (32/16rem);
-        }
-
-        .cs-pillar-text {
+            bottom: (28/16rem);
+            right: (44/16rem);
+            z-index: 20;
+            align-items: center;
+            gap: (8/16rem);
             font-family: var(--bodyFont);
-            font-size: clamp(1rem, 1.4vw, 1.0625rem);
-            font-weight: 400;
-            line-height: 1.7;
-            color: rgba(245, 245, 245, 0.6);
-            margin: 0;
-            max-width: 44ch;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transform: translateY((14/16rem));
-            transition: opacity 0.7s 0.06s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s 0.06s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: (9/16rem);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(245, 245, 245, 0.25);
             pointer-events: none;
+            transition: opacity 0.5s ease;
 
-            &.is-active {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
+            svg { animation: pillarsHintSlide 1.8s ease-in-out infinite; }
+            &.is-hidden { opacity: 0; }
         }
 
-        .cs-pillar-ctas {
-            position: relative;
-            height: (24/16rem);
+        @keyframes pillarsHintSlide {
+            0%, 100% { transform: translateX(0); }
+            50%       { transform: translateX(6px); }
         }
 
-        .cs-pillar-link {
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-family: var(--bodyFont);
-            font-size: (12/16rem);
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: rgba(245, 245, 245, 0.5);
-            opacity: 0;
-            transform: translateY((10/16rem));
-            transition: opacity 0.5s 0.12s ease, transform 0.5s 0.12s ease, color 0.3s;
-            white-space: nowrap;
-            pointer-events: none;
-
-            &.is-active {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-                color: #fff;
-            }
-
-            &:hover {
-                color: var(--primary);
-            }
-        }
-
-        .cs-pillar-right {
-            position: relative;
-            overflow: hidden;
-            background: #111113;
-        }
-
-        .cs-pillar-img-wrapper {
-            display: block;
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: scale(1.04);
-            transition: opacity 0.9s 0.08s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s 0.08s cubic-bezier(0.4, 0, 0.2, 1);
-
-            img {
-                width: 100%;
-                height: 110%;
-                top: -5%;
-                position: relative;
-                object-fit: cover;
-                display: block;
-            }
-
-            &.is-active {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .cs-pillars-spacer {
-            display: block;
-            height: 400vh;
-        }
-
+        /* Progress bar */
         .cs-pillars-progress {
             display: block;
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            grid-column: 1 / -1;
-            z-index: 10;
+            bottom: (28/16rem);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            width: 28%;
+            height: (2/16rem);
+            background: rgba(245, 245, 245, 0.15);
+            border-radius: 999px;
+            overflow: hidden;
+            pointer-events: none;
+        }
 
-            .cs-pillars-progress-bar-track {
-                width: 100%;
-                height: (3/16rem);
-                background: rgba(255, 255, 255, 0.1);
-                overflow: hidden;
-            }
+        /* Sticky panel — JS drives translateX on the track */
+        .cs-pillars-sticky {
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            border-left: 3px solid var(--primary);
 
-            .cs-pillars-progress-bar {
-                height: 100%;
-                background: var(--primary);
-                width: 0%;
-                transition: width 0.1s linear;
+            /* Left-side vignette */
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: (160/16rem);
+                background: linear-gradient(to right, rgba(11, 11, 13, 0.55) 0%, transparent 100%);
+                z-index: 5;
+                pointer-events: none;
             }
+        }
+
+        /* Larger content padding on desktop */
+        .cs-pillar-content {
+            padding: (48/16rem) (72/16rem) (64/16rem);
+        }
+
+        .cs-pillar-cat {
+            font-size: (11/16rem);
+        }
+
+        .cs-pillar-title {
+            font-size: clamp(2.75rem, 5.5vw, 6.5rem);
+            margin-bottom: (12/16rem);
+        }
+
+        .cs-pillar-sub {
+            font-size: (11/16rem);
+            margin-bottom: (20/16rem);
+        }
+
+        .cs-pillar-desc {
+            font-size: clamp(0.9375rem, 1.15vw, (16/16rem));
+            margin-bottom: (30/16rem);
+        }
+
+        .cs-pillar-cta {
+            font-size: (11/16rem);
         }
     }
 }
@@ -796,91 +787,76 @@
     #rise-experience {
         background-color: var(--darkBg);
 
-        .cs-exp-header {
-            text-align: center;
+        .cs-exp-spacer,
+        .cs-exp-panel,
+        .cs-exp-progress {
+            display: none;
+        }
+
+        .cs-exp-mobile {
+            display: flex;
+            flex-direction: column;
             padding: var(--sectionPadding);
-            padding-bottom: clamp(2rem, 4vw, 3rem);
+            gap: clamp(2.5rem, 6vw, 4rem);
         }
 
-        .cs-exp-title {
-            font-family: var(--headerFont);
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #fff;
-            line-height: 1.05;
-            margin: 0 0 (16/16rem);
+        .cs-exp-mobile-card {
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+            padding-bottom: clamp(2.5rem, 6vw, 4rem);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
         }
 
-        .cs-exp-sub {
-            color: rgba(245, 245, 245, 0.55);
-            font-size: clamp(0.9375rem, 2vw, 1.0625rem);
-            line-height: 1.65;
-            max-width: 55ch;
-            margin: 0 auto;
-        }
-
-        .cs-exp-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: (3/16rem);
-        }
-
-        .cs-exp-large {
-            grid-column: 1 / span 2;
-            height: 72vw;
-            min-height: (300/16rem);
-        }
-
-        .cs-exp-card {
-            position: relative;
-            height: 52vw;
-            min-height: (210/16rem);
+        .cs-exp-mobile-img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: (10/16rem);
             overflow: hidden;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
-        .cs-exp-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.6s ease;
-        }
-
-        .cs-exp-card:hover .cs-exp-bg {
-            transform: scale(1.04);
-        }
-
-        .cs-exp-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
-        }
-
-        .cs-exp-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: (24/16rem);
-        }
-
-        .cs-exp-tag {
-            display: inline-block;
-            font-family: var(--bodyFont);
+        .cs-exp-mobile-topper {
             font-size: (11/16rem);
             font-weight: 700;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--secondary);
-            margin-bottom: (8/16rem);
+            color: var(--primary);
         }
 
-        .cs-exp-cap {
-            color: rgba(245, 245, 245, 0.85);
-            font-size: clamp(0.875rem, 2vw, 1rem);
-            line-height: 1.5;
+        .cs-exp-mobile-heading {
+            font-family: var(--headerFont);
+            font-size: clamp(2rem, 7vw, 2.75rem);
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+            color: #fff;
             margin: 0;
+        }
+
+        .cs-exp-mobile-text {
+            font-family: var(--bodyFont);
+            font-size: (15/16rem);
+            line-height: 1.65;
+            color: rgba(245, 245, 245, 0.6);
+            margin: 0;
+        }
+
+        .cs-exp-word,
+        .cs-exp-text,
+        .cs-exp-img-wrapper {
+            transition: none;
         }
     }
 }
@@ -888,33 +864,187 @@
 /* Desktop */
 @media only screen and (min-width: 64rem) {
     #rise-experience {
-        .cs-exp-grid {
+        padding: 0;
+
+        .cs-exp-mobile {
+            display: none;
+        }
+
+        .cs-exp-sticky {
+            position: relative;
+        }
+
+        .cs-exp-spacer {
+            display: block;
+            height: 300vh;
+        }
+
+        .cs-exp-panel {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: (8/16rem);
-            height: 75vh;
-            min-height: (500/16rem);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
         }
 
-        .cs-exp-large {
-            grid-column: 1;
-            grid-row: 1 / span 2;
+        .cs-exp-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(3rem, 5vw, 6rem);
+            background: var(--darkBg);
+            position: relative;
+            z-index: 1;
         }
 
-        .cs-exp-card:not(.cs-exp-large):nth-child(2) {
-            grid-column: 2;
-            grid-row: 1;
+        .cs-exp-topper {
+            font-size: (11/16rem);
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+            display: block;
         }
 
-        .cs-exp-card:not(.cs-exp-large):nth-child(3) {
-            grid-column: 2;
-            grid-row: 2;
+        .cs-exp-heading {
+            position: relative;
+            height: clamp(7.5rem, 11.5vw, 14rem);
+            margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
         }
 
-        .cs-exp-card {
-            height: auto;
-            min-height: 0;
+        .cs-exp-word {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: var(--headerFont);
+            font-size: clamp(3.5rem, 5.5vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+
+            em {
+                font-style: normal;
+                color: var(--primary);
+                display: block;
+            }
+
+            &.is-active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cs-exp-bodies {
+            position: relative;
+            min-height: 7em;
+        }
+
+        .cs-exp-text {
+            font-family: var(--bodyFont);
+            font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+            line-height: 1.7;
+            color: rgba(245, 245, 245, 0.65);
+            margin: 0;
+            max-width: 44ch;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.5s 0.08s ease, transform 0.5s 0.08s ease;
+            pointer-events: none;
+
+            &.is-active {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+
+        .cs-exp-counter {
+            margin-top: clamp(2rem, 4vw, 3.5rem);
+            font-family: var(--bodyFont);
+            font-size: (12/16rem);
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            color: rgba(255, 255, 255, 0.25);
+
+            .cs-exp-count-cur {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .cs-exp-right {
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                left: 0;
+                width: (120/16rem);
+                background: linear-gradient(to right, var(--darkBg) 0%, transparent 100%);
+                z-index: 2;
+                pointer-events: none;
+            }
+        }
+
+        .cs-exp-img-wrapper {
+            display: block;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transform: scale(1.04);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+
+            img {
+                width: 100%;
+                height: 110%;
+                top: -5%;
+                position: relative;
+                object-fit: cover;
+            }
+
+            &.is-active {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .cs-exp-progress {
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            bottom: (32/16rem);
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            pointer-events: none;
+
+            .cs-exp-progress-track {
+                width: 30%;
+                height: (2/16rem);
+                background: rgba(255, 255, 255, 0.12);
+                border-radius: (999/16rem);
+                overflow: hidden;
+            }
+
+            .cs-exp-progress-fill {
+                height: 100%;
+                background: var(--primary);
+                width: 0%;
+                transition: width 0.1s linear;
+                border-radius: (999/16rem);
+            }
         }
     }
 }
@@ -958,6 +1088,7 @@
             gap: (12/16rem);
             overflow-x: auto;
             scroll-snap-type: x mandatory;
+            scroll-padding-left: (24/16rem);
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             padding: 0 (24/16rem) (8/16rem);

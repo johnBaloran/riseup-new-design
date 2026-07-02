@@ -1,0 +1,601 @@
+- generic [active] [ref=e1]:
+  - link "skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+    - text: Click To Skip To Main Content
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Rise Up League Home page" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+      - navigation "main navigation" [ref=e7]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Home" [ref=e11] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e12]:
+            - button "Photos" [ref=e13] [cursor=pointer]
+          - listitem [ref=e14]:
+            - button "League" [ref=e15] [cursor=pointer]
+          - listitem [ref=e16]:
+            - button "Information" [ref=e17] [cursor=pointer]
+      - generic [ref=e18]:
+        - link "Log In" [ref=e19] [cursor=pointer]:
+          - /url: /
+        - link "Sign Up" [ref=e20] [cursor=pointer]:
+          - /url: /
+  - main [ref=e21]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: The Best Basketball League
+        - heading "Elevate Your Game" [level=1] [ref=e29]:
+          - generic [ref=e30]: Elevate
+          - generic [ref=e31]: Your Game
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: Competition, culture, and community collide in Ontario's premier adult basketball league.
+        - link "Register Now" [ref=e34] [cursor=pointer]:
+          - /url: ""
+          - generic [ref=e35]: Register Now
+          - img [ref=e37]
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]: What Rise Up Delivers
+        - heading "The Full Package. Every Season." [level=2] [ref=e43]:
+          - text: The Full Package.
+          - text: Every Season.
+      - generic [ref=e44]:
+        - generic [ref=e45] [cursor=pointer]:
+          - img "Rise Up League 7 games plus playoffs" [ref=e47]
+          - generic [ref=e49]:
+            - generic [ref=e50]: League Format
+            - heading "7 Games + Playoffs" [level=3] [ref=e51]:
+              - text: 7 Games +
+              - text: Playoffs
+          - button "Learn more about 7 games plus playoffs" [ref=e52]:
+            - img [ref=e53]
+          - paragraph [ref=e55]: Seven guaranteed regular-season games plus a full playoff bracket. Every season has stakes — no shortened schedules, no cut corners.
+        - generic [ref=e56] [cursor=pointer]:
+          - img "Rise Up League championship rings" [ref=e58]
+          - generic [ref=e60]:
+            - generic [ref=e61]: Top Prize
+            - heading "Championship Rings" [level=3] [ref=e62]:
+              - text: Championship
+              - text: Rings
+          - button "Learn more about championship rings" [ref=e63]:
+            - img [ref=e64]
+          - paragraph [ref=e66]: Real rings. Pro media day portraits. A gym full of people watching you win it all. This isn't rec ball — it's the full experience.
+        - generic [ref=e67] [cursor=pointer]:
+          - img "Rise Up League full game coverage" [ref=e69]
+          - generic [ref=e71]:
+            - generic [ref=e72]: Media
+            - heading "Full Game Coverage" [level=3] [ref=e73]:
+              - text: Full Game
+              - text: Coverage
+          - button "Learn more about full game coverage" [ref=e74]:
+            - img [ref=e75]
+          - paragraph [ref=e77]: Official scorekeepers at every game and full game footage posted to YouTube. Every run is documented, every bucket on record.
+        - generic [ref=e78] [cursor=pointer]:
+          - img "Rise Up League season stats" [ref=e80]
+          - generic [ref=e82]:
+            - generic [ref=e83]: Analytics
+            - heading "Season Stats" [level=3] [ref=e84]:
+              - text: Season
+              - text: Stats
+          - button "Learn more about season stats" [ref=e85]:
+            - img [ref=e86]
+          - paragraph [ref=e88]: Real-time stats for every player on the floor. Track your points, assists, and rebounds across the full season — like the pros do.
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - generic [ref=e92]: The Journey
+        - heading "Memorable Moments. One Season." [level=2] [ref=e93]:
+          - text: Memorable Moments.
+          - text: One Season.
+      - list [ref=e94]:
+        - img
+        - listitem [ref=e95]:
+          - generic: ARRIVAL
+          - generic [ref=e96]:
+            - img "Players registering for Rise Up League" [ref=e98]
+            - generic [ref=e100]:
+              - paragraph [ref=e101]: REGISTER
+              - paragraph [ref=e102]: Lock In Your Spot
+              - paragraph [ref=e103]: Come as a full team or a free agent — we'll place you. Pick your division and lock in before spots fill.
+        - listitem [ref=e104]:
+          - generic: READY
+          - generic [ref=e105]:
+            - img "Rise Up League media day portraits" [ref=e107]
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: MEDIA DAY
+              - paragraph [ref=e111]: Look the Part
+              - paragraph [ref=e112]: Every player gets professional portraits and a player card before tip-off. Invite your family — this is where it starts to feel real.
+        - listitem [ref=e113]:
+          - generic: COMPETE
+          - generic [ref=e114]:
+            - img "Intense game action in Rise Up League" [ref=e116]
+            - generic [ref=e118]:
+              - paragraph [ref=e119]: PLAY
+              - paragraph [ref=e120]: Grind the Season
+              - paragraph [ref=e121]: Seven regular season games. Certified refs, official scorekeeping, and your stats tracked every game. Full game footage on YouTube by Monday.
+        - listitem [ref=e122]:
+          - generic: GLORY
+          - generic [ref=e123]:
+            - img "Rise Up League championship rings and trophy" [ref=e125]
+            - generic [ref=e127]:
+              - paragraph [ref=e128]: WIN IT ALL
+              - paragraph [ref=e129]: Championship Night
+              - paragraph [ref=e130]: The bracket drops. Every game is elimination. Win it all and you're walking out with a ring and a gym full of people who watched you earn it.
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - generic [ref=e134]: Track Record
+        - heading "By The Numbers" [level=2] [ref=e135]
+        - paragraph [ref=e136]: Every figure below was earned on the court — this is what a real competitive basketball community looks like.
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - img "Rise Up League season stats" [ref=e141]
+          - img "Rise Up League games" [ref=e144]
+          - img "Rise Up League championship" [ref=e147]
+        - generic [ref=e148]:
+          - paragraph [ref=e149]:
+            - generic [ref=e150]: "0"
+            - generic [ref=e151]: +
+          - paragraph [ref=e152]: Players
+          - paragraph [ref=e153]: Across 6 competitive divisions
+        - generic [ref=e154]:
+          - paragraph [ref=e155]:
+            - generic [ref=e156]: "0"
+            - generic [ref=e157]: +
+          - paragraph [ref=e158]: Games Guaranteed
+          - paragraph [ref=e159]: Plus a full playoff bracket
+        - generic [ref=e160]:
+          - paragraph [ref=e161]:
+            - generic [ref=e162]: "0"
+          - paragraph [ref=e163]: Divisions
+          - paragraph [ref=e164]: Rookie to All-Star level
+        - generic [ref=e165]:
+          - paragraph [ref=e166]:
+            - generic [ref=e167]: "0"
+            - generic [ref=e168]: "%"
+          - paragraph [ref=e169]: Covered
+          - paragraph [ref=e170]: Every game filmed & on YouTube
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - generic [ref=e175]: Game Night
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - text: The
+            - emphasis [ref=e178]: Energy
+          - generic [ref=e179]:
+            - text: Your
+            - emphasis [ref=e180]: People
+          - generic [ref=e181]:
+            - text: The
+            - emphasis [ref=e182]: Staff
+        - generic [ref=e183]:
+          - paragraph [ref=e184]: A gym that gets loud. Every bucket, every block, every clutch shot — the crowd feels it with you.
+          - paragraph: Invite your family. Bring your friends. The stands matter — show them what you've been working on all week.
+          - paragraph: A welcoming, organized league that treats every player, fan, and first-time visitor like they belong.
+        - generic [ref=e185]: 01 / 03
+      - generic [ref=e186]:
+        - img "Rise Up League game energy" [ref=e188]
+        - img "Rise Up League community" [ref=e190]
+        - img "Rise Up League staff" [ref=e192]
+    - generic [ref=e195]:
+      - generic [ref=e196]:
+        - generic [ref=e197]: The League
+        - heading "Find Your City" [level=2] [ref=e198]
+        - paragraph [ref=e199]: Three cities across the GTA. Pick your home court and lock in your spot for next season.
+      - generic [ref=e200]:
+        - link "Now Registering Brampton 6 Divisions 500+ Players Register Now" [ref=e201] [cursor=pointer]:
+          - /url: /sign-up/
+          - generic [ref=e202]:
+            - generic: "01"
+          - generic [ref=e205]:
+            - generic [ref=e206]: Now Registering
+            - heading "Brampton" [level=3] [ref=e207]
+            - generic [ref=e208]:
+              - generic [ref=e209]: 6 Divisions
+              - generic [ref=e210]: ·
+              - generic [ref=e211]: 500+ Players
+            - generic [ref=e212]:
+              - text: Register Now
+              - img [ref=e213]
+        - link "Now Registering Vaughan 6 Divisions 500+ Players Register Now" [ref=e215] [cursor=pointer]:
+          - /url: /sign-up/
+          - generic [ref=e216]:
+            - generic: "02"
+          - generic [ref=e219]:
+            - generic [ref=e220]: Now Registering
+            - heading "Vaughan" [level=3] [ref=e221]
+            - generic [ref=e222]:
+              - generic [ref=e223]: 6 Divisions
+              - generic [ref=e224]: ·
+              - generic [ref=e225]: 500+ Players
+            - generic [ref=e226]:
+              - text: Register Now
+              - img [ref=e227]
+        - link "Now Registering Mississauga 6 Divisions 500+ Players Register Now" [ref=e229] [cursor=pointer]:
+          - /url: /sign-up/
+          - generic [ref=e230]:
+            - generic: "03"
+          - generic [ref=e233]:
+            - generic [ref=e234]: Now Registering
+            - heading "Mississauga" [level=3] [ref=e235]
+            - generic [ref=e236]:
+              - generic [ref=e237]: 6 Divisions
+              - generic [ref=e238]: ·
+              - generic [ref=e239]: 500+ Players
+            - generic [ref=e240]:
+              - text: Register Now
+              - img [ref=e241]
+    - img [ref=e244]
+    - generic [ref=e247]:
+      - generic [ref=e248]:
+        - generic [ref=e249]:
+          - generic [ref=e250]: Skill Divisions
+          - heading "Find Your Level" [level=2] [ref=e251]
+        - paragraph [ref=e252]: Every team is placed by skill so games stay competitive and fun. Start where you are and move up as your squad grows.
+      - list [ref=e254]:
+        - listitem [ref=e255]:
+          - generic [ref=e258]:
+            - heading "Rookie" [level=3] [ref=e259]
+            - paragraph [ref=e260]: New to the game. Learning fast and building fundamentals!
+            - generic [ref=e261]:
+              - generic [ref=e262]: Grade 4
+              - link "Join Rookie" [ref=e263] [cursor=pointer]:
+                - /url: /sign-up/
+        - listitem [ref=e264]:
+          - generic [ref=e267]:
+            - heading "Fil – Rookie" [level=3] [ref=e268]
+            - paragraph [ref=e269]: New to the game. Learning fast and building fundamentals! Open to Filipino players, with one import allowed per team.
+            - generic [ref=e270]:
+              - generic [ref=e271]: Grade 5
+              - link "Join Fil – Rookie" [ref=e272] [cursor=pointer]:
+                - /url: /sign-up/
+        - listitem [ref=e273]:
+          - generic [ref=e276]:
+            - heading "Pro" [level=3] [ref=e277]
+            - paragraph [ref=e278]: For players with some experience — sharpen your skills, compete, and have fun!
+            - generic [ref=e279]:
+              - generic [ref=e280]: Grade 3
+              - link "Join Pro" [ref=e281] [cursor=pointer]:
+                - /url: /sign-up/
+        - listitem [ref=e282]:
+          - generic [ref=e285]:
+            - heading "Fil – Pro" [level=3] [ref=e286]
+            - paragraph [ref=e287]: For players with some experience — sharpen your skills, compete, and have fun! Open to Filipino players, with one import allowed per team.
+            - generic [ref=e288]:
+              - generic [ref=e289]: Grade 3
+              - link "Join Fil – Pro" [ref=e290] [cursor=pointer]:
+                - /url: /sign-up/
+        - listitem [ref=e291]:
+          - generic [ref=e294]:
+            - heading "Allstar" [level=3] [ref=e295]
+            - paragraph [ref=e296]: For experienced players seeking competitive play — elevate your game and challenge opponents.
+            - generic [ref=e297]:
+              - generic [ref=e298]: Grade 2
+              - link "Join Allstar" [ref=e299] [cursor=pointer]:
+                - /url: /sign-up/
+        - listitem [ref=e300]:
+          - generic [ref=e303]:
+            - heading "Fil – Great" [level=3] [ref=e304]
+            - paragraph [ref=e305]: For experienced players seeking competitive play — elevate your game and challenge opponents. Open to Filipino players, with one import allowed per team.
+            - generic [ref=e306]:
+              - generic [ref=e307]: Grade 2
+              - link "Join Fil – Great" [ref=e308] [cursor=pointer]:
+                - /url: /sign-up/
+        - listitem [ref=e309]:
+          - generic [ref=e312]:
+            - heading "Hall of Fame" [level=3] [ref=e313]
+            - paragraph [ref=e314]: For college and advanced players ready for high-level competition — show your skills and play at the top level!
+            - generic [ref=e315]:
+              - generic [ref=e316]: Grade 1
+              - link "Join Hall of Fame" [ref=e317] [cursor=pointer]:
+                - /url: /sign-up/
+      - generic [ref=e320]:
+        - button "Previous division" [disabled]:
+          - img
+        - button "Next division" [ref=e321] [cursor=pointer]:
+          - img [ref=e322]
+    - img [ref=e325]
+    - generic [ref=e327]:
+      - generic [ref=e329]:
+        - generic [ref=e330]:
+          - generic [ref=e331]: Through the Lens
+          - heading "From the Court" [level=2] [ref=e332]
+        - link "View All Photos" [ref=e333] [cursor=pointer]:
+          - /url: /photos/
+          - generic [ref=e334]: View All Photos
+          - img [ref=e335]
+      - generic [ref=e338]:
+        - link "Rise Up League player portrait Media Day" [ref=e339] [cursor=pointer]:
+          - /url: /media-day/
+          - img "Rise Up League player portrait" [ref=e340]
+          - generic: Media Day
+        - link "Basketball game action Game Photos" [ref=e341] [cursor=pointer]:
+          - /url: /photos/
+          - img "Basketball game action" [ref=e342]
+          - generic: Game Photos
+        - link "Rise Up League player portrait Media Day" [ref=e343] [cursor=pointer]:
+          - /url: /media-day/
+          - img "Rise Up League player portrait" [ref=e344]
+          - generic: Media Day
+        - link "Player drives to the basket Game Photos" [ref=e345] [cursor=pointer]:
+          - /url: /photos/
+          - img "Player drives to the basket" [ref=e346]
+          - generic: Game Photos
+        - link "Rise Up League player portrait Media Day" [ref=e347] [cursor=pointer]:
+          - /url: /media-day/
+          - img "Rise Up League player portrait" [ref=e348]
+          - generic: Media Day
+        - link "Intense basketball game action Game Photos" [ref=e349] [cursor=pointer]:
+          - /url: /photos/
+          - img "Intense basketball game action" [ref=e350]
+          - generic: Game Photos
+        - link [ref=e351] [cursor=pointer]:
+          - /url: /media-day/
+          - generic: Media Day
+        - link [ref=e352] [cursor=pointer]:
+          - /url: /photos/
+          - generic: Game Photos
+        - link [ref=e353] [cursor=pointer]:
+          - /url: /media-day/
+          - generic: Media Day
+        - link [ref=e354] [cursor=pointer]:
+          - /url: /photos/
+          - generic: Game Photos
+        - link [ref=e355] [cursor=pointer]:
+          - /url: /media-day/
+          - generic: Media Day
+        - link [ref=e356] [cursor=pointer]:
+          - /url: /photos/
+          - generic: Game Photos
+    - generic [ref=e357]:
+      - generic [ref=e358]:
+        - generic [ref=e359]: Word on the Court
+        - heading "Players Talk" [level=2] [ref=e360]
+      - generic [ref=e362]:
+        - list [ref=e363]:
+          - listitem [ref=e364]:
+            - paragraph [ref=e365]: "\"Best run league in the GTA, hands down. Games start on time, refs are legit, and every game is on YouTube by Monday.\""
+            - generic [ref=e366]:
+              - generic [ref=e367]: Marcus T.
+              - generic [ref=e368]: Allstar Division
+          - listitem [ref=e369]:
+            - paragraph [ref=e370]: "\"I came in as a rookie barely able to dribble. Two seasons later I'm starting. The skill divisions actually work.\""
+            - generic [ref=e371]:
+              - generic [ref=e372]: Devon K.
+              - generic [ref=e373]: Pro Division
+          - listitem [ref=e374]:
+            - paragraph [ref=e375]: "\"The stat tracking is addictive. My whole team checks the MVP ladder every week like it's fantasy.\""
+            - generic [ref=e376]:
+              - generic [ref=e377]: Jay R.
+              - generic [ref=e378]: Hall of Fame Division
+          - listitem [ref=e379]:
+            - paragraph [ref=e380]: "\"Fil division is family. Competitive on the court, barbecue energy off it. Wouldn't play anywhere else.\""
+            - generic [ref=e381]:
+              - generic [ref=e382]: Paolo S.
+              - generic [ref=e383]: Fil – Great Division
+          - listitem [ref=e384]:
+            - paragraph [ref=e385]: "\"Won the chip last season and the ring is actually nice. Not some plastic trophy — real championship hardware.\""
+            - generic [ref=e386]:
+              - generic [ref=e387]: Andre W.
+              - generic [ref=e388]: Allstar Division
+        - list [ref=e389]:
+          - listitem [ref=e390]:
+            - paragraph [ref=e391]: "\"Best run league in the GTA, hands down. Games start on time, refs are legit, and every game is on YouTube by Monday.\""
+            - generic [ref=e392]:
+              - generic [ref=e393]: Marcus T.
+              - generic [ref=e394]: Allstar Division
+          - listitem [ref=e395]:
+            - paragraph [ref=e396]: "\"I came in as a rookie barely able to dribble. Two seasons later I'm starting. The skill divisions actually work.\""
+            - generic [ref=e397]:
+              - generic [ref=e398]: Devon K.
+              - generic [ref=e399]: Pro Division
+          - listitem [ref=e400]:
+            - paragraph [ref=e401]: "\"The stat tracking is addictive. My whole team checks the MVP ladder every week like it's fantasy.\""
+            - generic [ref=e402]:
+              - generic [ref=e403]: Jay R.
+              - generic [ref=e404]: Hall of Fame Division
+          - listitem [ref=e405]:
+            - paragraph [ref=e406]: "\"Fil division is family. Competitive on the court, barbecue energy off it. Wouldn't play anywhere else.\""
+            - generic [ref=e407]:
+              - generic [ref=e408]: Paolo S.
+              - generic [ref=e409]: Fil – Great Division
+          - listitem [ref=e410]:
+            - paragraph [ref=e411]: "\"Won the chip last season and the ring is actually nice. Not some plastic trophy — real championship hardware.\""
+            - generic [ref=e412]:
+              - generic [ref=e413]: Andre W.
+              - generic [ref=e414]: Allstar Division
+      - generic [ref=e416]:
+        - list [ref=e417]:
+          - listitem [ref=e418]:
+            - paragraph [ref=e419]: "\"Media day made us feel like pros. Team photos, player cards, the whole thing. My mom framed mine.\""
+            - generic [ref=e420]:
+              - generic [ref=e421]: Chris L.
+              - generic [ref=e422]: Pro Division
+          - listitem [ref=e423]:
+            - paragraph [ref=e424]: "\"Schedule drops before the season, standings update same night. The organization level is unmatched.\""
+            - generic [ref=e425]:
+              - generic [ref=e426]: Sam B.
+              - generic [ref=e427]: Rookie Division
+          - listitem [ref=e428]:
+            - paragraph [ref=e429]: "\"Started a team with five coworkers who hadn't played since high school. Rookie division was the perfect landing spot.\""
+            - generic [ref=e430]:
+              - generic [ref=e431]: Nathan P.
+              - generic [ref=e432]: Rookie Division
+          - listitem [ref=e433]:
+            - paragraph [ref=e434]: "\"Refs take it seriously, scorekeepers take it seriously. You can just focus on hooping.\""
+            - generic [ref=e435]:
+              - generic [ref=e436]: Miguel D.
+              - generic [ref=e437]: Fil – Pro Division
+          - listitem [ref=e438]:
+            - paragraph [ref=e439]: "\"Watching my own game film every week changed how I play. Can't get that anywhere else at this price.\""
+            - generic [ref=e440]:
+              - generic [ref=e441]: Tyler J.
+              - generic [ref=e442]: Hall of Fame Division
+        - list [ref=e443]:
+          - listitem [ref=e444]:
+            - paragraph [ref=e445]: "\"Media day made us feel like pros. Team photos, player cards, the whole thing. My mom framed mine.\""
+            - generic [ref=e446]:
+              - generic [ref=e447]: Chris L.
+              - generic [ref=e448]: Pro Division
+          - listitem [ref=e449]:
+            - paragraph [ref=e450]: "\"Schedule drops before the season, standings update same night. The organization level is unmatched.\""
+            - generic [ref=e451]:
+              - generic [ref=e452]: Sam B.
+              - generic [ref=e453]: Rookie Division
+          - listitem [ref=e454]:
+            - paragraph [ref=e455]: "\"Started a team with five coworkers who hadn't played since high school. Rookie division was the perfect landing spot.\""
+            - generic [ref=e456]:
+              - generic [ref=e457]: Nathan P.
+              - generic [ref=e458]: Rookie Division
+          - listitem [ref=e459]:
+            - paragraph [ref=e460]: "\"Refs take it seriously, scorekeepers take it seriously. You can just focus on hooping.\""
+            - generic [ref=e461]:
+              - generic [ref=e462]: Miguel D.
+              - generic [ref=e463]: Fil – Pro Division
+          - listitem [ref=e464]:
+            - paragraph [ref=e465]: "\"Watching my own game film every week changed how I play. Can't get that anywhere else at this price.\""
+            - generic [ref=e466]:
+              - generic [ref=e467]: Tyler J.
+              - generic [ref=e468]: Hall of Fame Division
+    - img [ref=e470]
+    - generic [ref=e473]:
+      - generic [ref=e474]:
+        - generic [ref=e475]: FAQ
+        - heading "Got Questions?" [level=2] [ref=e476]
+        - paragraph [ref=e477]: Everything you need to know before you lace up. Can't find your answer? Reach out and we'll get back to you.
+        - link "Contact Us" [ref=e478] [cursor=pointer]:
+          - /url: /contact/
+      - list [ref=e479]:
+        - listitem [ref=e480]:
+          - button "How do I register?" [ref=e481] [cursor=pointer]:
+            - generic [ref=e482]: How do I register?
+          - generic:
+            - paragraph: Hit Sign Up, create your account, and register your team or join as a free agent. Full teams pick their division during registration — free agents get placed on a roster that needs players in the right division.
+        - listitem [ref=e484]:
+          - button "I don't have a team. Can I still play?" [ref=e485] [cursor=pointer]:
+            - generic [ref=e486]: I don't have a team. Can I still play?
+          - generic:
+            - paragraph: Absolutely. Register as a free agent and we'll place you on a team in the division that matches your level. It's one of the best ways to meet people who hoop.
+        - listitem [ref=e488]:
+          - button "Which division should I join?" [ref=e489] [cursor=pointer]:
+            - generic [ref=e490]: Which division should I join?
+          - generic:
+            - paragraph: Divisions run from Rookie (new to the game) up to Hall of Fame (college and advanced players). If you're unsure, check the division descriptions on our League page — and don't stress, teams can move up or down between seasons so games stay competitive.
+        - listitem [ref=e492]:
+          - button "What's included in a season?" [ref=e493] [cursor=pointer]:
+            - generic [ref=e494]: What's included in a season?
+          - generic:
+            - paragraph: Seven regular season games plus guaranteed playoffs, certified referees and scorekeepers, full game recordings on YouTube, tracked player stats, and championship rings and gear for the winners.
+        - listitem [ref=e496]:
+          - button "How do the Fil divisions work?" [ref=e497] [cursor=pointer]:
+            - generic [ref=e498]: How do the Fil divisions work?
+          - generic:
+            - paragraph: Fil – Great, Fil – Pro, and Fil – Rookie are open to Filipino players, with one import (non-Filipino player) allowed per team. Skill levels mirror the open divisions.
+        - listitem [ref=e500]:
+          - button "Where and when are games played?" [ref=e501] [cursor=pointer]:
+            - generic [ref=e502]: Where and when are games played?
+          - generic:
+            - paragraph: The full schedule is posted before the season starts and available on the Schedule page, with locations and tip-off times for every game. Standings update the same night games are played.
+        - listitem [ref=e504]:
+          - button "Are my stats really tracked?" [ref=e505] [cursor=pointer]:
+            - generic [ref=e506]: Are my stats really tracked?
+          - generic:
+            - paragraph: Every game. Points, rebounds, assists and more are recorded by official scorekeepers, feed into the season leaders and MVP ladder, and build your career profile across seasons.
+        - listitem [ref=e508]:
+          - button "What's the refund policy?" [ref=e509] [cursor=pointer]:
+            - generic [ref=e510]: What's the refund policy?
+          - generic:
+            - paragraph:
+              - text: Full details live on our
+              - link "Refund Policy" [ref=e512] [cursor=pointer]:
+                - /url: /refund-policy/
+              - text: page — give it a read before registering so there are no surprises.
+    - img [ref=e514]
+    - generic [ref=e519]:
+      - generic [ref=e520]: Next Season Is Loading
+      - heading "Ready to Rise Up?" [level=2] [ref=e521]:
+        - generic [ref=e522]: Ready to
+        - generic [ref=e523]: Rise Up?
+      - paragraph [ref=e524]: Spots fill fast and the schedule waits for no one. Lock in your team — or join as a free agent — and we'll see you at tip-off.
+      - generic [ref=e525]:
+        - link "Register Now" [ref=e526] [cursor=pointer]:
+          - /url: /sign-up/
+          - generic [ref=e527]: Register Now
+          - img [ref=e529]
+        - link "Talk to Us First" [ref=e532] [cursor=pointer]:
+          - /url: /contact/
+  - contentinfo [ref=e533]:
+    - generic [ref=e534]:
+      - generic [ref=e535]:
+        - link "Rise Up League home" [ref=e536] [cursor=pointer]:
+          - /url: /
+          - img "Rise Up League" [ref=e537]
+        - paragraph [ref=e538]: Ontario's premier adult basketball league. Competitive games, tracked stats, professional coverage, and hardware on the line every season.
+        - generic [ref=e539]:
+          - link "Visit Rise Up League on Instagram" [ref=e540] [cursor=pointer]:
+            - /url: https://www.instagram.com/riseupleague
+            - img [ref=e541]
+          - link "Visit Rise Up League on Facebook" [ref=e542] [cursor=pointer]:
+            - /url: https://www.facebook.com/riseupleague
+            - img [ref=e543]
+      - list [ref=e544]:
+        - listitem [ref=e545]:
+          - generic [ref=e546]: League
+        - listitem [ref=e547]:
+          - link "Schedule" [ref=e548] [cursor=pointer]:
+            - /url: /schedule/
+        - listitem [ref=e549]:
+          - link "Standings" [ref=e550] [cursor=pointer]:
+            - /url: /standings/
+        - listitem [ref=e551]:
+          - link "Teams" [ref=e552] [cursor=pointer]:
+            - /url: /teams/
+        - listitem [ref=e553]:
+          - link "Season Leaders" [ref=e554] [cursor=pointer]:
+            - /url: /season-leaders/
+        - listitem [ref=e555]:
+          - link "Career Leaders" [ref=e556] [cursor=pointer]:
+            - /url: /career-leaders/
+        - listitem [ref=e557]:
+          - link "Playoffs" [ref=e558] [cursor=pointer]:
+            - /url: /playoffs/
+      - list [ref=e559]:
+        - listitem [ref=e560]:
+          - generic [ref=e561]: Photos
+        - listitem [ref=e562]:
+          - link "Game Photos" [ref=e563] [cursor=pointer]:
+            - /url: /photos/
+        - listitem [ref=e564]:
+          - link "Media Day" [ref=e565] [cursor=pointer]:
+            - /url: /media-day/
+      - list [ref=e566]:
+        - listitem [ref=e567]:
+          - generic [ref=e568]: Info
+        - listitem [ref=e569]:
+          - link "FAQ" [ref=e570] [cursor=pointer]:
+            - /url: /faq/
+        - listitem [ref=e571]:
+          - link "League Rules" [ref=e572] [cursor=pointer]:
+            - /url: /league-rules/
+        - listitem [ref=e573]:
+          - link "All Players" [ref=e574] [cursor=pointer]:
+            - /url: /all-players/
+        - listitem [ref=e575]:
+          - link "Contact Us" [ref=e576] [cursor=pointer]:
+            - /url: /contact/
+        - listitem [ref=e577]:
+          - link "Refund Policy" [ref=e578] [cursor=pointer]:
+            - /url: /refund-policy/
+    - generic [ref=e580]:
+      - paragraph [ref=e581]: © 2026 Rise Up League. All rights reserved.
+      - list [ref=e582]:
+        - listitem [ref=e583]:
+          - link "Terms" [ref=e584] [cursor=pointer]:
+            - /url: /terms-and-conditions/
+        - listitem [ref=e585]:
+          - link "Refund Policy" [ref=e586] [cursor=pointer]:
+            - /url: /refund-policy/
+        - listitem [ref=e587]:
+          - link "support@riseupleague.com" [ref=e588] [cursor=pointer]:
+            - /url: mailto:support@riseupleague.com
